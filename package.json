@@ -1,11 +1,10 @@
 {
   "name": "housing-care-system-wiki",
-  "version": "1.7.1",
-  "description": "Housing Care System - Web Portal, Wiki & GDD Simulator",
-  "main": "server.js",
+  "version": "1.5.8",
+  "description": "Housing Care System - Web Portal, Wiki & GDD Interativo",
+  "private": true,
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js"
+    "dev": "node server.js"
   },
   "keywords": [
     "project-zomboid",
