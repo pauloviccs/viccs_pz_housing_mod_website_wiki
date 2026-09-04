@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Care System | Guia Tático & GDD Oficial</title>
+    <meta name="description" content="Portal tático oficial, Wiki, Game Design Document (GDD) e Simulador de HUD do mod Housing Care System (Living House) para Project Zomboid Build 42.">
+    <meta name="keywords" content="Project Zomboid, Build 42, Housing Care System, Mod, GDD, Wiki, PZ B42, Lua Modding, Tarkov UI">
+    <meta name="theme-color" content="#08090d">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Housing Care System | Official Tactical Guide & GDD">
+    <meta property="og:description" content="Living Comfort, Base Ownership, Hygiene, and Squalor Engine for Project Zomboid Build 42.">
+    <meta property="og:type" content="website">
+
+    <!-- Font Awesome 6 Free -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Secret Classification Bar (Secret Agency / Hacker) -->
+    <div class="agency-topbar">
+        <div class="agency-topbar-left">
+            <span class="classification-tag">TOP SECRET // CLASSIFIED</span>
+            <span>SYS.DIRECTIVE: LIVING-HOUSE-B42</span>
+            <span style="opacity: 0.4;">//</span>
+            <span>COORD: 38°02'N 84°30'W</span>
+        </div>
+        <div class="agency-topbar-right">
+            <span><span class="telemetry-dot"></span> SEC-NET: ONLINE</span>
+            <span class="mono" style="color: var(--accent-orange); font-weight: 700;">DEFCON-1</span>
+            <span>CLEARANCE: LEVEL-4</span>
+        </div>
+    </div>
+
+    <!-- Reengineered Secret Agency / Hacker Tactical Navbar -->
+    <header class="navbar">
+        <a href="#home" class="nav-brand" id="brandLink">
+            <div class="brand-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="brand-text">
+                <h1>Housing Care System</h1>
+                <p>TACTICAL OPS // B42 v1.7.1</p>
+            </div>
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><button class="nav-btn active" data-tab="home"><i class="fa-solid fa-terminal"></i> <span data-i18n="navWiki">Wiki & Sistemas</span></button></li>
+                <li><button class="nav-btn" data-tab="guide"><i class="fa-solid fa-book-skull"></i> <span data-i18n="navGuide">Manual de Operações</span></button></li>
+                <li><button class="nav-btn" data-tab="gdd"><i class="fa-solid fa-microchip"></i> <span data-i18n="navGdd">GDD & Arquitetura</span></button></li>
+                <li><button class="nav-btn" data-tab="database"><i class="fa-solid fa-boxes-stacked"></i> <span data-i18n="navDatabase">Banco de Itens</span></button></li>
+                <li><button class="nav-btn" data-tab="calculator"><i class="fa-solid fa-calculator"></i> <span data-i18n="navCalculator">Calculadora</span></button></li>
+                <li><button class="nav-btn" data-tab="sandbox"><i class="fa-solid fa-sliders"></i> <span data-i18n="navSandbox">Opções Sandbox</span></button></li>
+            </ul>
+        </nav>
+
+        <!-- Language Switcher (Cyber Switch) -->
+        <div class="lang-toggle" role="group" aria-label="Language Selector">
+            <button class="lang-btn active" id="btnLangPt" data-lang="pt">PT-BR</button>
+            <button class="lang-btn" id="btnLangEn" data-lang="en">EN</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- ===================================================================
+             TAB 1: HOME & OVERVIEW (WIKI)
+             =================================================================== -->
+        <section id="home" class="tab-content active">
+            <!-- Hero -->
+            <div class="hero">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    <span data-i18n="heroBadge">SISTEMA TÁTICO ATIVO // PZ B42 v1.7.1</span>
+                </div>
+                <h2 data-i18n="heroTitle">Sua base não é um depósito de caixotes. É a sua fortaleza mental.</h2>
+                <p data-i18n="heroSubtitle">O Housing Care System transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.</p>
+                
+                <div class="hero-actions">
+                    <button class="btn-primary" data-tab="database">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                        <span data-i18n="navDatabase">Banco de Itens & Clutter</span>
+                    </button>
+                    <button class="btn-secondary" data-tab="guide">
+                        <i class="fa-solid fa-book-skull"></i>
+                        <span data-i18n="heroBtnExplore">Manual do Sobrevivente</span>
+                    </button>
+                </div>
+
+                <!-- Live Metrics Highlights -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-val" data-i18n="heroStat1Val">8 Módulos</div>
+                        <div class="stat-label" data-i18n="heroStat1Label">Sistemas Integrados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val" data-i18n="heroStat2Val">90+ Objetos</div>
+                        <div class="stat-label" data-i18n="heroStat2Label">Itens & Mobílias Mapeadas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val" data-i18n="heroStat3Val">12 Status</div>
+                        <div class="stat-label" data-i18n="heroStat3Label">Moodles & Buffs Reativos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Keybinds Telemetry Banner -->
+            <div class="keybind-banner">
+                <div class="keybind-item">
+                    <kbd>J</kbd>
+                    <span><strong>Dashboard da Base:</strong> Geradores, Água & Renomear</span>
+                </div>
+                <div class="keybind-item">
+                    <kbd>K</kbd>
+                    <span><strong>Inspetor de Cômodo:</strong> Telemetria & Conforto</span>
+                </div>
+                <div class="keybind-item">
+                    <kbd>ESC</kbd>
+                    <span><strong>Fechar Janelas:</strong> Modais & Painéis</span>
+                </div>
+                <div class="keybind-item">
+                    <kbd>RMB</kbd>
+                    <span><strong>No Chão Interno:</strong> Reivindicar Residência</span>
+                </div>
+            </div>
+
+            <!-- TACTICAL COMPARISON: CASA NEUTRA VS. SEU LAR -->
+            <div class="comparison-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 0.5rem;">
+                    <h3 data-i18n="compTitle" style="font-size: 1.6rem;">Comparativo Operacional: Nem Toda Casa é o Seu Lar</h3>
+                    <p data-i18n="compSub" style="color: var(--text-dim); font-size: 0.95rem;">Entenda por que saquear a casa do vizinho não traz paz de espírito na v1.7.1.</p>
+                </div>
+
+                <div class="comparison-grid">
+                    <!-- Neutral House Card -->
+                    <div class="comp-card neutral">
+                        <div>
+                            <div class="comp-badge danger">
+                                <span><i class="fa-solid fa-triangle-exclamation"></i> IMÓVEL NEUTRO // ACESSO TEMPORÁRIO</span>
+                            </div>
+                            <h3>Casa Neutra ou Abandonada</h3>
+                            <p>Qualquer residência não reivindicada por você. Serve apenas como abrigo temporário contra a chuva e zumbis do lado de fora.</p>
+                            
+                            <ul class="comp-stat-list">
+                                <li class="comp-stat-item">
+                                    <span class="comp-stat-icon"><i class="fa-solid fa-lock text-red"></i></span>
+                                    <span><strong>Conforto Travado em 0 pts:</strong> O cérebro do sobrevivente não relaxa em território desconhecido.</span>
+                                </li>
+                                <li class="comp-stat-item">
+                                    <span class="comp-stat-icon"><i class="fa-solid fa-ban text-red"></i></span>
+                                    <span><strong>Aclimatação Desativada:</strong> Sem dreno passivo de estresse e sem bônus de aprendizado.</span>
+                                </li>
+                                <li class="comp-stat-item">
+                                    <span class="comp-stat-icon"><i class="fa-solid fa-circle-exclamation text-amber"></i></span>
+                                    <span><strong>Alerta no HUD:</strong> O painel exibe aviso constante de 'IMÓVEL NEUTRO'.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Claimed Safehouse Card -->
+                    <div class="comp-card claimed">
+                        <div>
+                            <div class="comp-badge success">
+                                <span><i class="fa-solid fa-shield-halved"></i> SANTUÁRIO REIVINDICADO // SEU LAR</span>
+                            </div>
+                            <h3>Seu Porto Seguro Oficial</h3>
+                            <p>Residência estabelecida como Lar oficial via menu de contexto no Single Player ou Safehouse registrada no Multiplayer.</p>
+                            
+                            <ul class="comp-stat-list">
+                                <li class="comp-stat-item">
+                                    <span class="comp-stat-icon"><i class="fa-solid fa-check-double text-teal"></i></span>
+                                    <span><strong>Conforto Pleno (até 100 pts):</strong> Desbloqueia os 4 Tiers de Moodles psicológicos e sono regenerativo acelerado.</span>
+                                </li>
+                                <li class="comp-stat-item">
+                                    <span class="comp-stat-icon"><i class="fa-solid fa-satellite-dish text-teal"></i></span>
+                                    <span><strong>Notificação em Halo:</strong> Aviso visual e sonoro elegante ao cruzar o perímetro de entrada e saída.</span>
+                                </li>
+                                <li class="comp-stat-item">
+                                    <span class="comp-stat-icon"><i class="fa-solid fa-certificate text-teal"></i></span>
+                                    <span><strong>Blindagem Mental:</strong> Dreno contínuo de estresse e tédio enquanto realiza tarefas domésticas.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE ROOM BLUEPRINT & DECOR SANDBOX -->
+            <div class="blueprint-sandbox">
+                <div class="section-header" style="text-align: left; margin-bottom: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="bento-badge" style="color: var(--accent-cyan);"><i class="fa-solid fa-microchip"></i> LABORATÓRIO TÁTICO</span>
+                        <span style="font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-mono);">// ENGINE v1.7.1</span>
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-top: 0.4rem;">Simulador Visual de Cômodo & Retornos Decrescentes</h3>
+                    <p style="color: var(--text-dim); font-size: 0.95rem;">Clique nos elementos do quarto para adicionar mobílias e decorações. Observe o conforto, os limites de categoria e o impacto do squalor em tempo real.</p>
+                </div>
+
+                <div class="blueprint-layout">
+                    <!-- Toggles Grid -->
+                    <div class="blueprint-toggles-grid">
+                        <div class="bp-toggle-card active" data-bp-item="cleanFloor" data-pts="10" data-cat="base">
+                            <div class="bp-info">
+                                <span class="bp-name">Piso Limpo e Desinfetado</span>
+                                <span class="bp-pts">+10 pts (Base)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="bp-toggle-card active" data-bp-item="bed" data-pts="10" data-cat="furn">
+                            <div class="bp-info">
+                                <span class="bp-name">Cama de Casal de Luxo</span>
+                                <span class="bp-pts">+10 pts (Mobília)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="bp-toggle-card" data-bp-item="couch" data-pts="7" data-cat="furn">
+                            <div class="bp-info">
+                                <span class="bp-name">Sofá de Couro Confortável</span>
+                                <span class="bp-pts">+7 pts (Mobília)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="bp-toggle-card active" data-bp-item="curtains" data-pts="5" data-cat="furn">
+                            <div class="bp-info">
+                                <span class="bp-name">Cortinas Térmicas Fechadas</span>
+                                <span class="bp-pts">+5 pts (Isolamento)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="bp-toggle-card" data-bp-item="rug" data-pts="6" data-cat="furn">
+                            <div class="bp-info">
+                                <span class="bp-name">Tapete Acolchoado</span>
+                                <span class="bp-pts">+6 pts (Isolamento)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="bp-toggle-card active" data-bp-item="light" data-pts="10" data-cat="light">
+                            <div class="bp-info">
+                                <span class="bp-name">Luminária / Abajur Aceso</span>
+                                <span class="bp-pts">+10 pts (Iluminação)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="bp-toggle-card" data-bp-item="clutter" data-pts="12" data-cat="clutter">
+                            <div class="bp-info">
+                                <span class="bp-name">Decoração & Itens 3D Variados</span>
+                                <span class="bp-pts">+12 pts (Clutter)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-check"></i></div>
+                        </div>
+
+                        <div class="bp-toggle-card danger" data-bp-item="squalor" data-pts="-25" data-cat="squalor">
+                            <div class="bp-info">
+                                <span class="bp-name">Manchas de Sangue & Lixo</span>
+                                <span class="bp-pts">-25 pts (Insalubridade)</span>
+                            </div>
+                            <div class="bp-check-indicator"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Telemetry Results Display -->
+                    <div class="blueprint-telemetry">
+                        <div>
+                            <div class="bp-score-header">
+                                <span class="bp-score-label">Pontuação Projetada</span>
+                                <span class="bp-score-number" id="bpTotalScore">35</span>
+                            </div>
+                            <div class="gauge-bar-bg" style="height: 10px;">
+                                <div id="bpScoreBar" class="gauge-bar-fill fill-comfort" style="width: 35%;"></div>
+                            </div>
+                            
+                            <div id="bpTierBadge" class="bp-tier-badge tier-1">Tier 1: Aconchegante</div>
+                        </div>
+
+                        <div>
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-dim); font-family: var(--font-mono); margin-bottom: 0.4rem;">Moodle Resultante:</div>
+                            <div id="bpMoodlePreview" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <span class="moodle-badge moodle-positive"><i class="fa-solid fa-house-chimney"></i> Lar Doce Lar</span>
+                            </div>
+
+                            <div class="bp-diminishing-alert">
+                                <strong><i class="fa-solid fa-triangle-exclamation text-orange"></i> DIRETRIZ ANTI-SPAM (v1.7.1):</strong> Repetir o mesmo item decorativo aplica retornos decrescentes: 1º=100%, 2º=60%, 3º=35%, 4º=15%, 5º+=5%. A categoria de clutter é limitada a 25 pts.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIDACTIC BENTO GRID: 4 PILARES DO MOD -->
+            <div class="section-header" style="text-align: left; margin-top: 3.5rem; margin-bottom: 0.5rem;">
+                <h3 data-i18n="sectWikiTitle" style="font-size: 1.6rem;">Enciclopédia Técnica & Módulos Operacionais</h3>
+                <p data-i18n="sectWikiSub" style="color: var(--text-dim); font-size: 0.95rem;">Mapeamento conciso e didático dos 4 sistemas essenciais do Housing Care System v1.7.1.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Bento Cell 1: Base Ownership -->
+                <div class="bento-card col-6">
+                    <div>
+                        <div class="bento-header">
+                            <span class="bento-badge">PILAR 01 // POSSE</span>
+                            <span class="mono text-cyan" style="font-size: 0.8rem;">Single & Multiplayer</span>
+                        </div>
+                        <h4>Protocolo de Posse de Residência</h4>
+                        <p>Nem toda casa é o seu lar. No v1.7.1, casas não reivindicadas mantêm o conforto travado em 0 pts e a aclimatação suspensa.</p>
+                        
+                        <ul class="bento-list">
+                            <li>
+                                <span class="dot-indicator"></span>
+                                <span><strong>Single Player:</strong> Clique com botão direito no chão interno e selecione <em>'Estabelecer Residência como Meu Lar'</em>.</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator"></span>
+                                <span><strong>Multiplayer:</strong> Integração nativa com Safehouses oficiais de proprietários ou moradores.</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator"></span>
+                                <span><strong>Halo HUD:</strong> Notificação visual de borda e som tático ao entrar e sair da área do refúgio.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bento Cell 2: Dental Hygiene -->
+                <div class="bento-card col-6">
+                    <div>
+                        <div class="bento-header">
+                            <span class="bento-badge" style="color: var(--accent-green); border-color: rgba(56, 211, 159, 0.3);">PILAR 02 // DENTAL</span>
+                            <span class="mono text-green" style="font-size: 0.8rem;">20 Usos por Tubo</span>
+                        </div>
+                        <h4>Higiene Bucal & Durabilidade da Pasta</h4>
+                        <p>Escovar os dentes restaura o senso de civilidade, cortando o estresse pela metade e prevenindo o colapso mental.</p>
+                        
+                        <ul class="bento-list">
+                            <li>
+                                <span class="dot-indicator dot-green"></span>
+                                <span><strong>Requisitos:</strong> Pia com água sanitária ou encanada + Escova + Tubo de Pasta de Dente.</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator dot-green"></span>
+                                <span><strong>Barra de Durabilidade:</strong> Cada escovação consome 5% da pasta (barra verde B42 visível no inventário).</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator dot-green"></span>
+                                <span><strong>Buff 'Hálito Fresco':</strong> -15 Estresse, -10 Tédio e proteção moral durante 4 horas in-game.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bento Cell 3: Nerfed Economy -->
+                <div class="bento-card col-6">
+                    <div>
+                        <div class="bento-header">
+                            <span class="bento-badge" style="color: var(--accent-amber); border-color: rgba(234, 182, 74, 0.3);">PILAR 03 // ECONOMIA NERFADA</span>
+                            <span class="mono text-amber" style="font-size: 0.8rem;">Fim da Inflação</span>
+                        </div>
+                        <h4>Rebalanceamento Econômico (v1.7.1)</h4>
+                        <p>Casas simples agora exigem trabalho para alcançar o nível Santuário. A pontuação foi cortada pela metade para garantir progressão satisfatória.</p>
+                        
+                        <ul class="bento-list">
+                            <li>
+                                <span class="dot-indicator dot-amber"></span>
+                                <span><strong>Piso Limpo:</strong> Reduzido de 25 para <strong>10 pts</strong> (casa vazia = Tier 0).</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator dot-amber"></span>
+                                <span><strong>Móveis:</strong> Camas de Luxo 10 pts, Sofás 7 pts, Mesas 4 pts, Cadeiras 3 pts.</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator dot-amber"></span>
+                                <span><strong>Clutter 3D:</strong> 0.1 a 0.6 pts com teto de categoria estipulado em 25 pts.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bento Cell 4: Dashboards -->
+                <div class="bento-card col-6">
+                    <div>
+                        <div class="bento-header">
+                            <span class="bento-badge" style="color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.3);">PILAR 04 // DASHBOARDS</span>
+                            <span class="mono text-purple" style="font-size: 0.8rem;">Atalhos [J] e [K]</span>
+                        </div>
+                        <h4>Painéis de Infraestrutura & Inspeção</h4>
+                        <p>Monitore suas redes de suprimento e diagnostique a qualidade de cada cômodo sem telas pretas ou erros de JVM.</p>
+                        
+                        <ul class="bento-list">
+                            <li>
+                                <span class="dot-indicator dot-purple"></span>
+                                <span><strong>Tecla [J]:</strong> Painel da Base com combustível do gerador, água em barris e renomeação de refúgio.</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator dot-purple"></span>
+                                <span><strong>Tecla [K]:</strong> Inspetor de Cômodo com quebra de linha ajustada e altura dinâmica.</span>
+                            </li>
+                            <li>
+                                <span class="dot-indicator dot-purple"></span>
+                                <span><strong>Estabilidade:</strong> Salto por janelas trancadas 100% blindado contra erros da JVM.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 2: GUIDE / HOW TO USE (DIDACTIC STEPPER)
+             =================================================================== -->
+        <section id="guide" class="tab-content">
+            <div class="section-header">
+                <h2 data-i18n="sectGuideTitle">Manual de Operações do Sobrevivente</h2>
+                <p data-i18n="sectGuideSub">Jornada passo a passo interativa: da invasão da casa abandonada até o santuário blindado.</p>
+            </div>
+
+            <div class="tactical-stepper">
+                <!-- Stepper Navigation -->
+                <div class="stepper-nav" id="stepperNav">
+                    <button class="stepper-btn active" data-step="1">
+                        <span class="mono text-amber">01</span>
+                        <span>Fase 1: Reconhecimento & Posse</span>
+                    </button>
+                    <button class="stepper-btn" data-step="2">
+                        <span class="mono text-cyan">02</span>
+                        <span>Fase 2: Quarto & Isolamento</span>
+                    </button>
+                    <button class="stepper-btn" data-step="3">
+                        <span class="mono text-green">03</span>
+                        <span>Fase 3: Higiene & Rotina</span>
+                    </button>
+                </div>
+
+                <!-- Pane 1: Recon & Posse -->
+                <div class="stepper-pane active" id="paneStep1">
+                    <div class="glass-panel">
+                        <h3 class="text-amber">Fase 1: Reconhecimento, Purificação & Posse</h3>
+                        <p>Ao encontrar uma casa estruturalmente sólida, elimine os riscos biológicos e reivindique a posse antes da primeira noite de sono:</p>
+
+                        <div class="gear-loadout">
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-broom text-amber"></i>
+                                Vassoura ou Esfregão
+                            </span>
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-bucket text-cyan"></i>
+                                Balde com Água Sanitária
+                            </span>
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-trowel text-green"></i>
+                                Pá de Jardim
+                            </span>
+                        </div>
+
+                        <ul class="tactical-checklist">
+                            <li class="check-item">
+                                <input type="checkbox" id="chk1_1" checked>
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Eliminar zumbis do perímetro e trancar entradas</span>
+                                    <span class="check-item-desc">Feche todas as portas e verifique se as janelas estão trancadas para evitar invasões furtivas.</span>
+                                </div>
+                            </li>
+                            <li class="check-item">
+                                <input type="checkbox" id="chk1_2" checked>
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Reivindicar a Residência como Lar Oficial</span>
+                                    <span class="check-item-desc">Clique com o botão direito no chão de qualquer cômodo interno e selecione <em>'Living House: Estabelecer Residência como Meu Lar'</em>.</span>
+                                </div>
+                            </li>
+                            <li class="check-item">
+                                <input type="checkbox" id="chk1_3">
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Limpar manchas de sangue e descartar corpos</span>
+                                    <span class="check-item-desc">Passe o mop com água sanitária em todos os pisos sujos. Carregue cadáveres para longe de 15 tiles ou enterre-os com a pá.</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="senior-callout">
+                            <div class="senior-callout-icon"><i class="fa-solid fa-user-secret text-orange"></i></div>
+                            <div class="senior-callout-text">
+                                <h5>Dica do Desenvolvedor Sênior</h5>
+                                <p>Não tente descansar em uma casa cheia de sangue: o Squalor acima de 15% anula 60% do conforto de qualquer cama e provoca náusea durante a noite!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 2: Quarto Principal -->
+                <div class="stepper-pane" id="paneStep2">
+                    <div class="glass-panel">
+                        <h3 class="text-cyan">Fase 2: Quarto Principal & Isolamento Térmico</h3>
+                        <p>O quarto de dormir é a sua unidade de tratamento intensivo de estresse e fadiga mental:</p>
+
+                        <div class="gear-loadout">
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-bed text-cyan"></i>
+                                Cama de Luxo / Casal (+10 pts)
+                            </span>
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-person-shelter text-cyan"></i>
+                                Cortinas de Tecido (+5 pts)
+                            </span>
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-rug text-cyan"></i>
+                                Tapete Acolchoado (+6 pts)
+                            </span>
+                        </div>
+
+                        <ul class="tactical-checklist">
+                            <li class="check-item">
+                                <input type="checkbox" id="chk2_1">
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Vedar todas as janelas com cortinas fechadas</span>
+                                    <span class="check-item-desc">Impede que hordas vejam seu personagem e bloqueia o vento frio durante tempestades.</span>
+                                </div>
+                            </li>
+                            <li class="check-item">
+                                <input type="checkbox" id="chk2_2">
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Posicionar tapetes e cama confortável</span>
+                                    <span class="check-item-desc">Tapetes no quarto fornecem bônus de isolamento no inverno e previnem debuffs por dormir em chão frio.</span>
+                                </div>
+                            </li>
+                            <li class="check-item">
+                                <input type="checkbox" id="chk2_3">
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Distribuir clutter e decorações com sabedoria</span>
+                                    <span class="check-item-desc">Adicione 1 rádio, 1 luminária e alguns livros organizados. Evite empilhar itens idênticos por causa dos retornos decrescentes.</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="senior-callout">
+                            <div class="senior-callout-icon"><i class="fa-solid fa-user-secret text-cyan"></i></div>
+                            <div class="senior-callout-text">
+                                <h5>Dica do Desenvolvedor Sênior</h5>
+                                <p>Pressione <strong>[K]</strong> dentro do quarto: a janela de inspeção mostra a pontuação individual de cada item para você saber se o cômodo atingiu o Tier 2 ou Tier 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 3: Higiene & Rotina -->
+                <div class="stepper-pane" id="paneStep3">
+                    <div class="glass-panel">
+                        <h3 class="text-green">Fase 3: Higiene, Água Encanada & Rotina Ativa</h3>
+                        <p>Crie rotinas diárias que blindam o personagem contra o tédio e a depressão no pós-apocalipse:</p>
+
+                        <div class="gear-loadout">
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-tooth text-green"></i>
+                                Tubo de Pasta de Dente (20 Usos)
+                            </span>
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-wrench text-green"></i>
+                                Chave Inglesa (Encanamento)
+                            </span>
+                            <span class="gear-pill">
+                                <i class="fa-solid fa-bolt text-green"></i>
+                                Gerador Elétrico com Combustível
+                            </span>
+                        </div>
+
+                        <ul class="tactical-checklist">
+                            <li class="check-item">
+                                <input type="checkbox" id="chk3_1">
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Conectar barril de água da chuva à pia sanitária</span>
+                                    <span class="check-item-desc">Coloque o barril no piso superior e encane com a chave inglesa para purificar água automaticamente.</span>
+                                </div>
+                            </li>
+                            <li class="check-item">
+                                <input type="checkbox" id="chk3_2">
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Escovar os dentes ao acordar e ao se deitar</span>
+                                    <span class="check-item-desc">Gasta 5% da durabilidade da pasta e renova o buff 'Hálito Fresco' (-15 estresse, -10 tédio).</span>
+                                </div>
+                            </li>
+                            <li class="check-item">
+                                <input type="checkbox" id="chk3_3">
+                                <div class="check-item-content">
+                                    <span class="check-item-title">Monitorar a infraestrutura pelo painel [J]</span>
+                                    <span class="check-item-desc">Acompanhe os litros de água restantes nos barris e os galões de gasolina no gerador.</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="senior-callout">
+                            <div class="senior-callout-icon"><i class="fa-solid fa-user-secret text-green"></i></div>
+                            <div class="senior-callout-text">
+                                <h5>Dica do Desenvolvedor Sênior</h5>
+                                <p>Tarefas domésticas ativas (como cozinhar refeições elaboradas ou arrumar a cama) estendem a duração dos buffs de conforto em até 30%!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 3: GDD & EQUAÇÕES INTERATIVAS
+             =================================================================== -->
+        <section id="gdd" class="tab-content">
+            <div class="section-header">
+                <h2 data-i18n="sectGddTitle">Game Design Document (GDD) & Fórmulas</h2>
+                <p data-i18n="sectGddSub">A matemática de cálculo, matriz de retornos decrescentes (v1.7.1) e arquitetura não-invasiva na JVM do PZ.</p>
+            </div>
+
+            <!-- Formula Interactive Card -->
+            <div class="formula-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 data-i18n="gddMath1Title">Fórmula de Conforto Residencial (v1.7.1)</h3>
+                    <span class="mono text-cyan" style="font-size: 0.85rem;">Score Total = 0 a 100 pts</span>
+                </div>
+                <p style="color: var(--text-dim); margin-top: 0.3rem;">Cada cômodo calcula sua pontuação somando as seguintes parcelas limitadas por tetos individuais:</p>
+
+                <!-- Interactive Formula Chips -->
+                <div class="formula-chips-container">
+                    <span class="formula-chip chip-base" title="Piso Limpo e Desinfetado">PisoLimpo(10)</span>
+                    <span style="color: var(--text-dim);">+</span>
+                    <span class="formula-chip chip-furn" title="Camas, Sofás, Mesas e Armários">Min(40, Mobílias)</span>
+                    <span style="color: var(--text-dim);">+</span>
+                    <span class="formula-chip chip-light" title="Fontes de Iluminação Acesa">Min(10, Luzes)</span>
+                    <span style="color: var(--text-dim);">+</span>
+                    <span class="formula-chip chip-clutter" title="Decorações e Clutter 3D">Min(25, Clutter3D)</span>
+                    <span style="color: var(--text-dim);">+</span>
+                    <span class="formula-chip chip-weather" title="Lareira / Ventiladores">Clima(-10 a +8)</span>
+                </div>
+
+                <!-- Tiers Showcase -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <div class="glass-panel" style="padding: 1.25rem;">
+                        <span class="mono text-green" style="font-weight: 700;">TIER 1 (20 pts)</span>
+                        <h4 style="font-size: 1.05rem; margin: 0.3rem 0;">Aconchegante</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">+5% sono, -5% estresse/h. Ideal para as primeiras semanas.</p>
+                    </div>
+                    <div class="glass-panel" style="padding: 1.25rem;">
+                        <span class="mono text-cyan" style="font-weight: 700;">TIER 2 (40 pts)</span>
+                        <h4 style="font-size: 1.05rem; margin: 0.3rem 0;">Confortável</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">+10% sono, -10% estresse/h, +10% XP treino.</p>
+                    </div>
+                    <div class="glass-panel" style="padding: 1.25rem;">
+                        <span class="mono text-purple" style="font-weight: 700;">TIER 3 (60 pts)</span>
+                        <h4 style="font-size: 1.05rem; margin: 0.3rem 0;">Muito Confortável</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">+15% sono, -15% estresse/h, +15% XP treino.</p>
+                    </div>
+                    <div class="glass-panel" style="padding: 1.25rem;">
+                        <span class="mono text-amber" style="font-weight: 700;">TIER 4 (80+ pts)</span>
+                        <h4 style="font-size: 1.05rem; margin: 0.3rem 0;">Santuário Perfeito</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted);">+25% sono, -25% estresse/h, imunidade a pesadelos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Squalor Degradation Card -->
+            <div class="formula-card" style="margin-top: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 data-i18n="gddMath2Title">Matriz de Squalor & Degradação Biológica</h3>
+                    <span class="mono text-red" style="font-size: 0.85rem;">Insalubridade = 0 a 100%</span>
+                </div>
+                <p style="color: var(--text-dim); margin-top: 0.3rem;">O lixo e os restos mortais apodrecem o conforto de forma implacável:</p>
+
+                <div class="formula-chips-container">
+                    <span class="formula-chip" style="background: rgba(242, 64, 64, 0.15); color: #f87171; border-color: rgba(242, 64, 64, 0.3);">Sangue(40%)</span>
+                    <span style="color: var(--text-dim);">+</span>
+                    <span class="formula-chip" style="background: rgba(234, 182, 74, 0.15); color: #fbbf24; border-color: rgba(234, 182, 74, 0.3);">Cadáveres(30%)</span>
+                    <span style="color: var(--text-dim);">+</span>
+                    <span class="formula-chip" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">Comida Estragada(20%)</span>
+                    <span style="color: var(--text-dim);">+</span>
+                    <span class="formula-chip" style="background: rgba(100, 116, 139, 0.15); color: #cbd5e1; border-color: rgba(100, 116, 139, 0.3);">Entulho(10%)</span>
+                </div>
+
+                <div class="bp-diminishing-alert" style="border-left-color: var(--accent-red); background: rgba(242, 64, 64, 0.08);">
+                    <strong><i class="fa-solid fa-skull-crossbones text-red"></i> ALERTA CRÍTICO // DEGRADAÇÃO:</strong> Se a insalubridade passar de <strong>15%</strong>, ela passa a drenar conforto diretamente. Ao atingir <strong>50%</strong>, todo e qualquer conforto do imóvel é anulado e o sobrevivente desenvolve náusea e moscas!
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 4: ITEM DATABASE (WITH TARKOV CLICK-TO-INSPECT)
+             =================================================================== -->
+        <section id="database" class="tab-content">
+            <div class="section-header">
+                <h2 data-i18n="sectDbTitle">Banco de Dados de Itens, Mobílias & Clutter 3D</h2>
+                <p data-i18n="sectDbSub">Valores pontuais reais de conforto, durabilidade, IDs de script e inspeção técnica no estilo Tarkov. Clique em qualquer linha para inspecionar.</p>
+            </div>
+
+            <div class="table-controls">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="dbSearch" class="search-input" placeholder="Buscar por nome, código Base.Item ou bônus..." data-i18n-attr="placeholder:dbSearchPlaceholder">
+                </div>
+                <div class="filter-pills" id="dbCategoryFilters">
+                    <button class="filter-btn active" data-category="all" data-i18n="dbFilterAll">Todos os Objetos</button>
+                    <button class="filter-btn" data-category="furniture" data-i18n="dbFilterFurniture">Móveis & Camas</button>
+                    <button class="filter-btn" data-category="cleaning" data-i18n="dbFilterCleaning">Limpeza & Dental</button>
+                    <button class="filter-btn" data-category="decor" data-i18n="dbFilterDecor">Decoração & Clutter 3D</button>
+                    <button class="filter-btn" data-category="thermal" data-i18n="dbFilterThermal">Sazonalidade & Calor</button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table" id="itemsTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="colItemName">Objeto / Item</th>
+                            <th data-i18n="colCategory">Categoria</th>
+                            <th data-i18n="colScore">Pontuação Rebalanceada</th>
+                            <th data-i18n="colBonus">Efeito Operacional</th>
+                            <th data-i18n="colRequirements">Requisitos / Como Usar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemsTableBody">
+                        <!-- Populated dynamically by app.js with click-to-inspect -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 5: HOMEMAKING ACTION CALCULATOR
+             =================================================================== -->
+        <section id="calculator" class="tab-content">
+            <div class="section-header">
+                <h2 data-i18n="sectCalcTitle">Calculadora de Ações & Homemaking</h2>
+                <p data-i18n="sectCalcSub">Calcule os requisitos de insumos, tempo de execução, cooldowns e ganhos de moral para cada tarefa doméstica.</p>
+            </div>
+
+            <div class="calc-container">
+                <div class="calc-selector-box">
+                    <div class="calc-field">
+                        <label for="calcActionSelect" data-i18n="calcActionSelect">Selecione a Ação / Tarefa Doméstica:</label>
+                        <select id="calcActionSelect" class="calc-select">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calc-results-box">
+                    <div class="calc-res-item">
+                        <div class="res-label" data-i18n="modalCategory">Classificação</div>
+                        <div id="calcResCategory" class="res-val mono text-cyan">Higiene</div>
+                    </div>
+                    <div class="calc-res-item">
+                        <div class="res-label" data-i18n="calcInsumosTitle">Insumos & Ferramentas Necessárias</div>
+                        <div id="calcResTools" class="res-val text-amber">Escova de Dentes + Pasta de Dente (5%)</div>
+                    </div>
+                    <div class="calc-res-item">
+                        <div class="res-label" data-i18n="calcDurationTitle">Tempo de Execução Estimado</div>
+                        <div id="calcResDuration" class="res-val mono">10 seg in-game</div>
+                    </div>
+                    <div class="calc-res-item">
+                        <div class="res-label" data-i18n="calcCooldownTitle">Tempo de Recarga Anti-Spam</div>
+                        <div id="calcResCooldown" class="res-val mono text-purple">4 horas in-game</div>
+                    </div>
+                    <div class="calc-res-item">
+                        <div class="res-label" data-i18n="calcEffectsTitle">Bônus Concedidos no Personagem</div>
+                        <div id="calcResEffects" class="res-val text-green">-15 Estresse, -10 Tédio, Buff 'Hálito Fresco' (4h)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB 6: SANDBOX OPTIONS
+             =================================================================== -->
+        <section id="sandbox" class="tab-content">
+            <div class="section-header">
+                <h2 data-i18n="sectSandboxTitle">Configurações de Sandbox do Servidor</h2>
+                <p data-i18n="sectSandboxSub">Tabela completa com as 15 variáveis sandbox oficiais e o impacto real de cada configuração.</p>
+            </div>
+
+            <div class="table-controls">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="sbSearch" class="search-input" placeholder="Filtrar opção sandbox..." data-i18n-attr="placeholder:sbSearchPlaceholder">
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table" id="sandboxTable">
+                    <thead>
+                        <tr>
+                            <th data-i18n="colSbVariable">Identificador Sandbox</th>
+                            <th data-i18n="colSbType">Tipo</th>
+                            <th data-i18n="colSbDefault">Padrão</th>
+                            <th data-i18n="colSbImpact">Efeito no Jogo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sandboxTableBody">
+                        <!-- Populated dynamically by app.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================================================================
+         TARKOV TACTICAL ITEM INSPECTION MODAL
+         =================================================================== -->
+    <div id="itemInspectionModal" class="modal-backdrop" role="dialog" aria-modal="true">
+        <div class="tactical-modal">
+            <div class="modal-header">
+                <h4 data-i18n="modalTitle">INSPEÇÃO TÁTICA DE ITEM // CLUTTER & INFRAESTRUTURA</h4>
+                <button id="modalCloseBtn" class="modal-close-btn" data-i18n="modalClose">Fechar [ESC]</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-item-title-row">
+                    <div id="modalItemTitle" class="modal-item-title">Item Name</div>
+                    <div id="modalItemCode" class="modal-item-code mono">Base.ItemCode</div>
+                </div>
+                <div class="modal-stats-grid">
+                    <div class="modal-stat-box">
+                        <div class="label" data-i18n="modalCategory">Classificação</div>
+                        <div id="modalItemCategory" class="val text-cyan mono">FURNITURE</div>
+                    </div>
+                    <div class="modal-stat-box">
+                        <div class="label" data-i18n="modalWeight">Peso Estimado</div>
+                        <div id="modalItemWeight" class="val text-amber mono">0.5 kg</div>
+                    </div>
+                    <div class="modal-stat-box">
+                        <div class="label" data-i18n="modalScore">Pontuação Base</div>
+                        <div id="modalItemScore" class="val text-green mono">+10 pts</div>
+                    </div>
+                </div>
+                <div class="modal-dossier">
+                    <h5 data-i18n="modalTacticalNotes">Dossiê Tático & Orientações de Uso</h5>
+                    <p id="modalItemNotes">Descrição tática detalhada do item no jogo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footerCredits">Housing Care System (Living House) // Build 42 Ready // Desenvolvido com Engenharia de Contexto</p>
+            <p data-i18n="footerRights">Wiki Oficial e Especificação de Game Design.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
