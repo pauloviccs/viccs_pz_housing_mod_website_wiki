@@ -161,10 +161,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 categoryLabel = currentLang === 'pt' ? 'Móveis & Camas' : 'Furniture & Beds';
             }
 
+            const itemIcon = item.icon || 'assets/icons/book.png';
+
             tr.innerHTML = `
                 <td>
-                    <strong>${item.name[currentLang]}</strong>
-                    <div class="mono" style="font-size: 0.72rem; color: var(--text-dim); margin-top: 0.15rem;">${item.id}</div>
+                    <div class="item-slot-wrapper">
+                        <div class="item-slot-box">
+                            <img src="${itemIcon}" alt="${item.name[currentLang]}" class="item-pixel-icon" loading="lazy">
+                        </div>
+                        <div class="item-details">
+                            <strong class="item-name-text">${item.name[currentLang]}</strong>
+                            <div class="mono item-id-subtext">${item.id}</div>
+                        </div>
+                    </div>
                 </td>
                 <td><span class="item-badge ${badgeClass}">${categoryLabel}</span></td>
                 <td class="mono ${item.score.includes('-') ? 'text-amber' : 'text-cyan'}">${item.score}</td>
@@ -187,6 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modalItemWeight').textContent = item.weight || '0.5 kg';
         document.getElementById('modalItemScore').textContent = item.score;
         document.getElementById('modalItemDiminishing').textContent = '1º=100% | 2º=60% | 3º=35% | 5º+=5%';
+
+        const modalItemSprite = document.getElementById('modalItemSprite');
+        if (modalItemSprite) {
+            modalItemSprite.src = item.icon || 'assets/icons/book.png';
+            modalItemSprite.alt = item.name[currentLang];
+        }
 
         const tacticalNotes = item.tacticalNotes ? item.tacticalNotes[currentLang] : item.bonus[currentLang];
         document.getElementById('modalItemNotes').textContent = tacticalNotes;
@@ -266,10 +281,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const resEffects = document.getElementById('calcResEffects');
 
         if (resCategory) resCategory.textContent = act.category;
-        if (resTools) resTools.textContent = act.tools[currentLang];
+        if (resTools) {
+            const toolIcon = act.icon ? `<img src="${act.icon}" class="calc-tool-icon" alt="" /> ` : '';
+            resTools.innerHTML = `${toolIcon}<span>${act.tools[currentLang]}</span>`;
+        }
         if (resDuration) resDuration.textContent = act.duration;
         if (resCooldown) resCooldown.textContent = act.cooldown;
-        if (resEffects) resEffects.textContent = act.rewards[currentLang];
+        if (resEffects) {
+            const moodleIcon = act.moodleIcon ? `<img src="${act.moodleIcon}" class="calc-moodle-icon" alt="" /> ` : '';
+            resEffects.innerHTML = `${moodleIcon}<span>${act.rewards[currentLang]}</span>`;
+        }
     }
 
     /* =========================================================================
@@ -352,38 +373,54 @@ document.addEventListener('DOMContentLoaded', () => {
             // Tier evaluation
             let tierName = '';
             let tierClass = '';
-            let moodleHtml = '';
+            let moodleIcon = '';
+            let moodleLabel = '';
 
             if (total < 20) {
                 tierName = currentLang === 'pt' ? 'Tier 0: Inóspito / Galinheiro' : 'Tier 0: Inhospitable';
                 tierClass = 'tier-0';
-                moodleHtml = currentLang === 'pt' ? '<i class="fa-solid fa-ban"></i> Sem Bônus' : '<i class="fa-solid fa-ban"></i> No Buff';
+                moodleIcon = 'assets/moodles/moodle_discomfort.png';
+                moodleLabel = currentLang === 'pt' ? 'Sem Bônus (Desconforto)' : 'No Buff (Discomfort)';
             } else if (total < 40) {
                 tierName = currentLang === 'pt' ? 'Tier 1: Aconchegante' : 'Tier 1: Cozy';
                 tierClass = 'tier-1';
-                moodleHtml = currentLang === 'pt' ? '<i class="fa-solid fa-house-chimney"></i> Lar Doce Lar' : '<i class="fa-solid fa-house-chimney"></i> Home Sweet Home';
+                moodleIcon = 'assets/moodles/lv_comfort_1.png';
+                moodleLabel = currentLang === 'pt' ? 'Lar Doce Lar' : 'Home Sweet Home';
             } else if (total < 60) {
                 tierName = currentLang === 'pt' ? 'Tier 2: Confortável' : 'Tier 2: Comfortable';
                 tierClass = 'tier-2';
-                moodleHtml = currentLang === 'pt' ? '<i class="fa-solid fa-couch"></i> Conforto Revigorante' : '<i class="fa-solid fa-couch"></i> Restful Comfort';
+                moodleIcon = 'assets/moodles/lv_comfort_2.png';
+                moodleLabel = currentLang === 'pt' ? 'Conforto Revigorante' : 'Restful Comfort';
             } else if (total < 80) {
                 tierName = currentLang === 'pt' ? 'Tier 3: Muito Confortável' : 'Tier 3: Very Comfortable';
                 tierClass = 'tier-3';
-                moodleHtml = currentLang === 'pt' ? '<i class="fa-solid fa-shield-halved"></i> Serenidade Absoluta' : '<i class="fa-solid fa-shield-halved"></i> Absolute Serenity';
+                moodleIcon = 'assets/moodles/lv_comfort_3.png';
+                moodleLabel = currentLang === 'pt' ? 'Serenidade Absoluta' : 'Absolute Serenity';
             } else {
                 tierName = currentLang === 'pt' ? 'Tier 4: Santuário Perfeito' : 'Tier 4: Perfect Sanctuary';
                 tierClass = 'tier-4';
-                moodleHtml = currentLang === 'pt' ? '<i class="fa-solid fa-certificate"></i> Santuário Inviolável' : '<i class="fa-solid fa-certificate"></i> Inviolable Sanctuary';
+                moodleIcon = 'assets/moodles/lv_comfort_4.png';
+                moodleLabel = currentLang === 'pt' ? 'Santuário Inviolável' : 'Inviolable Sanctuary';
             }
 
             bpTierBadge.className = `bp-tier-badge ${tierClass}`;
             bpTierBadge.textContent = tierName;
 
             if (bpMoodlePreview) {
-                bpMoodlePreview.innerHTML = `<span class="moodle-tag moodle-positive">${moodleHtml}</span>`;
+                bpMoodlePreview.innerHTML = `
+                    <span class="moodle-tag moodle-positive">
+                        <img src="${moodleIcon}" class="moodle-pixel-icon" alt="${moodleLabel}">
+                        <span>${moodleLabel}</span>
+                    </span>
+                `;
                 if (squalorPenalty < 0) {
-                    const squalorText = currentLang === 'pt' ? '<i class="fa-solid fa-biohazard"></i> Moscas & Sujeira' : '<i class="fa-solid fa-biohazard"></i> Flies & Filth';
-                    bpMoodlePreview.innerHTML += `<span class="moodle-tag moodle-negative">${squalorText}</span>`;
+                    const squalorLabel = currentLang === 'pt' ? 'Moscas & Sujeira' : 'Flies & Filth';
+                    bpMoodlePreview.innerHTML += `
+                        <span class="moodle-tag moodle-negative">
+                            <img src="assets/moodles/lv_squalor_2.png" class="moodle-pixel-icon" alt="${squalorLabel}">
+                            <span>${squalorLabel}</span>
+                        </span>
+                    `;
                 }
             }
         }
@@ -399,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =========================================================================
-       8. TACTICAL STEPPER / SURVIVOR JOURNEY
+       8. TACTICAL STEPPER / SURVIVOR JOURNEY (LEGACY COMPAT)
        ========================================================================= */
     function initTacticalStepper() {
         const stepButtons = document.querySelectorAll('.stepper-btn');
@@ -425,8 +462,96 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* =========================================================================
+       9. INTERACTIVE HOW-TO GUIDE ACCORDIONS & INSTANT SEARCH (v1.6.0)
+       ========================================================================= */
+    function initHowToGuide() {
+        const accordionItems = document.querySelectorAll('.guide-accordion-item');
+        const filterBtns = document.querySelectorAll('.guide-filter-btn');
+        const searchInput = document.getElementById('guideSearchInput');
+        const btnExpandAll = document.getElementById('btnGuideExpandAll');
+        const btnCollapseAll = document.getElementById('btnGuideCollapseAll');
+        const visibleCounter = document.getElementById('guideVisibleCount');
+
+        let activeGuideCat = 'all';
+
+        function updateGuideFilter() {
+            const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+            let count = 0;
+
+            accordionItems.forEach(item => {
+                const itemCat = item.getAttribute('data-guide-cat') || '';
+                const itemText = item.textContent.toLowerCase();
+                const itemKeywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+
+                const matchesCat = activeGuideCat === 'all' || itemCat === activeGuideCat;
+                const matchesQuery = !query || itemText.includes(query) || itemKeywords.includes(query);
+
+                if (matchesCat && matchesQuery) {
+                    item.classList.remove('hidden');
+                    count++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            if (visibleCounter) {
+                visibleCounter.textContent = count;
+            }
+        }
+
+        // Toggle Accordion on click
+        accordionItems.forEach(item => {
+            const trigger = item.querySelector('.accordion-trigger');
+            if (trigger) {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                });
+            }
+        });
+
+        // Filter Pills
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeGuideCat = btn.getAttribute('data-cat') || 'all';
+                updateGuideFilter();
+            });
+        });
+
+        // Live Search
+        if (searchInput) {
+            searchInput.addEventListener('input', updateGuideFilter);
+        }
+
+        // Expand All / Collapse All
+        if (btnExpandAll) {
+            btnExpandAll.addEventListener('click', () => {
+                accordionItems.forEach(item => {
+                    if (!item.classList.contains('hidden')) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        if (btnCollapseAll) {
+            btnCollapseAll.addEventListener('click', () => {
+                accordionItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+            });
+        }
+
+        updateGuideFilter();
+    }
+
     // Initial Execution
     initBlueprintSandbox();
     initTacticalStepper();
+    initHowToGuide();
     setLanguage(currentLang);
 });
+

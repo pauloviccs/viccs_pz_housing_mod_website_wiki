@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housing Care System | Guia Tático & GDD Oficial</title>
-    <meta name="description" content="Portal tático oficial, Wiki, Game Design Document (GDD) e Simulador de HUD do mod Housing Care System (Living House) para Project Zomboid Build 42.">
-    <meta name="keywords" content="Project Zomboid, Build 42, Housing Care System, Mod, GDD, Wiki, PZ B42, Lua Modding, Tarkov UI">
+    <title>PZ: Cozy Living | Guia Tático, Wiki & GDD Oficial</title>
+    <meta name="description" content="Portal tático oficial, Wiki, Game Design Document (GDD) e Guia How-To do mod PZ: Cozy Living (antigo Housing Care System) para Project Zomboid Build 42.">
+    <meta name="keywords" content="Project Zomboid, Build 42, PZ Cozy Living, Housing Care System, Mod, GDD, Wiki, PZ B42, Lua Modding, Tarkov UI">
     <meta name="theme-color" content="#08090d">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Housing Care System | Official Tactical Guide & GDD">
+    <meta property="og:title" content="PZ: Cozy Living | Official Tactical Guide, Wiki & GDD">
     <meta property="og:description" content="Living Comfort, Base Ownership, Hygiene, and Squalor Engine for Project Zomboid Build 42.">
     <meta property="og:type" content="website">
 
@@ -24,7 +24,7 @@
     <div class="agency-topbar">
         <div class="agency-topbar-left">
             <span class="classification-tag">TOP SECRET // CLASSIFIED</span>
-            <span>SYS.DIRECTIVE: LIVING-HOUSE-B42</span>
+            <span>SYS.DIRECTIVE: PZ-COZY-LIVING-B42</span>
             <span style="opacity: 0.4;">//</span>
             <span>COORD: 38°02'N 84°30'W</span>
         </div>
@@ -42,23 +42,23 @@
                 <i class="fa-solid fa-shield-halved"></i>
             </div>
             <div class="brand-text">
-                <h1>Housing Care System</h1>
-                <p>TACTICAL OPS // B42 v1.7.1</p>
+                <h1>PZ: Cozy Living</h1>
+                <p>B42 v1.6.0</p>
             </div>
         </a>
 
         <nav>
             <ul class="nav-links">
-                <li><button class="nav-btn active" data-tab="home"><i class="fa-solid fa-terminal"></i> <span data-i18n="navWiki">Wiki & Sistemas</span></button></li>
-                <li><button class="nav-btn" data-tab="guide"><i class="fa-solid fa-book-skull"></i> <span data-i18n="navGuide">Manual de Operações</span></button></li>
-                <li><button class="nav-btn" data-tab="gdd"><i class="fa-solid fa-microchip"></i> <span data-i18n="navGdd">GDD & Arquitetura</span></button></li>
-                <li><button class="nav-btn" data-tab="database"><i class="fa-solid fa-boxes-stacked"></i> <span data-i18n="navDatabase">Banco de Itens</span></button></li>
+                <li><button class="nav-btn active" data-tab="home"><i class="fa-solid fa-terminal"></i> <span data-i18n="navWiki">Wiki</span></button></li>
+                <li><button class="nav-btn" data-tab="guide"><i class="fa-solid fa-book-skull"></i> <span data-i18n="navGuide">Guia How-To</span></button></li>
+                <li><button class="nav-btn" data-tab="gdd"><i class="fa-solid fa-microchip"></i> <span data-i18n="navGdd">GDD & Regras</span></button></li>
+                <li><button class="nav-btn" data-tab="database"><i class="fa-solid fa-boxes-stacked"></i> <span data-i18n="navDatabase">Itens & Mobílias</span></button></li>
                 <li><button class="nav-btn" data-tab="calculator"><i class="fa-solid fa-calculator"></i> <span data-i18n="navCalculator">Calculadora</span></button></li>
-                <li><button class="nav-btn" data-tab="sandbox"><i class="fa-solid fa-sliders"></i> <span data-i18n="navSandbox">Opções Sandbox</span></button></li>
+                <li><button class="nav-btn" data-tab="sandbox"><i class="fa-solid fa-sliders"></i> <span data-i18n="navSandbox">Sandbox</span></button></li>
             </ul>
         </nav>
 
-        <!-- Language Switcher (Cyber Switch) -->
+        <!-- Language Switcher (Segmented Minimalist Pill) -->
         <div class="lang-toggle" role="group" aria-label="Language Selector">
             <button class="lang-btn active" id="btnLangPt" data-lang="pt">PT-BR</button>
             <button class="lang-btn" id="btnLangEn" data-lang="en">EN</button>
@@ -76,10 +76,10 @@
             <div class="hero">
                 <div class="hero-badge">
                     <span class="status-dot"></span>
-                    <span data-i18n="heroBadge">SISTEMA TÁTICO ATIVO // PZ B42 v1.7.1</span>
+                    <span data-i18n="heroBadge">SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.0</span>
                 </div>
                 <h2 data-i18n="heroTitle">Sua base não é um depósito de caixotes. É a sua fortaleza mental.</h2>
-                <p data-i18n="heroSubtitle">O Housing Care System transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.</p>
+                <p data-i18n="heroSubtitle">O PZ: Cozy Living transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.</p>
                 
                 <div class="hero-actions">
                     <button class="btn-primary" data-tab="database">
@@ -206,6 +206,7 @@
                     <!-- Toggles Grid -->
                     <div class="blueprint-toggles-grid">
                         <div class="bp-toggle-card active" data-bp-item="cleanFloor" data-pts="10" data-cat="base">
+                            <div class="bp-slot-mini"><img src="assets/icons/sponge.png" class="bp-pixel-thumb" alt="Piso Limpo"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Piso Limpo e Desinfetado</span>
                                 <span class="bp-pts">+10 pts (Base)</span>
@@ -214,6 +215,7 @@
                         </div>
 
                         <div class="bp-toggle-card active" data-bp-item="bed" data-pts="10" data-cat="furn">
+                            <div class="bp-slot-mini"><img src="assets/icons/fancy_bed.png" class="bp-pixel-thumb" alt="Cama"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Cama de Casal de Luxo</span>
                                 <span class="bp-pts">+10 pts (Mobília)</span>
@@ -222,6 +224,7 @@
                         </div>
 
                         <div class="bp-toggle-card" data-bp-item="couch" data-pts="7" data-cat="furn">
+                            <div class="bp-slot-mini"><img src="assets/icons/wardrobe.png" class="bp-pixel-thumb" alt="Sofá"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Sofá de Couro Confortável</span>
                                 <span class="bp-pts">+7 pts (Mobília)</span>
@@ -230,6 +233,7 @@
                         </div>
 
                         <div class="bp-toggle-card active" data-bp-item="curtains" data-pts="5" data-cat="furn">
+                            <div class="bp-slot-mini"><img src="assets/icons/sheet.png" class="bp-pixel-thumb" alt="Cortinas"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Cortinas Térmicas Fechadas</span>
                                 <span class="bp-pts">+5 pts (Isolamento)</span>
@@ -238,6 +242,7 @@
                         </div>
 
                         <div class="bp-toggle-card" data-bp-item="rug" data-pts="6" data-cat="furn">
+                            <div class="bp-slot-mini"><img src="assets/icons/towel.png" class="bp-pixel-thumb" alt="Tapete"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Tapete Acolchoado</span>
                                 <span class="bp-pts">+6 pts (Isolamento)</span>
@@ -246,6 +251,7 @@
                         </div>
 
                         <div class="bp-toggle-card active" data-bp-item="light" data-pts="10" data-cat="light">
+                            <div class="bp-slot-mini"><img src="assets/icons/lamp.png" class="bp-pixel-thumb" alt="Luminária"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Luminária / Abajur Aceso</span>
                                 <span class="bp-pts">+10 pts (Iluminação)</span>
@@ -254,6 +260,7 @@
                         </div>
 
                         <div class="bp-toggle-card" data-bp-item="clutter" data-pts="12" data-cat="clutter">
+                            <div class="bp-slot-mini"><img src="assets/icons/spiffo.png" class="bp-pixel-thumb" alt="Spiffo"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Decoração & Itens 3D Variados</span>
                                 <span class="bp-pts">+12 pts (Clutter)</span>
@@ -262,6 +269,7 @@
                         </div>
 
                         <div class="bp-toggle-card danger" data-bp-item="squalor" data-pts="-25" data-cat="squalor">
+                            <div class="bp-slot-mini"><img src="assets/icons/bleach.png" class="bp-pixel-thumb" alt="Squalor"></div>
                             <div class="bp-info">
                                 <span class="bp-name">Manchas de Sangue & Lixo</span>
                                 <span class="bp-pts">-25 pts (Insalubridade)</span>
@@ -413,6 +421,175 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ===================================================================
+                 TACTICAL MOODLES & STATUS SHOWCASE (BUILD 42 & COZY LIVING)
+                 =================================================================== -->
+            <div class="moodles-showcase-section">
+                <div class="section-header" style="text-align: left; margin-top: 2.5rem; margin-bottom: 1.2rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="bento-badge" style="color: var(--accent-cyan);"><i class="fa-solid fa-heart-pulse"></i> PSICOLOGIA & BIOFEEDBACK</span>
+                        <span style="font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-mono);">// BUILD 42 NATIVE SPRITES</span>
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-top: 0.4rem;">Galeria Tática de Moodles & Efeitos Mentais</h3>
+                    <p style="color: var(--text-dim); font-size: 0.95rem;">Os ícones oficiais do Project Zomboid e do mod Cozy Living. Entenda como o santuário protege a mente do seu sobrevivente contra o colapso e como a sujeira corrói sua sanidade.</p>
+                </div>
+
+                <div class="moodles-grid">
+                    <!-- TIER 1 -->
+                    <div class="moodle-card moodle-card-pos">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_comfort_1.png" class="moodle-sprite-img" alt="Lar Doce Lar">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Lar Doce Lar</span>
+                                <span class="moodle-tier-tag tier-1">Tier 1 // 20-39 pts</span>
+                            </div>
+                            <p class="moodle-desc">Ambiente básico arrumado. Dreno passivo leve de tédio (-15%) e regeneração de sono 10% mais rápida.</p>
+                        </div>
+                    </div>
+
+                    <!-- TIER 2 -->
+                    <div class="moodle-card moodle-card-pos">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_comfort_2.png" class="moodle-sprite-img" alt="Conforto Revigorante">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Conforto Revigorante</span>
+                                <span class="moodle-tier-tag tier-2">Tier 2 // 40-59 pts</span>
+                            </div>
+                            <p class="moodle-desc">Cama confortável e mobília básica. Neutraliza ansiedade pós-combate e acelera descanso em 25%.</p>
+                        </div>
+                    </div>
+
+                    <!-- TIER 3 -->
+                    <div class="moodle-card moodle-card-pos">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_comfort_3.png" class="moodle-sprite-img" alt="Serenidade Absoluta">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Serenidade Absoluta</span>
+                                <span class="moodle-tier-tag tier-3">Tier 3 // 60-79 pts</span>
+                            </div>
+                            <p class="moodle-desc">Decoração 3D, isolamento térmico e boa iluminação. Aumenta taxa de aprendizado de livros de skill (+25% XP).</p>
+                        </div>
+                    </div>
+
+                    <!-- TIER 4 -->
+                    <div class="moodle-card moodle-card-pos">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_comfort_4.png" class="moodle-sprite-img" alt="Santuário Inviolável">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Santuário Inviolável</span>
+                                <span class="moodle-tier-tag tier-4">Tier 4 // 80-100 pts</span>
+                            </div>
+                            <p class="moodle-desc">O ápice da sobrevivência. Imunidade total à tristeza dentro da base, sono ultra-reparador e regeneração mental contínua.</p>
+                        </div>
+                    </div>
+
+                    <!-- SQUALOR 1 -->
+                    <div class="moodle-card moodle-card-neg">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_squalor_1.png" class="moodle-sprite-img" alt="Poeira & Desordem">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Poeira & Desordem</span>
+                                <span class="moodle-tier-tag tier-sq1">Squalor 1 // 15-29%</span>
+                            </div>
+                            <p class="moodle-desc">Poeira acumulada e pegadas de lama. Alerta no inspetor [K] recomendando varrição regular com vassoura.</p>
+                        </div>
+                    </div>
+
+                    <!-- SQUALOR 2 -->
+                    <div class="moodle-card moodle-card-neg">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_squalor_2.png" class="moodle-sprite-img" alt="Moscas & Sujeira">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Moscas & Sujeira</span>
+                                <span class="moodle-tier-tag tier-sq2">Squalor 2 // 30-49%</span>
+                            </div>
+                            <p class="moodle-desc">Zumbido de moscas perceptível e manchas secas de sangue. Desconforto contínuo impede sono profundo.</p>
+                        </div>
+                    </div>
+
+                    <!-- SQUALOR 3 -->
+                    <div class="moodle-card moodle-card-neg">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_squalor_3.png" class="moodle-sprite-img" alt="Insalubridade Crítica">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Insalubridade Crítica</span>
+                                <span class="moodle-tier-tag tier-sq3">Squalor 3 // 50-74%</span>
+                            </div>
+                            <p class="moodle-desc">Anula imediatamente todo o conforto do cômodo para 0 pts. Sobrevivente sente nojo e estresse acelerado.</p>
+                        </div>
+                    </div>
+
+                    <!-- SQUALOR 4 -->
+                    <div class="moodle-card moodle-card-neg">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/lv_squalor_4.png" class="moodle-sprite-img" alt="Ninho de Pestilência">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Ninho de Pestilência</span>
+                                <span class="moodle-tier-tag tier-sq4">Squalor 4 // 75-100%</span>
+                            </div>
+                            <p class="moodle-desc">Carne podre ou zumbis apodrecendo dentro. Causa náusea severa imediata, ânsia de vômito e febre infecciosa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moodles Vanilla Reativos Strip -->
+                <div class="vanilla-moodles-strip">
+                    <div class="strip-header">
+                        <span class="mono text-cyan" style="font-size: 0.75rem;"><i class="fa-solid fa-code-compare"></i> STATUS VANILLA INFLUENCIADOS PELO ECOSSISTEMA DO LAR</span>
+                    </div>
+                    <div class="strip-items">
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_stressed.png" class="strip-icon" alt="Estresse">
+                            <div class="strip-text"><strong>Estresse:</strong> Drenado por escovação dental, rádio/TV e Tiers 2-4.</div>
+                        </div>
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_bored.png" class="strip-icon" alt="Tédio">
+                            <div class="strip-text"><strong>Tédio:</strong> Neutralizado por poltronas, leitura, TV e instrumentos.</div>
+                        </div>
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_sad.png" class="strip-icon" alt="Tristeza">
+                            <div class="strip-text"><strong>Tristeza:</strong> Combatida por refeições quentes e conforto do lar.</div>
+                        </div>
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_discomfort.png" class="strip-icon" alt="Desconforto">
+                            <div class="strip-text"><strong>Desconforto:</strong> Surge após usar vaso sanitário sem papel higiênico.</div>
+                        </div>
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_cold.png" class="strip-icon" alt="Hipotermia">
+                            <div class="strip-text"><strong>Hipotermia:</strong> Evitada por lareiras e fogões a lenha no inverno polar.</div>
+                        </div>
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_hot.png" class="strip-icon" alt="Hipertermia">
+                            <div class="strip-text"><strong>Hipertermia:</strong> Mitigada por ventiladores de teto em ondas de calor.</div>
+                        </div>
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_sleepy.png" class="strip-icon" alt="Fadiga">
+                            <div class="strip-text"><strong>Fadiga:</strong> Curada com velocidade dobrada em camas confortáveis.</div>
+                        </div>
+                        <div class="strip-item">
+                            <img src="assets/moodles/moodle_happy.png" class="strip-icon" alt="Felicidade">
+                            <div class="strip-text"><strong>Felicidade (B42):</strong> Concedida após higiene corporal e tarefas de asseio.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- ===================================================================
@@ -420,190 +597,1008 @@
              =================================================================== -->
         <section id="guide" class="tab-content">
             <div class="section-header">
-                <h2 data-i18n="sectGuideTitle">Manual de Operações do Sobrevivente</h2>
-                <p data-i18n="sectGuideSub">Jornada passo a passo interativa: da invasão da casa abandonada até o santuário blindado.</p>
+                <h2 data-i18n="sectGuideTitle">Manual de Operações & Guia de Sistemas (How-To Guide)</h2>
+                <p data-i18n="sectGuideSub">Aprenda como cada sistema funciona em detalhes, instruções passo a passo in-game, requisitos e impactos de negligência.</p>
             </div>
 
-            <div class="tactical-stepper">
-                <!-- Stepper Navigation -->
-                <div class="stepper-nav" id="stepperNav">
-                    <button class="stepper-btn active" data-step="1">
-                        <span class="mono text-amber">01</span>
-                        <span>Fase 1: Reconhecimento & Posse</span>
-                    </button>
-                    <button class="stepper-btn" data-step="2">
-                        <span class="mono text-cyan">02</span>
-                        <span>Fase 2: Quarto & Isolamento</span>
-                    </button>
-                    <button class="stepper-btn" data-step="3">
-                        <span class="mono text-green">03</span>
-                        <span>Fase 3: Higiene & Rotina</span>
-                    </button>
-                </div>
-
-                <!-- Pane 1: Recon & Posse -->
-                <div class="stepper-pane active" id="paneStep1">
-                    <div class="glass-panel">
-                        <h3 class="text-amber">Fase 1: Reconhecimento, Purificação & Posse</h3>
-                        <p>Ao encontrar uma casa estruturalmente sólida, elimine os riscos biológicos e reivindique a posse antes da primeira noite de sono:</p>
-
-                        <div class="gear-loadout">
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-broom text-amber"></i>
-                                Vassoura ou Esfregão
-                            </span>
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-bucket text-cyan"></i>
-                                Balde com Água Sanitária
-                            </span>
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-trowel text-green"></i>
-                                Pá de Jardim
-                            </span>
+            <div class="guide-container">
+                <!-- Tactical Guide Toolbar -->
+                <div class="guide-toolbar">
+                    <div class="guide-toolbar-top">
+                        <!-- Category Filter Pills -->
+                        <div class="guide-filter-group" id="guideFilterGroup">
+                            <button class="guide-filter-btn active" data-cat="all">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <span data-i18n="guideFilterAll">Todos os Sistemas</span>
+                                <span class="guide-filter-count">14</span>
+                            </button>
+                            <button class="guide-filter-btn" data-cat="hygiene">
+                                <i class="fa-solid fa-toilet"></i>
+                                <span data-i18n="guideFilterHygiene">Higiene & Fisiologia</span>
+                                <span class="guide-filter-count">4</span>
+                            </button>
+                            <button class="guide-filter-btn" data-cat="cleaning">
+                                <i class="fa-solid fa-broom"></i>
+                                <span data-i18n="guideFilterCleaning">Faxina & Descontaminação</span>
+                                <span class="guide-filter-count">3</span>
+                            </button>
+                            <button class="guide-filter-btn" data-cat="leisure">
+                                <i class="fa-solid fa-tv"></i>
+                                <span data-i18n="guideFilterLeisure">Lazer & Rotinas</span>
+                                <span class="guide-filter-count">3</span>
+                            </button>
+                            <button class="guide-filter-btn" data-cat="comfort">
+                                <i class="fa-solid fa-couch"></i>
+                                <span data-i18n="guideFilterComfort">Conforto & Clima</span>
+                                <span class="guide-filter-count">2</span>
+                            </button>
+                            <button class="guide-filter-btn" data-cat="interface">
+                                <i class="fa-solid fa-keyboard"></i>
+                                <span data-i18n="guideFilterInterface">Interface & Atalhos</span>
+                                <span class="guide-filter-count">2</span>
+                            </button>
                         </div>
 
-                        <ul class="tactical-checklist">
-                            <li class="check-item">
-                                <input type="checkbox" id="chk1_1" checked>
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Eliminar zumbis do perímetro e trancar entradas</span>
-                                    <span class="check-item-desc">Feche todas as portas e verifique se as janelas estão trancadas para evitar invasões furtivas.</span>
-                                </div>
-                            </li>
-                            <li class="check-item">
-                                <input type="checkbox" id="chk1_2" checked>
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Reivindicar a Residência como Lar Oficial</span>
-                                    <span class="check-item-desc">Clique com o botão direito no chão de qualquer cômodo interno e selecione <em>'Living House: Estabelecer Residência como Meu Lar'</em>.</span>
-                                </div>
-                            </li>
-                            <li class="check-item">
-                                <input type="checkbox" id="chk1_3">
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Limpar manchas de sangue e descartar corpos</span>
-                                    <span class="check-item-desc">Passe o mop com água sanitária em todos os pisos sujos. Carregue cadáveres para longe de 15 tiles ou enterre-os com a pá.</span>
-                                </div>
-                            </li>
-                        </ul>
+                        <!-- System Counter Display -->
+                        <div class="guide-counter-badge">
+                            <span data-i18n="guideCounterPrefix">Sistemas Mapeados:</span>
+                            <strong id="guideVisibleCount">14</strong> / 14
+                        </div>
+                    </div>
 
-                        <div class="senior-callout">
-                            <div class="senior-callout-icon"><i class="fa-solid fa-user-secret text-orange"></i></div>
-                            <div class="senior-callout-text">
-                                <h5>Dica do Desenvolvedor Sênior</h5>
-                                <p>Não tente descansar em uma casa cheia de sangue: o Squalor acima de 15% anula 60% do conforto de qualquer cama e provoca náusea durante a noite!</p>
-                            </div>
+                    <div class="guide-toolbar-bottom">
+                        <!-- Instant Search Bar -->
+                        <div class="guide-search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="guideSearchInput" class="guide-search-input" placeholder="Buscar por sistema, mecânica ou ação (ex: vaso, papel, lareira, K, chão)..." data-i18n-attr="placeholder:guideSearchPlaceholder">
+                        </div>
+
+                        <!-- Bulk Expand / Collapse Controls -->
+                        <div class="guide-actions-wrapper">
+                            <button id="btnGuideExpandAll" class="guide-action-btn">
+                                <i class="fa-solid fa-angles-down"></i>
+                                <span data-i18n="guideBtnExpandAll">Expandir Todos</span>
+                            </button>
+                            <button id="btnGuideCollapseAll" class="guide-action-btn">
+                                <i class="fa-solid fa-angles-up"></i>
+                                <span data-i18n="guideBtnCollapseAll">Recolher Todos</span>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pane 2: Quarto Principal -->
-                <div class="stepper-pane" id="paneStep2">
-                    <div class="glass-panel">
-                        <h3 class="text-cyan">Fase 2: Quarto Principal & Isolamento Térmico</h3>
-                        <p>O quarto de dormir é a sua unidade de tratamento intensivo de estresse e fadiga mental:</p>
+                <!-- ===================================================================
+                     ACCORDION LIST: 14 SYSTEMS
+                     =================================================================== -->
+                <div class="guide-accordion-list" id="guideAccordionList">
 
-                        <div class="gear-loadout">
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-bed text-cyan"></i>
-                                Cama de Luxo / Casal (+10 pts)
-                            </span>
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-person-shelter text-cyan"></i>
-                                Cortinas de Tecido (+5 pts)
-                            </span>
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-rug text-cyan"></i>
-                                Tapete Acolchoado (+6 pts)
-                            </span>
-                        </div>
+                    <!-- SYSTEM 01: Vasos Sanitários e Cabines -->
+                    <div class="guide-accordion-item" data-guide-cat="hygiene" data-keywords="vaso privada banheiro cabine sentar xixi necessidades urinar sanitário fisiologia">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-restroom"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">1. Vasos Sanitários Universais & Cabines Públicas</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-hygiene">Higiene</span>
+                                    </div>
+                                    <span class="acc-subtitle">Compatibilidade total com privadas residenciais e cabines comerciais com postura sentada imersiva.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Imagine que seu sobrevivente passa semanas correndo e lutando, mas no vanilla ele simplesmente não tinha onde aliviar suas necessidades biológicas com dignidade.</p>
+                                        <p>Na v1.6.0, qualquer privada do jogo — de casas de subúrbio a cabines metálicas de postos de gasolina — agora é um sanitário funcional. O personagem realmente senta na louça e obtém alívio psicológico.</p>
+                                    </div>
+                                </div>
 
-                        <ul class="tactical-checklist">
-                            <li class="check-item">
-                                <input type="checkbox" id="chk2_1">
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Vedar todas as janelas com cortinas fechadas</span>
-                                    <span class="check-item-desc">Impede que hordas vejam seu personagem e bloqueia o vento frio durante tempestades.</span>
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Aproxime-se de qualquer privada residencial ou cabine sanitária pública.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Clique com o <strong>botão direito</strong> diretamente sobre o tile do vaso sanitário.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Selecione a opção <strong>'Usar Banheiro'</strong>. O sobrevivente sentará no vaso e realizará o ciclo de alívio.</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="check-item">
-                                <input type="checkbox" id="chk2_2">
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Posicionar tapetes e cama confortável</span>
-                                    <span class="check-item-desc">Tapetes no quarto fornecem bônus de isolamento no inverno e previnem debuffs por dormir em chão frio.</span>
-                                </div>
-                            </li>
-                            <li class="check-item">
-                                <input type="checkbox" id="chk2_3">
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Distribuir clutter e decorações com sabedoria</span>
-                                    <span class="check-item-desc">Adicione 1 rádio, 1 luminária e alguns livros organizados. Evite empilhar itens idênticos por causa dos retornos decrescentes.</span>
-                                </div>
-                            </li>
-                        </ul>
 
-                        <div class="senior-callout">
-                            <div class="senior-callout-icon"><i class="fa-solid fa-user-secret text-cyan"></i></div>
-                            <div class="senior-callout-text">
-                                <h5>Dica do Desenvolvedor Sênior</h5>
-                                <p>Pressione <strong>[K]</strong> dentro do quarto: a janela de inspeção mostra a pontuação individual de cada item para você saber se o cômodo atingiu o Tier 2 ou Tier 3.</p>
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Qualquer tile de privada residencial ou cabine pública (ex: <code>fixtures_bathroom_01_0..11</code>, <code>fixtures_bathroom_02_*</code>).</p>
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/toilet_paper.png" class="pill-pixel-icon" alt="Papel Higiênico"> <code>Base.ToiletPaper</code> (Recomendado)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-droplet text-teal"></i> Água na rede (Opcional)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Alívio Correto</strong>
+                                                <span>Zera a bexiga, drena estresse e concede o buff de <strong>'Alívio Sanitário'</strong> (-10 estresse).</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-triangle-exclamation"></i> Segurar Bexiga</strong>
+                                                <span>Bexiga cheia causa dor abdominal, lentidão de corrida e perda gradativa de concentração.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Pane 3: Higiene & Rotina -->
-                <div class="stepper-pane" id="paneStep3">
-                    <div class="glass-panel">
-                        <h3 class="text-green">Fase 3: Higiene, Água Encanada & Rotina Ativa</h3>
-                        <p>Crie rotinas diárias que blindam o personagem contra o tédio e a depressão no pós-apocalipse:</p>
-
-                        <div class="gear-loadout">
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-tooth text-green"></i>
-                                Tubo de Pasta de Dente (20 Usos)
-                            </span>
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-wrench text-green"></i>
-                                Chave Inglesa (Encanamento)
-                            </span>
-                            <span class="gear-pill">
-                                <i class="fa-solid fa-bolt text-green"></i>
-                                Gerador Elétrico com Combustível
-                            </span>
-                        </div>
-
-                        <ul class="tactical-checklist">
-                            <li class="check-item">
-                                <input type="checkbox" id="chk3_1">
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Conectar barril de água da chuva à pia sanitária</span>
-                                    <span class="check-item-desc">Coloque o barril no piso superior e encane com a chave inglesa para purificar água automaticamente.</span>
+                    <!-- SYSTEM 02: Papel Higiênico Inteligente & Penalidade de Asseio -->
+                    <div class="guide-accordion-item" data-guide-cat="hygiene" data-keywords="papel higiênico asseio virilha roupa suja gaveta balcão 1 tile estresse">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-toilet-paper"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">2. Ciclo de Papel Higiênico Inteligente (Raio 1 Tile)</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-hygiene">Higiene</span>
+                                    </div>
+                                    <span class="acc-subtitle">Varredura automática em armários e gavetas adjacentes. Sem papel? Penalidade severa de asseio imediata!</span>
                                 </div>
-                            </li>
-                            <li class="check-item">
-                                <input type="checkbox" id="chk3_2">
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Escovar os dentes ao acordar e ao se deitar</span>
-                                    <span class="check-item-desc">Gasta 5% da durabilidade da pasta e renova o buff 'Hálito Fresco' (-15 estresse, -10 tédio).</span>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Ninguém gosta de carregar um rolo de papel higiênico dentro da mochila de combate o tempo todo. O lugar natural do papel é na gaveta ou prateleira ao lado do vaso!</p>
+                                        <p>O mod vasculha o seu inventário e também recipientes a <strong>1 tile de distância</strong>. Mas se você usar o banheiro sem papel nenhum, a ação ainda acontece (ninguém explode a bexiga), mas o asseio é quebrado com força.</p>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="check-item">
-                                <input type="checkbox" id="chk3_3">
-                                <div class="check-item-content">
-                                    <span class="check-item-title">Monitorar a infraestrutura pelo painel [J]</span>
-                                    <span class="check-item-desc">Acompanhe os litros de água restantes nos barris e os galões de gasolina no gerador.</span>
-                                </div>
-                            </li>
-                        </ul>
 
-                        <div class="senior-callout">
-                            <div class="senior-callout-icon"><i class="fa-solid fa-user-secret text-green"></i></div>
-                            <div class="senior-callout-text">
-                                <h5>Dica do Desenvolvedor Sênior</h5>
-                                <p>Tarefas domésticas ativas (como cozinhar refeições elaboradas ou arrumar a cama) estendem a duração dos buffs de conforto em até 30%!</p>
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Guarde rolos de papel higiênico em qualquer gaveta, balcão ou armário colado na privada (raio de 1 tile).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Ao usar o vaso, o sistema detecta o rolo automaticamente e gasta 1 unidade de durabilidade.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Se não houver papel por perto nem na mochila, o jogo emitirá um alerta de falta de asseio.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/toilet_paper.png" class="pill-pixel-icon" alt="Papel Higiênico"> <code>Base.ToiletPaper</code></span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-box text-cyan"></i> Raio: 1 tile do vaso ou inventário</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Com Papel</strong>
+                                                <span>Higienização completa, preservação do asseio pessoal e zero penalidade de vestuário.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-biohazard"></i> Sem Papel</strong>
+                                                <span><strong>+0.30 de Estresse</strong>, perda de buffs, roupas íntimas/calças sujas e urgência de tomar banho.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- SYSTEM 03: Alívio de Emergência na Natureza -->
+                    <div class="guide-accordion-item" data-guide-cat="hygiene" data-keywords="mato árvore arbusto natureza floresta xixi emergência matinho">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-tree"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">3. Alívio de Emergência na Natureza (Árvores & Arbustos)</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-hygiene">Fisiologia</span>
+                                    </div>
+                                    <span class="acc-subtitle">Opção de campo para quem está longe da base. Salva sua bexiga, mas suja as roupas.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Se você estiver no meio de uma expedição de caça ou saque na floresta a quilômetros de qualquer banheiro, você não precisa sofrer até estourar a bexiga.</p>
+                                        <p>Qualquer árvore ou arbusto denso serve como sanitário rústico improvisado de emergência para manter sua mobilidade física.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Aproxime-se de qualquer árvore ou arbusto grande no mapa.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Clique com o <strong>botão direito</strong> sobre o tile da vegetação.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Selecione <strong>'Aliviar-se no Mato'</strong>. O personagem agacha e esvazia a bexiga.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Tile de vegetação densa (árvores médias/grandes ou arbustos de folhagem espessa).</p>
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><i class="fa-solid fa-leaf text-green"></i> Vegetação natural externa</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-eye-slash text-sand"></i> Área segura sem zumbis colados</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Vantagem Tática</strong>
+                                                <span>Evita o desespero e a perda de controle da bexiga durante combates longos fora da base.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-ban"></i> Custo Operacional</strong>
+                                                <span><strong>Zero buffs de conforto</strong>, leve sujeira nas botas/calças e necessidade de lavar roupas depois.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 04: Higiene Bucal & Escovação de Dentes -->
+                    <div class="guide-accordion-item" data-guide-cat="hygiene" data-keywords="dentes escova pasta dental pia boca hálito fresco estresse">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-tooth"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">4. Higiene Bucal & Escovação de Dentes na Pia</span>
+                                        <span class="badge-tag badge-tag-hygiene">Higiene</span>
+                                    </div>
+                                    <span class="acc-subtitle">Recupere o senso de civilidade. 20 usos por tubo de pasta com barra verde de durabilidade visível.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>No apocalipse, sentir a boca limpa após dias comendo carne enlatada fria é o maior lembrete de que você ainda é um ser humano e não um animal selvagem.</p>
+                                        <p>Escovar os dentes funciona como um ansiolítico natural: drena pânico e estresse imediatamente sem criar vícios químicos como álcool ou cigarros.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Tenha em seu inventário 1 Escova de Dentes e 1 Tubo de Pasta de Dente com carga restante.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Aproxime-se de uma pia sanitária que contenha água (da rede pública ou encanada por barril).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Clique com o <strong>botão direito na pia</strong> e selecione <strong>'Escovar os Dentes'</strong>.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/toothbrush.png" class="pill-pixel-icon" alt="Escova"> <code>Base.Toothbrush</code></span>
+                                            <span class="sys-req-pill"><img src="assets/icons/toothpaste.png" class="pill-pixel-icon" alt="Pasta"> <code>Base.Toothpaste</code> (5% gasto/uso)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-sink text-sand"></i> Pia sanitária com água</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> 'Hálito Fresco'</strong>
+                                                <span><strong>-15 de Estresse</strong>, <strong>-10 de Tédio</strong> e proteção psicológica durante 4 horas in-game.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-xmark"></i> Negligência</strong>
+                                                <span>Acúmulo crônico de tédio e perda da oportunidade mais barata de cura mental diária do jogo.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 05: Faxina Ativa de Piso & Descontaminação de Sangue -->
+                    <div class="guide-accordion-item" data-guide-cat="cleaning" data-keywords="limpar chão faxina esfregão vassoura sangue desinfetar balde bleach água sanitária">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-broom"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">5. Faxina Ativa de Piso & Descontaminação de Sangue</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 FIX</span>
+                                        <span class="badge-tag badge-tag-cleaning">Faxina</span>
+                                    </div>
+                                    <span class="acc-subtitle">Passar o esfregão agora consome a sujeira, zera os overlays de poeira e concede buffs de limpeza moral.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Em versões anteriores, esfregar o chão executava a animação mas não diminuía os pontos de sujeira interna nem premiava o jogador. Isso matava a sensação de recompensa.</p>
+                                        <p>Na v1.6.0, o hook de faxina de piso foi 100% corrigido via <code>ISCleanFloorAction:perform()</code>: esfregar o chão elimina fisicamente as camadas de poeira e concede o buff de <strong>'Dever Cumprido'</strong>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Equipe uma Vassoura ou Esfregão (Mop) nas mãos primária e secundária.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Mantenha no inventário um Balde com Água Limpa ou Água Sanitária (Bleach).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Clique com o <strong>botão direito no chão manchado</strong> e selecione <strong>'Limpar Sangue'</strong> ou <strong>'Limpar Chão'</strong>.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/broom.png" class="pill-pixel-icon" alt="Vassoura"> <code>Base.Broom</code> / <img src="assets/icons/mop.png" class="pill-pixel-icon" alt="Esfregão"> <code>Base.Mop</code></span>
+                                            <span class="sys-req-pill"><img src="assets/icons/bucket_water.png" class="pill-pixel-icon" alt="Balde"> <code>Base.BucketWaterFull</code></span>
+                                            <span class="sys-req-pill"><img src="assets/icons/bleach.png" class="pill-pixel-icon" alt="Bleach"> <code>Base.Bleach</code> (Essencial p/ sangue)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Chão Impecável</strong>
+                                                <span>+10 pts de base limpa (essencial para sair do Tier 0) e bônus de ânimo moral por ordem no refúgio.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-biohazard"></i> Chão com Sangue</strong>
+                                                <span>Cada mancha gera +0.40 de Squalor. Acima de 15%, reduz o conforto do cômodo em 60% e atrai náusea.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 06: Higienização de Peças Sanitárias -->
+                    <div class="guide-accordion-item" data-guide-cat="cleaning" data-keywords="banheiro pia banheira chuveiro desinfetante esponja sujeira lodo">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-shower"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">6. Higienização de Peças Sanitárias (Pia, Vaso & Banheira)</span>
+                                        <span class="badge-tag badge-tag-cleaning">Faxina</span>
+                                    </div>
+                                    <span class="acc-subtitle">Evite que o banheiro se torne um berço de lodo, odores pútridos e perda de conforto.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Assim como na vida real, pias e banheiras acumulam lodo e resíduos com o uso contínuo. Lavar roupas sujas de sangue na pia encarde o ralo rapidamente.</p>
+                                        <p>Peças sanitárias imundas atraem moscas invisíveis e emitem uma aura negativa que invalida o descanso do quarto anexo.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Tenha na mão uma Esponja (Sponge), Pano de Prato (Dish Cloth) ou Toalha.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Tenha Água Sanitária (Bleach) ou Sabonete com carga no inventário.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Clique com botão direito sobre a louça sanitária e selecione <strong>'Limpar / Desinfetar Peça'</strong>.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/sponge.png" class="pill-pixel-icon" alt="Esponja"> <code>Base.Sponge</code> / <img src="assets/icons/dishtowel.png" class="pill-pixel-icon" alt="Pano"> <code>Base.DishCloth</code></span>
+                                            <span class="sys-req-pill"><img src="assets/icons/bleach.png" class="pill-pixel-icon" alt="Bleach"> <code>Base.Bleach</code> / <img src="assets/icons/soap.png" class="pill-pixel-icon" alt="Sabão"> <code>Base.Soap2</code></span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-bath text-cyan"></i> Vaso, Pia ou Banheira</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Banheiro Higienizado</strong>
+                                                <span>Aumenta a satisfação ao tomar banho e previne o surgimento do vetor de infecção sanitária.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-biohazard"></i> Banheiro Imundo</strong>
+                                                <span>Gera até +15 pts de Squalor contínuo, provocando náusea ao escovar dentes ou tomar banho.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 07: Comida Estragada Solta & Teto de Squalor -->
+                    <div class="guide-accordion-item" data-guide-cat="cleaning" data-keywords="comida podre estragada geladeira armário moscas teto squalor clutter">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-drumstick-bite"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">7. Controle de Comida Podre & Teto Protetor de Squalor</span>
+                                        <span class="badge-tag badge-tag-cleaning">Insalubridade</span>
+                                    </div>
+                                    <span class="acc-subtitle">Comida estragada no chão ou em balcões abertos gera náusea. Armazene dentro de geladeiras e armários.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Deixar um bife cru ou uma melancia apodrecer em cima da mesa contamina todo o ar da casa. No mod, comida estragada solta fora de gavetas atua como um emissor biológico de squalor.</p>
+                                        <p>Ao mesmo tempo, para quem gosta de decorar com livros e ferramentas soltas no chão, o mod possui um teto seguro de <strong>10 itens decorativos por tile</strong> antes de considerar sujeira.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Nunca jogue itens comestíveis estragados no piso ou sobre mesas abertas.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Transfira alimentos podres para uma Lixeira (Trash Can) e use a ação 'Esvaziar Lixeira'.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Ou guarde em Compostores externos para gerar adubo fértil de agricultura.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><i class="fa-solid fa-trash-can text-sand"></i> Lixeira funcional</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-snowflake text-cyan"></i> Geladeira ligada para conservação</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-plant-wilt text-green"></i> Caixa de Compostagem externa</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Cozinha Asseptica</strong>
+                                                <span>Preserva 100% da pontuação do cômodo e permite cozinhar refeições com bônus máximo de felicidade.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-biohazard"></i> Podridão Exposta</strong>
+                                                <span>Multiplicador de 0.20 por alimento estragado solto. Se o Squalor total passar de 50%, <strong>zera todo o conforto da base</strong>!</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 08: Entretenimento Ativo (TV e Rádio Ligados) -->
+                    <div class="guide-accordion-item" data-guide-cat="leisure" data-keywords="tv rádio lazer música entretenimento tédio tristeza som gerador">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-tv"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">8. Entretenimento Ativo (TV & Rádio Ligados no Quarto)</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-leisure">Lazer</span>
+                                    </div>
+                                    <span class="acc-subtitle">Aparelhos sintonizados em cômodos aconchegantes aceleram a eliminação de tédio e depressão.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Ficar sentado num quarto silencioso olhando para a parede dá agonia em qualquer um. Mas ligar o rádio para ouvir música clássica ou uma fita VHS na TV traz conforto imediato.</p>
+                                        <p>O <code>LV_LeisureSystem</code> monitora se há aparelhos de TV ou rádio tocando dentro de um cômodo que possua Tier Confortável (Tier >= 1), multiplicando a drenagem de tédio vanilla do jogo.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Posicione uma TV com energia elétrica ou um Rádio com bateria funcional no quarto ou sala.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Ligue o aparelho e ajuste o volume no mínimo (para não atrair zumbis pela janela).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Permaneça descansando, lendo livros ou organizando caixas no mesmo cômodo.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/television.png" class="pill-pixel-icon" alt="TV"> TV Funcional / <img src="assets/icons/radio.png" class="pill-pixel-icon" alt="Rádio"> Rádio</span>
+                                            <span class="sys-req-pill"><img src="assets/icons/generator.png" class="pill-pixel-icon" alt="Gerador"> Energia (Gerador / Pilha)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-shield-halved text-teal"></i> Cômodo em Tier 1 ou superior</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Efeito Ativo</strong>
+                                                <span>Redução acelerada de tédio (até 2.5x mais rápido) e blindagem contra o moodle de Depressão Severa.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-triangle-exclamation"></i> Cuidado com Volume</strong>
+                                                <span>Volume acima de 3 blocos vazando por janelas sem cortina pode atrair hordas noturnas.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 09: Lareira de Inverno ("Noite ao Redor do Fogo") -->
+                    <div class="guide-accordion-item" data-guide-cat="leisure" data-keywords="lareira fogo fogueira inverno frio neve aquecimento solo multiplayer">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-fire-burner"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">9. Lareira de Inverno ("Noite ao Redor do Fogo" — Solo & MP)</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-leisure">Sazonalidade</span>
+                                    </div>
+                                    <span class="acc-subtitle">Agora 100% habilitada para jogadores solitários! Conforto térmico e moral durante o inverno gélido.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>O inverno de Kentucky em temperaturas abaixo de 5°C é impiedoso. Sentar diante do fogo crepitante traz aquecimento físico e consolo psicológico.</p>
+                                        <p>Na v1.6.0, o gatilho da rotina <em>'Noite ao Redor do Fogo'</em> foi atualizado para exigir <strong>mínimo de 1 jogador</strong> (antes exigia 2), permitindo que sobreviventes solo também aproveitem plenamente o bônus sazonal.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Abasteça uma lareira de pedra, fogão a lenha (Antique Stove) ou fogueira com troncos.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Acenda o fogo com isqueiro ou fósforos entre as 18h e as 04h durante os meses frios.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Sente-se próximo ao fogo (raio de 3 tiles). O buff será ativado automaticamente.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/campfire.png" class="pill-pixel-icon" alt="Fogo"> Lareira / Fogueira (&lt;= 5°C)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-tree text-amber"></i> Troncos de madeira ou gravetos</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-user text-cyan"></i> Mínimo de 1 sobrevivente no raio</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> 'Coração Aquecido'</strong>
+                                                <span>+8 pts de conforto térmico, proteção contra hipotermia ao dormir e aceleração da recuperação de gripes.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-snowflake"></i> Inverno sem Fogo</strong>
+                                                <span>Dormir em cômodo congelante sem lareira impõe debuff de <strong>-10 pts de conforto</strong> e pesadelos de frio.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 10: Sono Reparador & Travesseiros Acolchoados -->
+                    <div class="guide-accordion-item" data-guide-cat="comfort" data-keywords="cama sono dormir travesseiro fadiga cansaço descanso estamina">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-bed"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">10. Sono Reparador & Travesseiros Acolchoados</span>
+                                        <span class="badge-tag badge-tag-comfort">Conforto</span>
+                                    </div>
+                                    <span class="acc-subtitle">Redução de até 25% no tempo de sono e eliminação completa de pesadelos e dores nas costas.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Dormir no chão duro ou num sofá rasgado faz seu personagem acordar dolorido, cansado e mal-humorado. Uma cama limpa de casal com travesseiro macio restaura o corpo duas vezes mais rápido.</p>
+                                        <p>No mod, a qualidade do sono é multiplicada pelo Tier de Conforto do quarto, permitindo que você acorde mais cedo, com estamina cheia e sem dor muscular.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Equipe uma cama de boa qualidade no quarto (cama de casal ou de solteiro de carpinteiro).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Mantenha 1 Travesseiro (Pillow) e 1 Lençol/Cobertor limpos sobre a cama ou no inventário.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Feche as cortinas do quarto para vedar a luz antes de deitar para dormir.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/fancy_bed.png" class="pill-pixel-icon" alt="Cama"> Cama de Qualidade (+10 pts)</span>
+                                            <span class="sys-req-pill"><img src="assets/icons/pillow.png" class="pill-pixel-icon" alt="Travesseiro"> <code>Base.Pillow</code></span>
+                                            <span class="sys-req-pill"><img src="assets/icons/sheet.png" class="pill-pixel-icon" alt="Lençol"> Janelas vedadas com cortina</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> 'Sono dos Justos'</strong>
+                                                <span>Desperta com estamina 100% cheia, sem rigidez no pescoço e com bônus acelerado de ganho de XP.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-ban"></i> Dormir no Chão</strong>
+                                                <span>Fadiga residual persistente, torcicolo que impede mirar com precisão e perda de moral.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 11: Rotinas Matinais, Streaks & Reset por Squalor 3 -->
+                    <div class="guide-accordion-item" data-guide-cat="leisure" data-keywords="rotina hábitos streak sequência duolingo squalor reset alarme penalidade">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-fire"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">11. Rotinas Matinais, Streaks & Reset Punitivo por Squalor</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-leisure">Rotinas</span>
+                                    </div>
+                                    <span class="acc-subtitle">Acumule sequências diárias de disciplina. Mas CUIDADO: Squalor Tier 3 zera seu streak instantaneamente!</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Pense no sistema de "Ofensiva do Duolingo": cumprir pequenos deveres todo dia (arrumar a cama, escovar os dentes, banho) acumula dias de disciplina inquebrável.</p>
+                                        <p>Porém, a disciplina não sobrevive em um chiqueiro. Na v1.6.0, se a insalubridade do seu refúgio atingir o <strong>Squalor Tier 3</strong> (sangue e lixo acumulados), seu streak é zerado para 0 com um alarme sonoro punitivo!</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Abra a janela do Inspetor de Cômodo com a tecla <strong>[K]</strong> para conferir a Checklist Diária.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Complete pelo menos 2 tarefas domésticas antes do meio-dia para manter o Streak vivo.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Jamais permita que o Squalor ultrapasse 30% em sua casa para não sofrer o reset.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><i class="fa-solid fa-list-check text-green"></i> Checklist do Inspetor [K]</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-broom text-amber"></i> Manter Squalor abaixo do Tier 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Multiplicador de Streak</strong>
+                                                <span>Cada dia consecutivo aumenta em +5% a duração de todos os buffs positivos obtidos no lar.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-bell text-orange"></i> Sirene de Reset</strong>
+                                                <span>Atingir Squalor Tier 3 reseta o streak para <strong>0</strong>, emitindo som de falha crítica e perda de bônus.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 12: Reivindicação de Posse do Lar -->
+                    <div class="guide-accordion-item" data-guide-cat="comfort" data-keywords="posse lar santuário safehouse reivindicar halo notificação singleplayer multiplayer">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">12. Reivindicação de Posse do Lar (Singleplayer & Safehouses)</span>
+                                        <span class="badge-tag badge-tag-comfort">Fundação</span>
+                                    </div>
+                                    <span class="acc-subtitle">Nem toda casa é seu lar. Casas neutras não dão bônus. Estabeleça seu porto seguro oficial.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Invadir a casa de um desconhecido e deitar na cama dele não te traz paz de espírito — você fica em alerta constante esperando alguém aparecer.</p>
+                                        <p>No mod, casas não reivindicadas são identificadas como <strong>'IMÓVEL NEUTRO'</strong> com conforto travado em 0 pts. Para desbloquear os Tiers de serenidade, você deve formalizar a casa como seu Lar.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span><strong>No Single Player:</strong> Entre na casa, clique com botão direito no piso interno e selecione <em>'Living House: Estabelecer Residência como Meu Lar'</em>.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span><strong>No Multiplayer:</strong> Registre a casa como sua Safehouse oficial vanilla (o mod conecta automaticamente aos donos e moradores).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Ao cruzar o perímetro da base, você verá um aviso Halo tático discreto confirmando sua entrada no santuário.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><i class="fa-solid fa-door-closed text-cyan"></i> Estrutura fechada de 4 paredes e telhado</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-shield-halved text-teal"></i> Safehouse registrada (Multiplayer)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Lar Reivindicado</strong>
+                                                <span>Desbloqueia os 4 Tiers de conforto (até 100 pts), dreno passivo de ansiedade e telemetria total.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-ban"></i> Imóvel Neutro</strong>
+                                                <span>Pontuação travada em 0 pts, aclimatação desativada e nenhum bônus de relaxamento ao descansar.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 13: Inspetor de Cômodo & Checklist Doméstico Diário [Tecla K] -->
+                    <div class="guide-accordion-item" data-guide-cat="interface" data-keywords="tecla k inspetor cômodo dashboard checklist tarefas the sims pontuação telemetria">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-clipboard-check"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">13. Inspetor de Cômodo & Checklist Doméstica [Tecla K]</span>
+                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-interface">Interface</span>
+                                    </div>
+                                    <span class="acc-subtitle">Diagnóstico em tempo real da pontuação do quarto e a nova Checklist de Rotina estilo The Sims.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Como saber se colocar mais uma cadeira vai realmente melhorar o quarto ou se já bateu no teto de retornos decrescentes? E o que fazer hoje na base?</p>
+                                        <p>O Inspetor aberto com a <strong>tecla [K]</strong> analisa todos os tiles do cômodo atual, exibe a pontuação categorizada e traz a <strong>Checklist Diária</strong> com objetivos claros para manter sua mente sã.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Fique em pé dentro de qualquer cômodo da sua base reivindicada.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Pressione a tecla <strong>[K]</strong> no teclado para abrir a janela de telemetria instantânea.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Consulte a lista de tarefas diárias recomendadas (ex: 'Passar pano', 'Escovar dentes', 'Arejar janelas').</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><i class="fa-solid fa-keyboard text-teal"></i> Tecla de atalho: <code>[K]</code></span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-house text-sand"></i> Estar dentro de uma casa reivindicada</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Controle Científico</strong>
+                                                <span>Visão exata do conforto de cada objeto e garantia de que nenhum esforço decorativo seja desperdiçado.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-eye-slash"></i> Jogar no Escuro</strong>
+                                                <span>Risco de acumular 10 sofás idênticos sem saber que apenas o primeiro deu pontos plenos!</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 14: Dashboard de Infraestrutura e Governança [Tecla J] -->
+                    <div class="guide-accordion-item" data-guide-cat="interface" data-keywords="tecla j dashboard base gerador combustível gasolina barris água renomear refúgio">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-sliders"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">14. Dashboard de Infraestrutura & Governança da Base [Tecla J]</span>
+                                        <span class="badge-tag badge-tag-interface">Interface</span>
+                                    </div>
+                                    <span class="acc-subtitle">Painel executivo da sua base: telemetria de geradores, barris de água e renomeação do seu santuário.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>No meio de uma tempestade ou cerco de zumbis, correr lá fora para checar se o gerador tem gasolina ou se os barris de chuva do telhado estão cheios é arriscado demais.</p>
+                                        <p>O Dashboard centralizado aberto na <strong>tecla [J]</strong> serve como o painel de controle da sua fortaleza: mostra água total armazenada, combustível restante e permite batizar sua base com um nome oficial.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Em qualquer área da sua base, aperte a tecla <strong>[J]</strong> no teclado.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Veja os níveis consolidados de eletricidade e litros de água disponíveis.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Clique no botão <strong>'Renomear Base'</strong> para digitar um nome personalizado para o seu santuário.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><i class="fa-solid fa-keyboard text-teal"></i> Tecla de atalho: <code>[J]</code></span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-bolt text-amber"></i> Geradores ou barris no perímetro da base</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Gestão Antecipada</strong>
+                                                <span>Saiba exatamente quando abastecer o gerador antes que as carnes do congelador comecem a estragar.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-triangle-exclamation"></i> Apagão Inesperado</strong>
+                                                <span>Descobrir que a água ou a energia acabaram no meio da noite coloca em risco sua comida e sua segurança.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -813,30 +1808,49 @@
     <div id="itemInspectionModal" class="modal-backdrop" role="dialog" aria-modal="true">
         <div class="tactical-modal">
             <div class="modal-header">
-                <h4 data-i18n="modalTitle">INSPEÇÃO TÁTICA DE ITEM // CLUTTER & INFRAESTRUTURA</h4>
+                <div class="modal-header-tag">
+                    <i class="fa-solid fa-crosshairs text-teal"></i>
+                    <h4 data-i18n="modalTitle">INSPEÇÃO TÁTICA DE ITEM // CLUTTER & INFRAESTRUTURA</h4>
+                </div>
                 <button id="modalCloseBtn" class="modal-close-btn" data-i18n="modalClose">Fechar [ESC]</button>
             </div>
             <div class="modal-body">
-                <div class="modal-item-title-row">
-                    <div id="modalItemTitle" class="modal-item-title">Item Name</div>
-                    <div id="modalItemCode" class="modal-item-code mono">Base.ItemCode</div>
-                </div>
-                <div class="modal-stats-grid">
-                    <div class="modal-stat-box">
-                        <div class="label" data-i18n="modalCategory">Classificação</div>
-                        <div id="modalItemCategory" class="val text-cyan mono">FURNITURE</div>
+                <div class="modal-tarkov-display">
+                    <div class="modal-item-visual-preview">
+                        <div class="modal-grid-crosshairs"></div>
+                        <img id="modalItemSprite" class="modal-pixel-sprite" src="assets/icons/book.png" alt="Item Preview">
+                        <span class="modal-item-tier-tag">ORIGINAL SPRITE</span>
                     </div>
-                    <div class="modal-stat-box">
-                        <div class="label" data-i18n="modalWeight">Peso Estimado</div>
-                        <div id="modalItemWeight" class="val text-amber mono">0.5 kg</div>
-                    </div>
-                    <div class="modal-stat-box">
-                        <div class="label" data-i18n="modalScore">Pontuação Base</div>
-                        <div id="modalItemScore" class="val text-green mono">+10 pts</div>
+                    <div class="modal-tarkov-main-info">
+                        <div class="modal-item-title-row">
+                            <div id="modalItemTitle" class="modal-item-title">Item Name</div>
+                            <div id="modalItemCode" class="modal-item-code mono">Base.ItemCode</div>
+                        </div>
+                        <div class="modal-stats-grid">
+                            <div class="modal-stat-box">
+                                <div class="label" data-i18n="modalCategory">Classificação</div>
+                                <div id="modalItemCategory" class="val text-cyan mono">FURNITURE</div>
+                            </div>
+                            <div class="modal-stat-box">
+                                <div class="label" data-i18n="modalWeight">Peso Estimado</div>
+                                <div id="modalItemWeight" class="val text-amber mono">0.5 kg</div>
+                            </div>
+                            <div class="modal-stat-box">
+                                <div class="label" data-i18n="modalScore">Pontuação Base</div>
+                                <div id="modalItemScore" class="val text-green mono">+10 pts</div>
+                            </div>
+                            <div class="modal-stat-box">
+                                <div class="label">Curva de Saturação</div>
+                                <div id="modalItemDiminishing" class="val text-purple mono" style="font-size: 0.72rem;">1º=100% | 2º=60% | 3º=35%</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-dossier">
-                    <h5 data-i18n="modalTacticalNotes">Dossiê Tático & Orientações de Uso</h5>
+                    <div class="modal-dossier-header">
+                        <i class="fa-solid fa-file-waveform text-teal"></i>
+                        <h5 data-i18n="modalTacticalNotes">Dossiê Tático & Orientações de Uso</h5>
+                    </div>
                     <p id="modalItemNotes">Descrição tática detalhada do item no jogo.</p>
                 </div>
             </div>
@@ -846,7 +1860,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p data-i18n="footerCredits">Housing Care System (Living House) // Build 42 Ready // Desenvolvido com Engenharia de Contexto</p>
+            <p data-i18n="footerCredits">PZ: Cozy Living (antigo Housing Care System) // Build 42 Ready // Desenvolvido com Engenharia de Contexto</p>
             <p data-i18n="footerRights">Wiki Oficial e Especificação de Game Design.</p>
         </div>
     </footer>

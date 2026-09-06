@@ -1,7 +1,7 @@
 {
-  "name": "housing-care-system-wiki",
-  "version": "1.5.8",
-  "description": "Housing Care System - Web Portal, Wiki & GDD Interativo",
+  "name": "pz-cozy-living-wiki",
+  "version": "1.6.0",
+  "description": "PZ: Cozy Living - Web Portal, Wiki & GDD Interativo",
   "private": true,
   "scripts": {
     "dev": "node server.js"

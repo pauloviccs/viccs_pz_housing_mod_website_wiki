@@ -1,0 +1,11 @@
+# AI Agent memory and context
+.agent/
+.agent/**
+
+# Dependencies
+node_modules/
+
+# OS and temporary files
+.DS_Store
+Thumbs.db
+*.log

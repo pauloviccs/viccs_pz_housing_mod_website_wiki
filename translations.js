@@ -1,61 +1,74 @@
 /**
- * Housing Care System (Living House) - Official Documentation & Wiki
+ * PZ: Cozy Living (antigo Housing Care System) - Official Documentation & Wiki
  * Bilingual Translation Matrix (Português [BR] / English [EN])
- * Alinhado com a versão v1.7.1 (B42) & UI Tática Escape From Tarkov
+ * Alinhado com a versão v1.6.0 (B42) & UI Tática Escape From Tarkov
  */
 
 const TRANSLATIONS = {
     pt: {
         // Site Meta & Nav
-        siteTitle: "Housing Care System | Guia Tático & GDD Oficial",
+        siteTitle: "PZ: Cozy Living | Guia Tático, Wiki & GDD Oficial",
         siteTagline: "Sistema Hardcore de Conforto, Posse de Residência, Higiene e Degradação para Project Zomboid Build 42",
-        navWiki: "Wiki & Sistemas",
-        navGuide: "Manual de Operações",
-        navGdd: "GDD & Arquitetura",
-        navDatabase: "Banco de Itens & Clutter",
-        navCalculator: "Calculadora de Ações",
-        navSandbox: "Opções Sandbox",
+        navWiki: "Wiki",
+        navGuide: "Guia How-To",
+        navGdd: "GDD & Regras",
+        navDatabase: "Itens & Mobílias",
+        navCalculator: "Calculadora",
+        navSandbox: "Sandbox",
         navLanguage: "Idioma",
 
         // Hero Section
-        heroBadge: "SISTEMA TÁTICO ATIVO // PZ B42 v1.7.1",
+        heroBadge: "SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.0",
         heroTitle: "Sua base não é um depósito de caixotes. É a sua fortaleza mental.",
-        heroSubtitle: "O Housing Care System transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.",
+        heroSubtitle: "O mod PZ: Cozy Living transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.",
         heroBtnExplore: "Manual do Sobrevivente",
         heroStat1Label: "Sistemas Integrados",
-        heroStat1Val: "8 Módulos",
+        heroStat1Val: "14 Subsistemas",
         heroStat2Label: "Itens & Mobílias Mapeadas",
         heroStat2Val: "90+ Objetos",
         heroStat3Label: "Moodles & Buffs Reativos",
-        heroStat3Val: "12 Status",
+        heroStat3Val: "14 Status",
 
         // Features Highlights
         featComfortTitle: "Conforto & Reivindicação do Lar",
         featComfortDesc: "Casas neutras não concedem bônus. Reivindique seu lar com botão direito (SP) ou safehouse oficial (MP) para desbloquear a aclimatação e o scanner de cômodos.",
         featSqualorTitle: "Vetor de Squalor & Insalubridade",
         featSqualorDesc: "Sangue zumbi nos pisos, lixo acumulado, comida estragada e peças sanitárias imundas atraem moscas, náusea e anulam completamente os buffs de conforto.",
-        featHygieneTitle: "Higiene Bucal & Cuidados Dentais",
-        featHygieneDesc: "Escove os dentes em pias sanitárias usando pasta dental (20 usos, barra de durabilidade visível) para obter o buff 'Hálito Fresco' (-15 estresse, -10 tédio).",
+        featHygieneTitle: "Higiene Bucal & Fisiologia Completa",
+        featHygieneDesc: "Vasos sanitários imersivos, ciclo inteligente de papel higiênico com raio de 1 tile e escovação de dentes protegem sua sanidade mental.",
         featThermalsTitle: "Sazonalidade & Isolamento Tático",
         featThermalsDesc: "Sobreviva ao inverno severo de Kentucky mantendo lareiras acesas (+8 pts) e tapetes isolantes (+6 pts). No verão, use cortinas e ventiladores (+4 pts).",
 
         // Comparison Section
         compTitle: "Comparativo Operacional: Nem Toda Casa é o Seu Lar",
-        compSub: "Entenda por que saquear a casa do vizinho não traz paz de espírito na v1.7.1.",
+        compSub: "Entenda por que saquear a casa do vizinho não traz paz de espírito no PZ: Cozy Living.",
 
         // Section Headers
         sectWikiTitle: "Enciclopédia Técnica & Módulos Operacionais",
-        sectWikiSub: "Mapeamento completo dos 8 subsistemas do mod, lógica de posse, mitigação de bugs e diretrizes táticas.",
-        sectGuideTitle: "Manual de Operações do Sobrevivente",
-        sectGuideSub: "Passo a passo pragmático: da invasão da casa abandonada até o santuário autossustentável.",
+        sectWikiSub: "Mapeamento completo dos subsistemas do mod, lógica de posse, mitigação de bugs e diretrizes táticas.",
+        sectGuideTitle: "Manual de Operações & Guia de Sistemas (How-To Guide)",
+        sectGuideSub: "Aprenda como cada sistema funciona em detalhes, instruções passo a passo in-game, requisitos e impactos de negligência.",
         sectGddTitle: "Game Design Document (GDD) & Fórmulas",
-        sectGddSub: "A matemática de cálculo, matriz de retornos decrescentes (v1.7.1) e arquitetura não-invasiva na JVM do PZ.",
+        sectGddSub: "A matemática de cálculo, matriz de retornos decrescentes e arquitetura não-invasiva na JVM do PZ.",
         sectDbTitle: "Banco de Dados de Itens, Mobílias & Clutter 3D",
         sectDbSub: "Valores pontuais reais de conforto, durabilidade, IDs de script e inspeção técnica no estilo Tarkov.",
         sectCalcTitle: "Calculadora de Ações & Homemaking",
         sectCalcSub: "Calcule os requisitos de insumos, tempo de execução, cooldowns e ganhos de moral para cada tarefa doméstica.",
         sectSandboxTitle: "Configurações de Sandbox do Servidor",
-        sectSandboxSub: "Tabela completa com as 15 variáveis sandbox oficiais e o impacto real de cada configuração.",
+        sectSandboxSub: "Tabela completa com as variáveis sandbox oficiais e o impacto real de cada configuração.",
+
+        // Guide Toolbar & Categorization
+        guideFilterAll: "Todos os Sistemas",
+        guideFilterHygiene: "Higiene & Fisiologia",
+        guideFilterCleaning: "Faxina & Descontaminação",
+        guideFilterLeisure: "Lazer & Rotinas",
+        guideFilterComfort: "Conforto & Clima",
+        guideFilterInterface: "Interface & Atalhos",
+        guideSearchPlaceholder: "Buscar sistema, mecânica ou ação (ex: vaso, papel, lareira, K, chão)...",
+        guideBtnExpandAll: "Expandir Todos",
+        guideBtnCollapseAll: "Recolher Todos",
+        guideCounterPrefix: "Sistemas Mapeados:",
+
 
         // Wiki Modules
         modOwnershipTitle: "1. Protocolo de Posse de Residência (Nem Toda Casa é o Seu Lar)",
@@ -146,66 +159,79 @@ const TRANSLATIONS = {
         tip2: "Pasta de Dente possui durabilidade oficial B42. Não desperdice escovando sem ter água na pia sanitária.",
         tip3: "Pular janelas trancadas foi 100% blindado contra falhas na JVM no v1.7.1, mas quebrar janelas desfaz o isolamento térmico!",
 
-        footerCredits: "Housing Care System (Living House) // Build 42 Ready // Desenvolvido com Engenharia de Contexto",
+        footerCredits: "PZ: Cozy Living (antigo Housing Care System) // Build 42 Ready // Desenvolvido com Engenharia de Contexto",
         footerRights: "Wiki Oficial e Especificação de Game Design."
     },
 
     en: {
         // Site Meta & Nav
-        siteTitle: "Housing Care System | Official Tactical Guide & GDD",
+        siteTitle: "PZ: Cozy Living | Official Tactical Guide, Wiki & GDD",
         siteTagline: "Hardcore Living Comfort, Base Ownership, Hygiene and Squalor Engine for Project Zomboid Build 42",
-        navWiki: "Wiki & Systems",
-        navGuide: "Field Manual",
-        navGdd: "GDD & Architecture",
-        navDatabase: "Item & Clutter Database",
-        navCalculator: "Action Calculator",
-        navSandbox: "Sandbox Settings",
+        navWiki: "Wiki",
+        navGuide: "How-To Guide",
+        navGdd: "GDD & Rules",
+        navDatabase: "Items & Clutter",
+        navCalculator: "Calculator",
+        navSandbox: "Sandbox",
         navLanguage: "Language",
 
         // Hero Section
-        heroBadge: "TACTICAL ENGINE ACTIVE // PZ B42 v1.7.1",
+        heroBadge: "TACTICAL ENGINE ACTIVE // PZ: COZY LIVING B42 v1.6.0",
         heroTitle: "Your safehouse isn't a crate graveyard. It's your psychological fortress.",
-        heroSubtitle: "Housing Care System transforms your refuge into a living tactical ecosystem. Base ownership, hygiene durability, rebalanced comfort scores, generator/water infrastructure and seasonal weather dictate who survives and who collapses.",
+        heroSubtitle: "PZ: Cozy Living transforms your refuge into a living tactical ecosystem. Base ownership, hygiene durability, rebalanced comfort scores, generator/water infrastructure and seasonal weather dictate who survives and who collapses.",
         heroBtnExplore: "Survivor Field Manual",
         heroStat1Label: "Integrated Modules",
-        heroStat1Val: "8 Systems",
+        heroStat1Val: "14 Subsystems",
         heroStat2Label: "Cataloged Items & Tiles",
         heroStat2Val: "90+ Objects",
         heroStat3Label: "Reactive Moodles & Buffs",
-        heroStat3Val: "12 Status",
+        heroStat3Val: "14 Status",
 
         // Features Highlights
         featComfortTitle: "Comfort & Refuge Claiming",
         featComfortDesc: "Neutral buildings grant zero buffs. Claim your home via right-click (SP) or official safehouse (MP) to unlock shelter acclimatization and room telemetry.",
         featSqualorTitle: "Squalor & Filth Vectors",
         featSqualorDesc: "Zombie blood stains, loose debris, rotten food on countertops and filthy bathroom fixtures emit nausea, attract flies and completely cancel comfort bonuses.",
-        featHygieneTitle: "Oral Hygiene & Dental Care",
-        featHygieneDesc: "Brush your teeth at bathroom sinks using Toothpaste (20 uses, visible drainable bar) to earn the 'Fresh Breath' buff (-15 stress, -10 boredom).",
+        featHygieneTitle: "Oral Hygiene & Complete Physiology",
+        featHygieneDesc: "Immersive sit-down toilets, intelligent 1-tile toilet paper detection, and tooth brushing safeguard your mental composure.",
         featThermalsTitle: "Tactical Seasonality & Insulation",
         featThermalsDesc: "Survive Kentucky's sub-zero winter by maintaining lit fireplaces (+8 pts) and insulating floor rugs (+6 pts). In summer, leverage curtains and fans (+4 pts).",
 
         // Comparison Section
         compTitle: "Operational Comparison: Not Every House Is Your Home",
-        compSub: "Understand why looting a neighbor's house provides zero comfort in v1.7.1.",
+        compSub: "Understand why looting a neighbor's house provides zero comfort in PZ: Cozy Living.",
 
         // Section Headers
         sectWikiTitle: "Technical Encyclopedia & Operational Modules",
-        sectWikiSub: "Complete breakdown of all 8 engine subsystems, ownership governance, bug mitigations, and tactical guidelines.",
-        sectGuideTitle: "Survivor Field Operations Manual",
-        sectGuideSub: "A pragmatic step-by-step roadmap: from breaching an abandoned home to sustaining an impenetrable sanctuary.",
+        sectWikiSub: "Complete breakdown of mod subsystems, ownership governance, bug mitigations, and tactical guidelines.",
+        sectGuideTitle: "Field Operations Manual & How-To Guide",
+        sectGuideSub: "Learn how every single system works in detail: in-game step-by-step instructions, requirements and neglect penalties.",
         sectGddTitle: "Game Design Document (GDD) & Formulas",
-        sectGddSub: "Mathematical formulas, diminishing returns curve (v1.7.1), and non-invasive JVM architecture.",
+        sectGddSub: "Mathematical formulas, diminishing returns curve, and non-invasive JVM architecture.",
         sectDbTitle: "Item, Furniture & 3D Clutter Database",
         sectDbSub: "Actual rebalanced score values, item durability, code IDs, and Tarkov-style tactical inspection cards.",
         sectCalcTitle: "Homemaking & Action Calculator",
         sectCalcSub: "Calculate required tools, execution time, anti-spam cooldowns and morale rewards for each homemaking chore.",
         sectSandboxTitle: "Server & Sandbox Settings",
-        sectSandboxSub: "Full table featuring all 15 official sandbox variables and their real in-game impact.",
+        sectSandboxSub: "Full table featuring official sandbox variables and their real in-game impact.",
+
+        // Guide Toolbar & Categorization
+        guideFilterAll: "All Systems",
+        guideFilterHygiene: "Hygiene & Physiology",
+        guideFilterCleaning: "Cleaning & Decontamination",
+        guideFilterLeisure: "Leisure & Daily Routines",
+        guideFilterComfort: "Comfort & Climate",
+        guideFilterInterface: "UI & Keybinds",
+        guideSearchPlaceholder: "Search system, action or mechanic (e.g., toilet, paper, fireplace, K, floor)...",
+        guideBtnExpandAll: "Expand All",
+        guideBtnCollapseAll: "Collapse All",
+        guideCounterPrefix: "Mapped Systems:",
 
         // Wiki Modules
         modOwnershipTitle: "1. Base Ownership Protocol (Not Every House Is Your Home)",
-        modOwnershipP1: "In vanilla or unmodded setups, looting a neighbor's house granted instant psychological comfort just because of a plush armchair. In v1.7.1, **unclaimed houses are designated as 'NEUTRAL HOUSE'** — comfort score remains pinned at 0 pts and acclimatization is suspended.",
+        modOwnershipP1: "In vanilla or unmodded setups, looting a neighbor's house granted instant psychological comfort just because of a plush armchair. In v1.6.0, **unclaimed houses are designated as 'NEUTRAL HOUSE'** — comfort score remains pinned at 0 pts and acclimatization is suspended.",
         modOwnershipP2: "To claim a house as your official refuge in **Single Player**, right-click the interior floor and select `Living House: Claim Residence as My Home`. In **Multiplayer**, the system binds to official safehouses where you are the owner or an approved resident. Transiting base perimeters triggers clean Halo notifications.",
+
 
         modDentalTitle: "2. Dental Hygiene & Toothpaste Durability",
         modDentalP1: "Brushing teeth is an essential micro-routine for post-apocalyptic mental fortitude. Approaching a plumbed sink with a Toothbrush (`Base.Toothbrush`) and Toothpaste (`Base.Toothpaste`) presents the context menu action.",
@@ -291,18 +317,33 @@ const TRANSLATIONS = {
         tip2: "Toothpaste has native B42 durability. Do not waste brushings without water in a plumbed sink.",
         tip3: "Climbing through locked windows was completely stabilized against JVM crashes in v1.7.1, but smashing windows breaks room insulation!",
 
-        footerCredits: "Housing Care System (Living House) // Build 42 Ready // Built with Context Engineering",
+        footerCredits: "PZ: Cozy Living (formerly Housing Care System) // Build 42 Ready // Built with Context Engineering",
         footerRights: "Official Wiki & Game Design Specification."
     }
 };
 
-// Database Items Catalog (v1.7.1 Rebalanced Numbers)
+// Database Items Catalog (v1.6.0 Rebalanced Numbers & Official Icons)
 const ITEM_DATABASE = [
     // --- HIGIENE & DENTAL ---
+    {
+        id: "Base.ToiletPaper",
+        name: { pt: "Papel Higiênico (Rolo de Asseio)", en: "Toilet Paper (Roll)" },
+        category: "cleaning",
+        icon: "assets/icons/toilet_paper.png",
+        weight: "0.25 kg",
+        score: "+25 Asseio / Uso",
+        bonus: { pt: "Essencial ao usar o vaso sanitário. Consome durabilidade. Previne roupas sujas e estresse.", en: "Essential when using toilet fixtures. Consumes durability. Prevents soiled clothes and stress." },
+        req: { pt: "No inventário pessoal ou em armários/gavetas a 1 tile de distância", en: "In inventory or adjacent containers within 1 tile" },
+        tacticalNotes: {
+            pt: "v1.6.0: O sistema vasculha o inventário e gavetas/armários num raio de 1 tile. Usar a privada sem papel causa penalidade severa: +0.30 estresse, sujeira nas roupas e perda imediata de buffs!",
+            en: "v1.6.0: Scans inventory and containers within a 1-tile radius. Relieving without paper triggers severe penalties: +0.30 stress, soiled clothes, and instant loss of positive buffs!"
+        }
+    },
     {
         id: "Base.Toothbrush",
         name: { pt: "Escova de Dentes", en: "Toothbrush" },
         category: "cleaning",
+        icon: "assets/icons/toothbrush.png",
         weight: "0.1 kg",
         score: "+15 Moral",
         bonus: { pt: "-15 Estresse, -10 Tédio, concede 'Hálito Fresco' (4h)", en: "-15 Stress, -10 Boredom, awards 'Fresh Breath' (4h)" },
@@ -316,6 +357,7 @@ const ITEM_DATABASE = [
         id: "Base.Toothpaste",
         name: { pt: "Pasta de Dente (Tubo Drenável)", en: "Toothpaste (Drainable Tube)" },
         category: "cleaning",
+        icon: "assets/icons/toothpaste.png",
         weight: "0.2 kg",
         score: "20 Usos (5%/uso)",
         bonus: { pt: "Necessária para escovar os dentes. Barra verde de durabilidade visível.", en: "Required to brush teeth. Visible green durability progress bar." },
@@ -329,6 +371,7 @@ const ITEM_DATABASE = [
         id: "Base.Soap2",
         name: { pt: "Sabonete em Barra", en: "Bar Soap" },
         category: "cleaning",
+        icon: "assets/icons/soap.png",
         weight: "0.2 kg",
         score: "+40 Higiene",
         bonus: { pt: "Elimina sangue e sujeira corporal, previne coceira e odores", en: "Removes gore and grime, prevents itching and odor tracking" },
@@ -342,6 +385,7 @@ const ITEM_DATABASE = [
         id: "Base.Broom",
         name: { pt: "Vassoura Manual", en: "Straw Broom" },
         category: "cleaning",
+        icon: "assets/icons/broom.png",
         weight: "1.0 kg",
         score: "-25 Squalor",
         bonus: { pt: "Varre poeira de cômodos e pequenos detritos", en: "Sweeps room dust and small dirt piles" },
@@ -355,6 +399,7 @@ const ITEM_DATABASE = [
         id: "Base.Mop",
         name: { pt: "Esfregão com Balde", en: "Floor Mop" },
         category: "cleaning",
+        icon: "assets/icons/mop.png",
         weight: "1.5 kg",
         score: "-45 Squalor",
         bonus: { pt: "Limpa poças d'água, graxa e manchas difíceis", en: "Cleans water puddles, grease and stubborn grime" },
@@ -368,6 +413,7 @@ const ITEM_DATABASE = [
         id: "Base.Bleach",
         name: { pt: "Água Sanitária (Bleach)", en: "Disinfectant Bleach" },
         category: "cleaning",
+        icon: "assets/icons/bleach.png",
         weight: "1.0 kg",
         score: "-70 Squalor",
         bonus: { pt: "Esteriliza sangue zumbi de pisos/paredes e extermina moscas", en: "Sterilizes zombie blood on walls/floors and eradicates flies" },
@@ -377,12 +423,83 @@ const ITEM_DATABASE = [
             en: "Bleach is the ultimate countermeasure against high squalor. Completely shuts down room nausea."
         }
     },
+    {
+        id: "Base.CleaningLiquid",
+        name: { pt: "Limpador Multiuso / Detergente", en: "All-Purpose Cleaning Liquid" },
+        category: "cleaning",
+        icon: "assets/icons/cleaning_liquid.png",
+        weight: "0.8 kg",
+        score: "-35 Squalor",
+        bonus: { pt: "Limpeza rápida de bancadas de cozinha, fogões e pias", en: "Fast cleansing of kitchen counters, stoves and sinks" },
+        req: { pt: "Usar com esponja ou toalha", en: "Combine with sponge or towel" },
+        tacticalNotes: {
+            pt: "Excelente para manutenção diária de cozinhas após sessões de culinária para remover gordura acumulada.",
+            en: "Great for daily kitchen maintenance following cooking sessions to clear grease buildup."
+        }
+    },
+    {
+        id: "Base.Sponge",
+        name: { pt: "Esponja de Limpeza", en: "Cleaning Sponge" },
+        category: "cleaning",
+        icon: "assets/icons/sponge.png",
+        weight: "0.1 kg",
+        score: "-15 Squalor",
+        bonus: { pt: "Remove manchas locais em louças, pias e balcões", en: "Removes localized stains on cookware, sinks and counters" },
+        req: { pt: "Água limpa e detergente", en: "Clean water and detergent" },
+        tacticalNotes: {
+            pt: "Ferramenta leve e durável que substitui panos de prato em desinfecções rápidas de superfícies.",
+            en: "Lightweight and durable tool replacing dish towels for quick surface sanitization."
+        }
+    },
+    {
+        id: "Base.BathTowel",
+        name: { pt: "Toalha de Banho Seca", en: "Bath Towel" },
+        category: "cleaning",
+        icon: "assets/icons/towel.png",
+        weight: "0.3 kg",
+        score: "+10 Higiene",
+        bonus: { pt: "Seca o sobrevivente após o banho, prevenindo resfriados e hipotermia", en: "Dries survivor after showers, preventing colds and hypothermia" },
+        req: { pt: "Inventário pessoal após banho", en: "Personal inventory after bathing" },
+        tacticalNotes: {
+            pt: "Secar-se imediatamente após lavar-se no inverno evita o moodle de resfriado e acelera o sono restaurador.",
+            en: "Drying immediately after winter washing prevents chills and accelerates restorative sleep."
+        }
+    },
+    {
+        id: "Base.DishCloth",
+        name: { pt: "Pano de Prato / Louça", en: "Dish Towel / Cloth" },
+        category: "cleaning",
+        icon: "assets/icons/dishtowel.png",
+        weight: "0.1 kg",
+        score: "-20 Squalor",
+        bonus: { pt: "Seca e desinfeta superfícies e utensílios culinários", en: "Dries and sanitizes cookware and food prep areas" },
+        req: { pt: "Balcão de cozinha ou pia", en: "Kitchen counter or sink" },
+        tacticalNotes: {
+            pt: "Reutilizável. Pode ser lavado em pias com água e sabão quando ficar encharcado ou sujo.",
+            en: "Reusable. Can be washed in sinks with water and soap when soaked or soiled."
+        }
+    },
+    {
+        id: "Base.BucketWaterFull",
+        name: { pt: "Balde com Água Limpa", en: "Bucket with Water" },
+        category: "cleaning",
+        icon: "assets/icons/bucket_water.png",
+        weight: "4.0 kg",
+        score: "+5 Suporte",
+        bonus: { pt: "Reservatório portátil de água para esfregão e limpeza pós-queda da rede", en: "Portable water supply for mopping and cleaning after grid shutoff" },
+        req: { pt: "Equipado na mão secundária durante faxinas", en: "Equipped in secondary hand during mopping" },
+        tacticalNotes: {
+            pt: "Indispensável após a água encanada acabar. Pode ser reabastecido em barris coletores de chuva.",
+            en: "Crucial after water cutoff. Easily refilled from rooftop rain collector barrels."
+        }
+    },
 
-    // --- MOBÍLIAS (VALORES NERFADOS v1.7.1) ---
+    // --- MOBÍLIAS (VALORES NERFADOS v1.6.0 / v1.7.1) ---
     {
         id: "tile.furniture_bedding_01",
         name: { pt: "Cama de Casal / Solteiro Confortável", en: "Comfortable Bed" },
         category: "furniture",
+        icon: "assets/icons/fancy_bed.png",
         weight: "Tile Fixo",
         score: "+10 Conforto",
         bonus: { pt: "Sono profundo, combate pesadelos e fadiga acelerada", en: "Deep restorative sleep, counters nightmares and fatigue" },
@@ -393,9 +510,38 @@ const ITEM_DATABASE = [
         }
     },
     {
+        id: "Base.Pillow",
+        name: { pt: "Travesseiro Macio", en: "Comfort Pillow" },
+        category: "furniture",
+        icon: "assets/icons/pillow.png",
+        weight: "0.5 kg",
+        score: "+3 Conforto",
+        bonus: { pt: "Elimina torcicolos e melhora a qualidade do sono sobre camas e sofás", en: "Eliminates stiff necks and enhances sleep restfulness on beds and couches" },
+        req: { pt: "No inventário ao dormir ou sobre a cama", en: "In inventory when sleeping or on bed" },
+        tacticalNotes: {
+            pt: "Dormir com travesseiro reduz drasticamente a probabilidade de acordar com dores no pescoço ou costas.",
+            en: "Sleeping with a pillow dramatically decreases waking up with neck or back strain."
+        }
+    },
+    {
+        id: "Base.BedSheet",
+        name: { pt: "Lençol / Cobertor de Algodão", en: "Cotton Bed Sheet" },
+        category: "furniture",
+        icon: "assets/icons/sheet.png",
+        weight: "0.8 kg",
+        score: "+2 Conforto Térmico",
+        bonus: { pt: "Retém calor corporal no sono e pode ser usado como cortina improvisada", en: "Traps body heat while resting; can also be hung as blackout curtain" },
+        req: { pt: "Cama ou janela", en: "Bed or window frame" },
+        tacticalNotes: {
+            pt: "Item de dupla utilidade: confere aquecimento passivo na cama e veda janelas contra a visão zumbi.",
+            en: "Dual-utility asset: provides passive bed warmth and covers windows against wandering zombie sightlines."
+        }
+    },
+    {
         id: "tile.furniture_seating_sofa",
         name: { pt: "Sofá Acolchoado / Poltrona", en: "Padded Couch / Armchair" },
         category: "furniture",
+        icon: "assets/icons/wardrobe.png",
         weight: "Tile Fixo",
         score: "+7 Conforto (Sofá) / +3 (Cadeira)",
         bonus: { pt: "Descanso de estamina e leitura com redução acelerada de tédio", en: "Endurance recovery and cuts boredom while reading" },
@@ -406,22 +552,10 @@ const ITEM_DATABASE = [
         }
     },
     {
-        id: "tile.furniture_tables_high",
-        name: { pt: "Mesa de Jantar / Balcão de Cozinha", en: "Dining Table / Kitchen Counter" },
-        category: "furniture",
-        weight: "Tile Fixo",
-        score: "+4 Conforto",
-        bonus: { pt: "Suporte para refeições e organização de clutter 3D", en: "Supports sit-down meals and 3D clutter displays" },
-        req: { pt: "Superfície sem carne podre", en: "Surface free of rotten meat" },
-        tacticalNotes: {
-            pt: "Mesas servem como plataforma ideal para organizar latas de alimento e louças 3D que somam na categoria decorativa.",
-            en: "Tables serve as prime platforms for organizing 3D pantry cans and tableware for decor points."
-        }
-    },
-    {
         id: "tile.furniture_storage_closet",
         name: { pt: "Armário / Guarda-Roupa / Cômoda", en: "Wardrobe / Storage Cupboard" },
         category: "furniture",
+        icon: "assets/icons/wardrobe.png",
         weight: "Tile Fixo",
         score: "+4 Conforto",
         bonus: { pt: "Sensação de organização e estoque seguro", en: "Psychological organization and safe storage" },
@@ -435,6 +569,7 @@ const ITEM_DATABASE = [
         id: "tile.furniture_shelving_bookshelf",
         name: { pt: "Estante de Livros de Madeira", en: "Wooden Bookshelf" },
         category: "furniture",
+        icon: "assets/icons/book.png",
         weight: "Tile Fixo",
         score: "+5 Conforto",
         bonus: { pt: "Acelera a absorção de multiplicadores de livros de skill", en: "Accelerates reading absorption of skill book multipliers" },
@@ -445,22 +580,10 @@ const ITEM_DATABASE = [
         }
     },
     {
-        id: "tile.appliances_cooking_stove",
-        name: { pt: "Fogão Elétrico / Forno a Gás", en: "Kitchen Stove & Oven" },
-        category: "furniture",
-        weight: "Tile Fixo",
-        score: "+6 Conforto",
-        bonus: { pt: "Permite cozinhar refeições quentes que ativam bônus de Homemaking", en: "Enables warm homecooked meals triggering Homemaking buffs" },
-        req: { pt: "Energia elétrica ativa ou gerador ligado", en: "Active grid power or connected generator" },
-        tacticalNotes: {
-            pt: "Cozinhar refeições complexas adiciona sujeira orgânica na cozinha, exigindo faxinas regulares com pano/mop.",
-            en: "Cooking complex meals adds organic grease in the kitchen, demanding regular cleaning passes."
-        }
-    },
-    {
         id: "tile.appliances_refrigeration",
         name: { pt: "Geladeira / Freezer Frost-Free", en: "Refrigerator & Freezer" },
         category: "furniture",
+        icon: "assets/icons/fridge.png",
         weight: "Tile Fixo",
         score: "+6 Conforto",
         bonus: { pt: "Preserva alimentos e impede acúmulo de comida estragada no cômodo", en: "Preserves perishables and prevents rotten food squalor spikes" },
@@ -476,6 +599,7 @@ const ITEM_DATABASE = [
         id: "tile.appliances_cooking_antique_stove",
         name: { pt: "Fogão a Lenha / Lareira Antiga", en: "Antique Wood Stove / Fireplace" },
         category: "thermal",
+        icon: "assets/icons/campfire.png",
         weight: "Tile Fixo",
         score: "+8 Conforto (Inverno Ativo)",
         bonus: { pt: "Aquecimento contínuo no inverno polar. Previne penalidade de frio (-10)", en: "Sub-zero winter heating. Wards off freezing room penalty (-10)" },
@@ -489,6 +613,7 @@ const ITEM_DATABASE = [
         id: "tile.appliances_fan",
         name: { pt: "Ventilador Elétrico de Teto / Mesa", en: "Electric Air Fan" },
         category: "thermal",
+        icon: "assets/icons/generator.png",
         weight: "Tile Fixo",
         score: "+4 Conforto (Verão)",
         bonus: { pt: "Circulação de ar refrescante em ondas de calor escaldantes", en: "Refreshing air draft during blistering summer heatwaves" },
@@ -499,9 +624,38 @@ const ITEM_DATABASE = [
         }
     },
     {
-        id: "tile.curtains_closed",
-        name: { pt: "Cortinas Fechadas", en: "Closed Window Curtains" },
+        id: "Base.Generator",
+        name: { pt: "Gerador Elétrico Portátil", en: "Portable Electric Generator" },
         category: "thermal",
+        icon: "assets/icons/generator.png",
+        weight: "35.0 kg",
+        score: "Alimentação de Base",
+        bonus: { pt: "Garante eletricidade estável para geladeiras, luzes, fornos e ventiladores", en: "Powers refrigerators, lights, ovens and cooling fans" },
+        req: { pt: "Combustível (Gasolina) + Manutenção com Eletrônicos", en: "Gasoline Fuel + Electronics Scrap Maintenance" },
+        tacticalNotes: {
+            pt: "Monitore o painel [J] para acompanhar o nível de combustível e a condição mecânica sem precisar checar na chuva.",
+            en: "Check the [J] telemetry dashboard to track fuel and mechanical status without venturing out in storms."
+        }
+    },
+    {
+        id: "tile.lighting_lamp",
+        name: { pt: "Luminária / Abajur Aceso", en: "Table Lamp / Floor Lantern" },
+        category: "thermal",
+        icon: "assets/icons/lamp.png",
+        weight: "Item / Tile",
+        score: "+10 Iluminação",
+        bonus: { pt: "Combate o pânico de escuridão e viabiliza leituras noturnas sem fadiga ocular", en: "Counters nyctophobia panic and enables nighttime reading without eyestrain" },
+        req: { pt: "Lâmpada intacta + Energia ativa", en: "Working lightbulb + Active power" },
+        tacticalNotes: {
+            pt: "Quartos sem qualquer fonte de iluminação sofrem penalidade de sensação de abandono.",
+            en: "Unlit rooms trigger psychological desolation penalties."
+        }
+    },
+    {
+        id: "tile.curtains_closed",
+        name: { pt: "Cortinas Térmicas Fechadas", en: "Closed Window Curtains" },
+        category: "thermal",
+        icon: "assets/icons/sheet.png",
         weight: "Item / Tile",
         score: "+2 Conforto Térmico",
         bonus: { pt: "Isolamento de correntes de ar frio no inverno e bloqueio de sol escaldante no verão", en: "Blocks winter drafts and deflects blistering summer radiation" },
@@ -515,6 +669,7 @@ const ITEM_DATABASE = [
         id: "tile.floors_rugs",
         name: { pt: "Tapete Acolchoado / Pele de Animal", en: "Area Rug / Animal Hide" },
         category: "thermal",
+        icon: "assets/icons/towel.png",
         weight: "Tile",
         score: "+4 Normal / +6 Inverno",
         bonus: { pt: "Isolamento térmico do chão frio e redução de barulho ao caminhar", en: "Thermal floor insulation against frost and muffles indoor steps" },
@@ -530,19 +685,35 @@ const ITEM_DATABASE = [
         id: "tile.walls_decoration_painting",
         name: { pt: "Quadro de Pintura / Pôster Artístico", en: "Wall Painting / Art Poster" },
         category: "decor",
+        icon: "assets/icons/painting.png",
         weight: "Tile Parede",
         score: "+3 Conforto",
         bonus: { pt: "Combate passivo a tédio e melancolia", en: "Passive reduction of survivor boredom and gloom" },
         req: { pt: "Fixado em parede rebocada/pintada", en: "Mounted on plastered/painted wall" },
         tacticalNotes: {
-            pt: "Espelhos e relógios de parede também pontuam +3 pts nesta categoria.",
-            en: "Wall mirrors and wall clocks also grant +3 pts in this decorative category."
+            pt: "Espelhos e quadros artísticos decoram paredes sem ocupar espaço de chão transitável.",
+            en: "Art paintings and mirrors decorate vertical spaces without obstructing floor paths."
+        }
+    },
+    {
+        id: "tile.walls_decoration_mirror",
+        name: { pt: "Espelho de Parede / Banheiro", en: "Wall Mirror" },
+        category: "decor",
+        icon: "assets/icons/mirror.png",
+        weight: "Tile Parede",
+        score: "+3 Conforto",
+        bonus: { pt: "Sensação de amplitude e suporte visual para cuidados pessoais", en: "Room space enhancement and grooming support" },
+        req: { pt: "Parede de banheiro ou quarto", en: "Bathroom or bedroom wall" },
+        tacticalNotes: {
+            pt: "Espelhos pontuam na categoria de decoração e aumentam a pontuação de banheiros confortáveis.",
+            en: "Mirrors boost bathroom decor rating and aesthetic comfort score."
         }
     },
     {
         id: "Base.Spiffo",
         name: { pt: "Pelúcia Oficial do Spiffo", en: "Spiffo Plush Toy" },
         category: "decor",
+        icon: "assets/icons/spiffo.png",
         weight: "0.5 kg",
         score: "+1.0 Conforto 3D",
         bonus: { pt: "Colecionável que humaniza o ambiente e traz aconchego", en: "Collectible that humanizes the refuge and restores morale" },
@@ -554,8 +725,9 @@ const ITEM_DATABASE = [
     },
     {
         id: "Base.Book",
-        name: { pt: "Livros, Revistas & Quadrinhos 3D", en: "3D Books, Comics & Magazines" },
+        name: { pt: "Livros, Revistas & Manuais 3D", en: "3D Books, Comics & Manuals" },
         category: "decor",
+        icon: "assets/icons/book.png",
         weight: "0.5 kg",
         score: "+0.4 a +0.6 Conforto 3D",
         bonus: { pt: "Transforma mesas vazias em estações aconchegantes de leitura", en: "Turns barren desks into cozy reading stations" },
@@ -566,9 +738,24 @@ const ITEM_DATABASE = [
         }
     },
     {
+        id: "Base.ComicBook",
+        name: { pt: "Revista em Quadrinhos (Comic Book)", en: "Comic Book" },
+        category: "decor",
+        icon: "assets/icons/comic_book.png",
+        weight: "0.2 kg",
+        score: "+0.5 Conforto 3D",
+        bonus: { pt: "Entretenimento nostálgico que elimina estresse instantâneo", en: "Nostalgic entertainment cutting survivor stress" },
+        req: { pt: "Exibido na mesa de cabeceira ou poltrona", en: "Displayed on nightstand or armchair" },
+        tacticalNotes: {
+            pt: "Pode ser lido para redução de tédio ou mantido como decoração 3D de alta pontuação.",
+            en: "Can be consumed for rapid boredom reduction or displayed for steady 3D decor score."
+        }
+    },
+    {
         id: "Base.GuitarAcoustic",
         name: { pt: "Violão Acústico / Guitarra", en: "Acoustic Guitar / Bass" },
         category: "decor",
+        icon: "assets/icons/guitar.png",
         weight: "3.0 kg",
         score: "+1.2 Conforto 3D",
         bonus: { pt: "Pode ser tocado para a ação de Lazer/Hobbies (-5 Tédio, -5 Tristeza)", en: "Can be played for Leisure/Hobbies action (-5 Boredom, -5 Sadness)" },
@@ -582,6 +769,7 @@ const ITEM_DATABASE = [
         id: "Base.CannedCorn",
         name: { pt: "Alimentos Enlatados / Despensa 3D", en: "Canned Food & Pantry 3D" },
         category: "decor",
+        icon: "assets/icons/canned_corn.png",
         weight: "0.5 kg",
         score: "+0.15 Conforto 3D",
         bonus: { pt: "Sensação de fartura e despensa abastecida", en: "Sense of abundance and well-stocked pantry" },
@@ -589,6 +777,62 @@ const ITEM_DATABASE = [
         tacticalNotes: {
             pt: "Nerfado de 0.5 para 0.15 pts. Evita que o jogador atinja santuário apenas acumulando latas no chão.",
             en: "Nerfed from 0.5 to 0.15 pts. Prevents cheesing high tiers by dumping canned goods on the floor."
+        }
+    },
+    {
+        id: "Base.Radio",
+        name: { pt: "Rádio ValuTech / Receptor FM", en: "ValuTech Broadcast Radio" },
+        category: "decor",
+        icon: "assets/icons/radio.png",
+        weight: "1.5 kg",
+        score: "+1.5 Conforto Ativo",
+        bonus: { pt: "v1.6.0: Transmissões em cômodo com alto conforto multiplicam dreno de tédio", en: "v1.6.0: Active broadcasts in high comfort rooms amplify boredom reduction" },
+        req: { pt: "Baterias ou ligado na tomada", en: "Battery or connected grid power" },
+        tacticalNotes: {
+            pt: "Permite ouvir avisos de emergência automatizados e reduz o sentimento de solidão.",
+            en: "Picks up emergency automated broadcasts and wards off survivor loneliness."
+        }
+    },
+    {
+        id: "Base.Television",
+        name: { pt: "Televisão de Tubo / Antique TV", en: "Vintage CRT Television" },
+        category: "decor",
+        icon: "assets/icons/television.png",
+        weight: "10.0 kg",
+        score: "+2.0 Conforto Ativo",
+        bonus: { pt: "v1.6.0: Assistir fitas VHS ou canais ao vivo amplifica o buff de descanso", en: "v1.6.0: Watching VHS tapes or live broadcasts boosts rest recovery" },
+        req: { pt: "Energia elétrica contínua", en: "Continuous power supply" },
+        tacticalNotes: {
+            pt: "Assistir programas educativos e fitas de sobrevivência em um refúgio de Tier 3/4 dobra o alívio psicológico.",
+            en: "Watching survival tapes in Tier 3/4 comfort spaces doubles psychological relief."
+        }
+    },
+    {
+        id: "Base.Paintbrush",
+        name: { pt: "Pincel de Pintor Profissional", en: "Painter's Brush" },
+        category: "decor",
+        icon: "assets/icons/paintbrush.png",
+        weight: "0.2 kg",
+        score: "Ferramenta de Base",
+        bonus: { pt: "Permite pintar paredes rebocadas com cores acolhedoras", en: "Used to paint plastered walls with soothing colors" },
+        req: { pt: "Balde de Tinta na mão secundária", en: "Paint bucket in secondary hand" },
+        tacticalNotes: {
+            pt: "Paredes de madeira crua não pontuam em conforto. Rebocar e pintar com cores quentes concede bônus fixo.",
+            en: "Raw wooden walls give no comfort. Plastering and painting with warm tones adds permanent score."
+        }
+    },
+    {
+        id: "Base.PlasterBag",
+        name: { pt: "Saco de Gesso / Reboco", en: "Bag of Plaster Powder" },
+        category: "decor",
+        icon: "assets/icons/plaster.png",
+        weight: "5.0 kg",
+        score: "Acabamento Estrutural",
+        bonus: { pt: "Cobre paredes rústicas de madeira, eliminando ranhuras de vento", en: "Finishes rough wooden walls, sealing draft leaks" },
+        req: { pt: "Misturar com balde d'água", en: "Mix with bucket of water" },
+        tacticalNotes: {
+            pt: "Paredes rebocadas retêm melhor a temperatura no inverno e aumentam o isolamento acústico.",
+            en: "Plastered walls insulate winter heat and dampen indoor sound signatures."
         }
     }
 ];
@@ -690,9 +934,22 @@ const SANDBOX_OPTIONS = [
 // Action & Homemaking Calculator Matrix
 const CRAFTING_ACTIONS = [
     {
+        id: "toilet_relief",
+        name: { pt: "Uso Sanitário & Asseio Pessoal", en: "Toilet Fixture & Hygiene Relief" },
+        category: "Higiene",
+        icon: "assets/icons/toilet_paper.png",
+        moodleIcon: "assets/moodles/lv_comfort_1.png",
+        tools: { pt: "Privada + Papel Higiênico (no inventário ou a 1 tile)", en: "Toilet + Toilet Paper (inventory or 1 tile)" },
+        duration: "10 seg in-game",
+        cooldown: "Sem cooldown (necessidade fisiológica)",
+        rewards: { pt: "Alívio físico completo, previne roupas sujas e elimina estresse", en: "Physical relief, wards off soiled garments and stress" }
+    },
+    {
         id: "brush_teeth",
         name: { pt: "Escovação Dental Sanitária", en: "Sanitary Teeth Brushing" },
         category: "Higiene",
+        icon: "assets/icons/toothbrush.png",
+        moodleIcon: "assets/moodles/moodle_happy.png",
         tools: { pt: "Escova de Dentes + Pasta de Dente (5% consumo)", en: "Toothbrush + Toothpaste (5% drain)" },
         duration: "10 seg in-game",
         cooldown: "4 horas in-game",
@@ -702,6 +959,8 @@ const CRAFTING_ACTIONS = [
         id: "clean_floor",
         name: { pt: "Faxina de Piso e Sangue", en: "Floor & Blood Mopping" },
         category: "Limpeza",
+        icon: "assets/icons/mop.png",
+        moodleIcon: "assets/moodles/lv_squalor_1.png",
         tools: { pt: "Esfregão/Vassoura + Balde com Água Sanitária", en: "Mop/Broom + Bleach Bucket" },
         duration: "15 seg / tile",
         cooldown: "60 segundos",
@@ -711,6 +970,8 @@ const CRAFTING_ACTIONS = [
         id: "clean_fixture",
         name: { pt: "Desinfecção de Vaso / Pia / Chuveiro", en: "Sanitize Bathroom Fixture" },
         category: "Limpeza",
+        icon: "assets/icons/sponge.png",
+        moodleIcon: "assets/icons/cleaning_liquid.png",
         tools: { pt: "Pano de Prato ou Esponja + Sabão/Bleach", en: "Dish Towel or Sponge + Soap/Bleach" },
         duration: "12 seg",
         cooldown: "60 segundos",
@@ -720,6 +981,8 @@ const CRAFTING_ACTIONS = [
         id: "home_cooking",
         name: { pt: "Culinária Caseira no Fogão", en: "Homestyle Cooking" },
         category: "Culinária",
+        icon: "assets/icons/canned_corn.png",
+        moodleIcon: "assets/moodles/lv_comfort_2.png",
         tools: { pt: "Panela/Frigideira + Fogão ativo ou a Lenha", en: "Cooking Pot/Pan + Active Stove" },
         duration: "Variável por receita",
         cooldown: "60 segundos",
@@ -729,6 +992,8 @@ const CRAFTING_ACTIONS = [
         id: "play_music",
         name: { pt: "Praticar Música ou Leitura Confortável", en: "Play Instrument / Reading Session" },
         category: "Lazer & Hobbies",
+        icon: "assets/icons/guitar.png",
+        moodleIcon: "assets/moodles/moodle_bored.png",
         tools: { pt: "Violão, Guitarra, Livro ou Revista", en: "Guitar, Violin, Book or Magazine" },
         duration: "10 seg",
         cooldown: "60 segundos",
@@ -738,9 +1003,104 @@ const CRAFTING_ACTIONS = [
         id: "claim_refuge",
         name: { pt: "Estabelecer Residência como Lar Oficial", en: "Claim Residence as Official Home" },
         category: "Posse & Governança",
+        icon: "assets/moodles/lv_comfort_4.png",
+        moodleIcon: "assets/moodles/lv_comfort_1.png",
         tools: { pt: "Interior de qualquer casa sem dono anterior", en: "Interior of any unclaimed house" },
         duration: "Instantâneo (Menu de Contexto)",
         cooldown: "Sem cooldown",
         rewards: { pt: "Desbloqueia scanner [K], HUD de aconchego e telemetria [J]", en: "Unlocks inspector [K], comfort HUD and [J] telemetry" }
     }
 ];
+
+// Catalog of Official & Custom Moodles (Build 42)
+const MOODLES_CATALOG = [
+    {
+        id: "lv_comfort_1",
+        name: { pt: "Lar Doce Lar (Tier 1)", en: "Home Sweet Home (Tier 1)" },
+        type: "positive",
+        icon: "assets/moodles/lv_comfort_1.png",
+        scoreRange: "20 - 39 pts Conforto",
+        description: {
+            pt: "Ambiente básico arrumado. Concede dreno passivo leve de tédio e leve aceleração de sono.",
+            en: "Basic tidy room. Mild passive boredom reduction and slightly accelerated rest."
+        }
+    },
+    {
+        id: "lv_comfort_2",
+        name: { pt: "Conforto Revigorante (Tier 2)", en: "Restful Comfort (Tier 2)" },
+        type: "positive",
+        icon: "assets/moodles/lv_comfort_2.png",
+        scoreRange: "40 - 59 pts Conforto",
+        description: {
+            pt: "Mobiliário adequado e boa cama. Neutraliza ansiedade pós-combate e cura fadiga 25% mais rápido.",
+            en: "Quality furniture and decent bed. Dispels post-combat anxiety, +25% rest speed."
+        }
+    },
+    {
+        id: "lv_comfort_3",
+        name: { pt: "Serenidade Absoluta (Tier 3)", en: "Absolute Serenity (Tier 3)" },
+        type: "positive",
+        icon: "assets/moodles/lv_comfort_3.png",
+        scoreRange: "60 - 79 pts Conforto",
+        description: {
+            pt: "Decoração 3D refinada, isolamento térmico e iluminação quente. Acelera absorção de livros de skill.",
+            en: "Refined 3D clutter, thermal insulation and warm lighting. Accelerates reading XP multipliers."
+        }
+    },
+    {
+        id: "lv_comfort_4",
+        name: { pt: "Santuário Inviolável (Tier 4)", en: "Inviolable Sanctuary (Tier 4)" },
+        type: "positive",
+        icon: "assets/moodles/lv_comfort_4.png",
+        scoreRange: "80 - 100 pts Conforto",
+        description: {
+            pt: "O ápice do apocalipse. Imunidade total à depressão dentro da base, sono ultra-reparador e regeneração moral plena.",
+            en: "The zenith of survival. Complete depression immunity inside refuge, ultra-restorative sleep."
+        }
+    },
+    {
+        id: "lv_squalor_1",
+        name: { pt: "Poeira & Desordem (Squalor 1)", en: "Dust & Disarray (Squalor 1)" },
+        type: "negative",
+        icon: "assets/moodles/lv_squalor_1.png",
+        scoreRange: "15 - 29% Sujeira",
+        description: {
+            pt: "Poeira acumulada e pegadas de lama. Alerta visual no inspetor [K] recomendando varrição com vassoura.",
+            en: "Accumulated dust and mud footprints. Visual notification in [K] inspector suggesting sweeping."
+        }
+    },
+    {
+        id: "lv_squalor_2",
+        name: { pt: "Moscas & Sujeira (Squalor 2)", en: "Flies & Filth (Squalor 2)" },
+        type: "negative",
+        icon: "assets/moodles/lv_squalor_2.png",
+        scoreRange: "30 - 49% Sujeira",
+        description: {
+            pt: "Zumbido de moscas perceptível, poças secas ou sangue. Causa desconforto contínuo e impede sono profundo.",
+            en: "Audible buzzing flies, dried gore and stains. Causes continuous restlessness, blocking deep sleep."
+        }
+    },
+    {
+        id: "lv_squalor_3",
+        name: { pt: "Insalubridade Crítica (Squalor 3)", en: "Critical Squalor (Squalor 3)" },
+        type: "negative",
+        icon: "assets/moodles/lv_squalor_3.png",
+        scoreRange: "50 - 74% Sujeira",
+        description: {
+            pt: "Sobrescreve imediatamente o conforto do cômodo para ZERO. Sobrevivente sente nojo e estresse crescente.",
+            en: "Immediately forces room comfort to ZERO. Triggers revulsion, disgust and compounding stress."
+        }
+    },
+    {
+        id: "lv_squalor_4",
+        name: { pt: "Ninho de Pestilência (Squalor 4)", en: "Pestilence Nest (Squalor 4)" },
+        type: "negative",
+        icon: "assets/moodles/lv_squalor_4.png",
+        scoreRange: "75 - 100% Sujeira",
+        description: {
+            pt: "Carne podre e cadáveres em decomposição no interior. Provoca náusea severa, vômito e risco de infecção.",
+            en: "Rotten food and corpses inside. Triggers severe room nausea, retching and infection hazards."
+        }
+    }
+];
+
