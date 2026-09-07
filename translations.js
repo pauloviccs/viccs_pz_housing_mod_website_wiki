@@ -18,16 +18,16 @@ const TRANSLATIONS = {
         navLanguage: "Idioma",
 
         // Hero Section
-        heroBadge: "SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.0",
+        heroBadge: "SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.3",
         heroTitle: "Sua base não é um depósito de caixotes. É a sua fortaleza mental.",
         heroSubtitle: "O mod PZ: Cozy Living transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.",
         heroBtnExplore: "Manual do Sobrevivente",
         heroStat1Label: "Sistemas Integrados",
-        heroStat1Val: "14 Subsistemas",
+        heroStat1Val: "16 Subsistemas",
         heroStat2Label: "Itens & Mobílias Mapeadas",
-        heroStat2Val: "90+ Objetos",
+        heroStat2Val: "100+ Objetos",
         heroStat3Label: "Moodles & Buffs Reativos",
-        heroStat3Val: "14 Status",
+        heroStat3Val: "16 Status & Moodles",
 
         // Features Highlights
         featComfortTitle: "Conforto & Reivindicação do Lar",
@@ -176,16 +176,16 @@ const TRANSLATIONS = {
         navLanguage: "Language",
 
         // Hero Section
-        heroBadge: "TACTICAL ENGINE ACTIVE // PZ: COZY LIVING B42 v1.6.0",
+        heroBadge: "TACTICAL ENGINE ACTIVE // PZ: COZY LIVING B42 v1.6.3",
         heroTitle: "Your safehouse isn't a crate graveyard. It's your psychological fortress.",
         heroSubtitle: "PZ: Cozy Living transforms your refuge into a living tactical ecosystem. Base ownership, hygiene durability, rebalanced comfort scores, generator/water infrastructure and seasonal weather dictate who survives and who collapses.",
         heroBtnExplore: "Survivor Field Manual",
         heroStat1Label: "Integrated Modules",
-        heroStat1Val: "14 Subsystems",
+        heroStat1Val: "16 Subsystems",
         heroStat2Label: "Cataloged Items & Tiles",
-        heroStat2Val: "90+ Objects",
+        heroStat2Val: "100+ Objects",
         heroStat3Label: "Reactive Moodles & Buffs",
-        heroStat3Val: "14 Status",
+        heroStat3Val: "16 Status & Moodles",
 
         // Features Highlights
         featComfortTitle: "Comfort & Refuge Claiming",
@@ -472,25 +472,53 @@ const ITEM_DATABASE = [
         icon: "assets/icons/dishtowel.png",
         weight: "0.1 kg",
         score: "-20 Squalor",
-        bonus: { pt: "Seca e desinfeta superfícies e utensílios culinários", en: "Dries and sanitizes cookware and food prep areas" },
-        req: { pt: "Balcão de cozinha ou pia", en: "Kitchen counter or sink" },
+        bonus: { pt: "Seca e desinfeta superfícies; acumula sujeira percentual no inventário (v1.6.3)", en: "Dries and sanitizes surfaces; accumulates dirt % in inventory (v1.6.3)" },
+        req: { pt: "Balcão de cozinha, pia ou fixtures", en: "Kitchen counter, sink or fixtures" },
         tacticalNotes: {
-            pt: "Reutilizável. Pode ser lavado em pias com água e sabão quando ficar encharcado ou sujo.",
-            en: "Reusable. Can be washed in sinks with water and soap when soaked or soiled."
+            pt: "v1.6.3: Cada faxina eleva o indicador de sujeira do pano (0..100%). Ao atingir 100%, fica inutilizável até ser lavado na pia com sabão e água limpa.",
+            en: "v1.6.3: Each chore increases cloth dirt % (0..100%). At 100%, becomes unusable until washed in a sink with soap and clean water."
         }
     },
     {
         id: "Base.BucketWaterFull",
-        name: { pt: "Balde com Água Limpa", en: "Bucket with Water" },
+        name: { pt: "Balde com Água Limpa (Drenável)", en: "Bucket with Water (Drainable)" },
         category: "cleaning",
         icon: "assets/icons/bucket_water.png",
         weight: "4.0 kg",
         score: "+5 Suporte",
-        bonus: { pt: "Reservatório portátil de água para esfregão e limpeza pós-queda da rede", en: "Portable water supply for mopping and cleaning after grid shutoff" },
+        bonus: { pt: "Reservatório com consumo real de água proporcional por tile faxinado (v1.6.3)", en: "Reservoir with proportional real water drain per mopped tile (v1.6.3)" },
         req: { pt: "Equipado na mão secundária durante faxinas", en: "Equipped in secondary hand during mopping" },
         tacticalNotes: {
-            pt: "Indispensável após a água encanada acabar. Pode ser reabastecido em barris coletores de chuva.",
-            en: "Crucial after water cutoff. Easily refilled from rooftop rain collector barrels."
+            pt: "v1.6.3: Limpar pisos ou sangue consome água gradualmente do balde. Baldes secos perdem a eficácia e exigem reabastecimento na pia ou barril.",
+            en: "v1.6.3: Mopping floors and gore drains water from the bucket. Empty buckets lose efficacy until refilled at plumbed sinks or barrels."
+        }
+    },
+    {
+        id: "Base.Pot",
+        name: { pt: "Panela de Cozimento (Stovetop 3D)", en: "Cooking Pot (Stovetop 3D)" },
+        category: "cleaning",
+        icon: "assets/icons/canned_corn.png",
+        weight: "1.5 kg",
+        score: "Utensílio 3D",
+        bonus: { pt: "Cozimento térmico real quando colocada sobre a boca do fogão ligado (v1.6.1)", en: "Real physical stovetop cooking when placed on active burner (v1.6.1)" },
+        req: { pt: "Soltar diretamente sobre o fogão, churrasqueira ou lareira acesa", en: "Drop directly on top of active stove burner, grill or lit fireplace" },
+        tacticalNotes: {
+            pt: "v1.6.1+: Descongela e cozinha ensopados e alimentos no mundo 3D sem precisar abrir inventários. Concede +20% de Duração do Lar, mas pode queimar e incendiar a casa se esquecida!",
+            en: "v1.6.1+: Defrosts and cooks stews/soups in 3D world on the stove burner. Awards +20% Home Aura duration, but can burn and spark fires if abandoned!"
+        }
+    },
+    {
+        id: "Base.Pan",
+        name: { pt: "Frigideira de Alimentos (Stovetop 3D)", en: "Frying Pan (Stovetop 3D)" },
+        category: "cleaning",
+        icon: "assets/icons/canned_corn.png",
+        weight: "1.2 kg",
+        score: "Utensílio 3D",
+        bonus: { pt: "Fritura rápida de ovos, bacon e carnes sobre a chapa do fogão", en: "Fast frying for meats, eggs and bacon directly on hot burners" },
+        req: { pt: "Boca do fogão ou lareira acesa", en: "Active stove burner or lit fireplace" },
+        tacticalNotes: {
+            pt: "Ideal para refeições matinais rápidas. Acompanhe a telemetria pelo checklist [K]: [~] Cozinhando -> [OK] Servir.",
+            en: "Ideal for fast morning meals. Track cooking telemetry in [K] inspector checklist: [~] Cooking -> [OK] Ready."
         }
     },
 
@@ -928,6 +956,48 @@ const SANDBOX_OPTIONS = [
         type: "Float (0.2 - 1.0)",
         default: "0.85",
         impact: { pt: "Opacidade do vidro translúcido do painel da HUD.", en: "Backdrop opacity of the translucent HUD glass panel." }
+    },
+    {
+        name: "HousingCare.StovetopCookingEnabled",
+        type: "Boolean",
+        default: "true",
+        impact: { pt: "v1.6.1: Ativa o cozimento físico em 3D de panelas e carnes sobre a boca de fogões e lareiras.", en: "v1.6.1: Enables physical 3D stovetop cooking for pots and meats on active burners." }
+    },
+    {
+        name: "HousingCare.StovetopFireRiskEnabled",
+        type: "Boolean",
+        default: "true",
+        impact: { pt: "v1.6.1: Alimentos queimando no fogo alto por tempo excessivo provocam risco real de incêndio.", en: "v1.6.1: Severely burnt food left on high heat triggers real building fire hazards." }
+    },
+    {
+        name: "HousingCare.ApplianceScanEnabled",
+        type: "Boolean",
+        default: "true",
+        impact: { pt: "v1.6.3: Ativa a varredura e o Painel de Aparelhos e Instalações (Tecla U) com abas por cômodo.", en: "v1.6.3: Enables room appliance scanning and the Appliance Dashboard (U key) with room tabs." }
+    },
+    {
+        name: "HousingCare.BucketWaterDrainRate",
+        type: "Float (0.5 - 3.0)",
+        default: "1.0",
+        impact: { pt: "v1.6.3: Multiplicador de consumo de água do balde durante faxinas de piso e desinfecções.", en: "v1.6.3: Multiplier for bucket water consumption during floor mopping and sanitization." }
+    },
+    {
+        name: "HousingCare.DishClothDirtRate",
+        type: "Float (0.5 - 3.0)",
+        default: "1.0",
+        impact: { pt: "v1.6.3: Taxa na qual panos de prato e toalhas acumulam sujeira (0 a 100%) antes de exigir lavagem.", en: "v1.6.3: Rate at which dish towels accumulate dirt (0 to 100%) before requiring sink washing." }
+    },
+    {
+        name: "HousingCare.ToolDegradationRate",
+        type: "Float (0.2 - 2.0)",
+        default: "1.0",
+        impact: { pt: "v1.6.3: Taxa de desgaste mecânico de vassouras, esponjas e esfregões por ciclo de limpeza.", en: "v1.6.3: Wear and condition degradation rate for brooms, sponges and mops per chore cycle." }
+    },
+    {
+        name: "HousingCare.ToiletPaperSearchRadius",
+        type: "Integer (1 - 3)",
+        default: "1",
+        impact: { pt: "v1.6.0: Raio em blocos para busca de papel higiênico em recipientes adjacentes ao vaso.", en: "v1.6.0: Tile radius for detecting toilet paper in adjacent containers and drawers." }
     }
 ];
 
@@ -961,7 +1031,7 @@ const CRAFTING_ACTIONS = [
         category: "Limpeza",
         icon: "assets/icons/mop.png",
         moodleIcon: "assets/moodles/lv_squalor_1.png",
-        tools: { pt: "Esfregão/Vassoura + Balde com Água Sanitária", en: "Mop/Broom + Bleach Bucket" },
+        tools: { pt: "Esfregão/Vassoura + Balde com Água Sanitária (consome água)", en: "Mop/Broom + Bleach Bucket (consumes water)" },
         duration: "15 seg / tile",
         cooldown: "60 segundos",
         rewards: { pt: "-45 a -70 Squalor, remove moscas e previne náusea", en: "-45 to -70 Squalor, removes flies and prevents nausea" }
@@ -976,6 +1046,39 @@ const CRAFTING_ACTIONS = [
         duration: "12 seg",
         cooldown: "60 segundos",
         rewards: { pt: "Transforma fixture suja em +4 pts de Conforto Sanitário", en: "Turns dirty fixture into +4 pts Sanitary Comfort" }
+    },
+    {
+        id: "stovetop_cooking_action",
+        name: { pt: "Cozimento Real sobre o Fogão (Stovetop 3D)", en: "Physical Stovetop 3D Cooking" },
+        category: "Culinária",
+        icon: "assets/icons/canned_corn.png",
+        moodleIcon: "assets/moodles/lv_comfort_2.png",
+        tools: { pt: "Panela, Frigideira ou Alimento solto sobre a boca do fogão ligado", en: "Pot, Pan or Food dropped onto active stove burner" },
+        duration: "Minutos in-game (variável)",
+        cooldown: "Sem cooldown (física contínua)",
+        rewards: { pt: "+20% Duração do Lar, descongela carnes e refeição quente nutritiva", en: "+20% Home Aura, defrosts meats, hot nutritious meal" }
+    },
+    {
+        id: "wash_dishcloth",
+        name: { pt: "Lavar Pano de Prato Encardido", en: "Wash Soiled Dish Cloth" },
+        category: "Limpeza",
+        icon: "assets/icons/dishtowel.png",
+        moodleIcon: "assets/icons/soap.png",
+        tools: { pt: "Pano a 100% de sujeira + Pia com água + Sabão ou Bleach", en: "100% soiled cloth + Plumbed sink + Soap or Bleach" },
+        duration: "8 seg in-game",
+        cooldown: "Sem cooldown",
+        rewards: { pt: "Restaura o pano para 0% de sujeira, permitindo novas faxinas", en: "Restores cloth to 0% dirt, ready for more chores" }
+    },
+    {
+        id: "appliance_inspect",
+        name: { pt: "Inspeção de Aparelhos e Instalações (Tecla U)", en: "Inspect Appliances & Fixtures (Key U)" },
+        category: "Interface",
+        icon: "assets/icons/sponge.png",
+        moodleIcon: "assets/moodles/lv_comfort_3.png",
+        tools: { pt: "Dentro de safehouse ou base residencial", en: "Inside safehouse or residential base" },
+        duration: "Instantâneo [Tecla U]",
+        cooldown: "Sem cooldown",
+        rewards: { pt: "Diagnóstico completo de pias, fogões e fixtures por cômodo", en: "Complete diagnosis of sinks, stoves and fixtures by room" }
     },
     {
         id: "home_cooking",
@@ -1056,6 +1159,61 @@ const MOODLES_CATALOG = [
         description: {
             pt: "O ápice do apocalipse. Imunidade total à depressão dentro da base, sono ultra-reparador e regeneração moral plena.",
             en: "The zenith of survival. Complete depression immunity inside refuge, ultra-restorative sleep."
+        }
+    },
+    {
+        id: "lv_morning_cozy",
+        name: { pt: "Manhã Aconchegante", en: "Morning Cozy" },
+        type: "positive",
+        icon: "assets/moodles/moodle_happy.png",
+        scoreRange: "Rotina Matinal",
+        description: {
+            pt: "Bônus concedido após tomar café ou fazer a primeira refeição quente na base entre 06h e 10h. Drena fadiga e melhora o ânimo.",
+            en: "Granted after having breakfast or hot meal at base between 06:00 and 10:00. Reduces fatigue, boosts mood."
+        }
+    },
+    {
+        id: "lv_routine_streak",
+        name: { pt: "Rotina Estabelecida (Streak)", en: "Routine Streak" },
+        type: "positive",
+        icon: "assets/moodles/moodle_happy.png",
+        scoreRange: "3+ Dias Consecutivos",
+        description: {
+            pt: "Hábito sólido mantido por 3 ou mais dias consecutivos. Cria uma couraça psicológica contra pânico e depressão no apocalipse.",
+            en: "Solid routine maintained for 3+ consecutive days. Creates a psychological armor against panic and gloom."
+        }
+    },
+    {
+        id: "lv_spotless_home",
+        name: { pt: "Casa Impecável", en: "Spotless Sanctuary" },
+        type: "positive",
+        icon: "assets/moodles/moodle_concentrating.png",
+        scoreRange: "0% Squalor na Base",
+        description: {
+            pt: "Ambiente 100% desinfetado e sem poeira. Acelera o ganho de XP em leitura de livros de habilidades e estudo de fitas VHS.",
+            en: "100% disinfected, dust-free environment. Accelerates skill book reading and VHS study XP multiplier."
+        }
+    },
+    {
+        id: "lv_relieved",
+        name: { pt: "Aliviado (Pós-Sanitário)", en: "Relieved" },
+        type: "positive",
+        icon: "assets/moodles/lv_comfort_1.png",
+        scoreRange: "Uso do Vaso com Papel",
+        description: {
+            pt: "Sensação revigorante de bem-estar após utilizar privada higienizada com papel higiênico. Zera o estresse acumulado de aperto.",
+            en: "Rejuvenating comfort after using clean toilet with toilet paper. Wipes out urgency stress."
+        }
+    },
+    {
+        id: "lv_toilet_need",
+        name: { pt: "Aperto Sanitário (Bexiga)", en: "Toilet Urgency" },
+        type: "negative",
+        icon: "assets/moodles/moodle_discomfort.png",
+        scoreRange: "Necessidade Biológica",
+        description: {
+            pt: "O sobrevivente precisa de alívio com urgência. Ignorar provoca desconforto, perda de velocidade de corrida e estresse.",
+            en: "Survivor urgently needs a restroom. Neglecting triggers physical discomfort, slower sprint and stress."
         }
     },
     {
