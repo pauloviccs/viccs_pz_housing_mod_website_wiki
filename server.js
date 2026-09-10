@@ -58,7 +58,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
   console.log('====================================================');
-  console.log(`  🚀 PZ: Cozy Living - Wiki & GDD Portal v1.6.0`);
+  console.log(`  🚀 PZ: Cozy Living - Wiki & GDD Portal v1.6.7`);
   console.log(`  🌐 Local:   http://localhost:${PORT}`);
   console.log('====================================================');
   console.log('  Pressione Ctrl+C para encerrar o servidor.');

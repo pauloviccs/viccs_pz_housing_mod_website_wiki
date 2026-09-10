@@ -2479,6 +2479,13 @@ kbd {
     box-shadow: 0 0 10px rgba(224, 90, 43, 0.2);
 }
 
+.badge-tag-v167 {
+    background: rgba(42, 166, 154, 0.25);
+    color: #38f8d4;
+    border: 1px solid rgba(42, 166, 154, 0.6);
+    box-shadow: 0 0 10px rgba(42, 166, 154, 0.25);
+}
+
 .badge-tag-hygiene {
     background: rgba(42, 166, 154, 0.15);
     color: var(--accent-teal-bright);

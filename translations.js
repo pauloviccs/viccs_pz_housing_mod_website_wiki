@@ -18,16 +18,16 @@ const TRANSLATIONS = {
         navLanguage: "Idioma",
 
         // Hero Section
-        heroBadge: "SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.3",
+        heroBadge: "SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.7",
         heroTitle: "Sua base não é um depósito de caixotes. É a sua fortaleza mental.",
         heroSubtitle: "O mod PZ: Cozy Living transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.",
         heroBtnExplore: "Manual do Sobrevivente",
         heroStat1Label: "Sistemas Integrados",
-        heroStat1Val: "16 Subsistemas",
+        heroStat1Val: "20 Subsistemas",
         heroStat2Label: "Itens & Mobílias Mapeadas",
         heroStat2Val: "100+ Objetos",
         heroStat3Label: "Moodles & Buffs Reativos",
-        heroStat3Val: "16 Status & Moodles",
+        heroStat3Val: "19 Status & Moodles",
 
         // Features Highlights
         featComfortTitle: "Conforto & Reivindicação do Lar",
@@ -176,16 +176,16 @@ const TRANSLATIONS = {
         navLanguage: "Language",
 
         // Hero Section
-        heroBadge: "TACTICAL ENGINE ACTIVE // PZ: COZY LIVING B42 v1.6.3",
+        heroBadge: "TACTICAL ENGINE ACTIVE // PZ: COZY LIVING B42 v1.6.7",
         heroTitle: "Your safehouse isn't a crate graveyard. It's your psychological fortress.",
         heroSubtitle: "PZ: Cozy Living transforms your refuge into a living tactical ecosystem. Base ownership, hygiene durability, rebalanced comfort scores, generator/water infrastructure and seasonal weather dictate who survives and who collapses.",
         heroBtnExplore: "Survivor Field Manual",
         heroStat1Label: "Integrated Modules",
-        heroStat1Val: "16 Subsystems",
+        heroStat1Val: "20 Subsystems",
         heroStat2Label: "Cataloged Items & Tiles",
         heroStat2Val: "100+ Objects",
         heroStat3Label: "Reactive Moodles & Buffs",
-        heroStat3Val: "16 Status & Moodles",
+        heroStat3Val: "19 Statuses & Moodles",
 
         // Features Highlights
         featComfortTitle: "Comfort & Refuge Claiming",
@@ -862,6 +862,20 @@ const ITEM_DATABASE = [
             pt: "Paredes rebocadas retêm melhor a temperatura no inverno e aumentam o isolamento acústico.",
             en: "Plastered walls insulate winter heat and dampen indoor sound signatures."
         }
+    },
+    {
+        id: "Base.LightBulb",
+        name: { pt: "Lâmpada Elétrica Incandescente", en: "Incandescent Light Bulb" },
+        category: "utility",
+        icon: "assets/icons/lamp.png",
+        weight: "0.2 kg",
+        score: "Restaura Luz da Base",
+        bonus: { pt: "Substitui filamentos queimados em luminárias e abajures da residência.", en: "Replaces burned filaments in residential lamps and fixtures." },
+        req: { pt: "No inventário primário ou secundário ao interagir com a luminária", en: "In primary or secondary inventory when interacting with fixture" },
+        tacticalNotes: {
+            pt: "v1.6.7: Lâmpadas ativas sofrem queima periódica de filamento. O sobrevivente pode verificar no Checklist de Manutenção [K] e substituir com botão direito na luminária apagada.",
+            en: "v1.6.7: Active lights suffer periodic filament burnout. Survivors can audit via Maintenance Checklist [K] and replace via right-click on the dark fixture."
+        }
     }
 ];
 
@@ -998,6 +1012,60 @@ const SANDBOX_OPTIONS = [
         type: "Integer (1 - 3)",
         default: "1",
         impact: { pt: "v1.6.0: Raio em blocos para busca de papel higiênico em recipientes adjacentes ao vaso.", en: "v1.6.0: Tile radius for detecting toilet paper in adjacent containers and drawers." }
+    },
+    {
+        name: "HousingCare.EnableLightBulbBurnout",
+        type: "Boolean",
+        default: "true",
+        impact: { pt: "v1.6.7: Ativa a queima periódica de lâmpadas incandescentes em luminárias ativas na base.", en: "v1.6.7: Enables periodic filament burnout for active light fixtures in base." }
+    },
+    {
+        name: "HousingCare.LightBulbBurnoutChance",
+        type: "Integer (1 - 100)",
+        default: "3",
+        impact: { pt: "v1.6.7: Chance percentual (%) por ciclo de iluminação para queima do filamento da lâmpada.", en: "v1.6.7: Percentage roll chance (%) per illumination cycle for filament burnout." }
+    },
+    {
+        name: "HousingCare.SqualorLingerHours",
+        type: "Integer (1 - 24)",
+        default: "4",
+        impact: { pt: "v1.6.7: Horas in-game que o ar viciado e a poeira demoram para decair após eliminação dos focos de sujeira.", en: "v1.6.7: In-game hours squalor aura lingers after active filth sources are eliminated." }
+    },
+    {
+        name: "HousingCare.ChoreCooldownSeconds",
+        type: "Integer (5 - 300)",
+        default: "30",
+        impact: { pt: "v1.6.7: Cooldown anti-spam dedicado para tarefas domésticas menores e asseio corporal.", en: "v1.6.7: Dedicated anti-spam cooldown for minor homemaking chores and grooming." }
+    },
+    {
+        name: "HousingCare.StovetopCheckIntervalSeconds",
+        type: "Integer (5 - 60)",
+        default: "12",
+        impact: { pt: "v1.6.7: Intervalo em segundos de cálculo térmico e progresso de cozimento físico no fogão/lareira.", en: "v1.6.7: Real interval in seconds between physics cooking checks on active stovetops." }
+    },
+    {
+        name: "HousingCare.Enable_Aquecido",
+        type: "Boolean",
+        default: "true",
+        impact: { pt: "v1.6.6: Ativa o buff 'Aquecido & Confortável' em ambientes com lareira/calefação, curando resfriados.", en: "v1.6.6: Enables 'Warm & Cozy' buff in heated shelters during winter, curing colds." }
+    },
+    {
+        name: "HousingCare.Enable_Alerta",
+        type: "Boolean",
+        default: "true",
+        impact: { pt: "v1.6.6: Ativa o buff 'Alerta & Focado' concedido pela serenidade do santuário contra pânico repentino.", en: "v1.6.6: Enables 'Alert & Focused' buff from sanctuary serene state, dampening sudden panic." }
+    },
+    {
+        name: "HousingCare.AllowLootLuckBuff",
+        type: "Boolean",
+        default: "true",
+        impact: { pt: "v1.6.5: Concede segunda rolagem de itens raros ao abrir contêineres fechados para sobreviventes com mente plena.", en: "v1.6.5: Grants second loot roll for rare items in closed containers to survivors with high focus." }
+    },
+    {
+        name: "HousingCare.BladderGainPerHour",
+        type: "Float (0.05 - 1.0)",
+        default: "0.15",
+        impact: { pt: "v1.6.7: Taxa de acúmulo fisiológico por hora em repouso (amplificada pelo consumo de líquidos).", en: "v1.6.7: Hourly physiological bladder accumulation rate at rest (scaled with beverage intake)." }
     }
 ];
 
@@ -1112,6 +1180,17 @@ const CRAFTING_ACTIONS = [
         duration: "Instantâneo (Menu de Contexto)",
         cooldown: "Sem cooldown",
         rewards: { pt: "Desbloqueia scanner [K], HUD de aconchego e telemetria [J]", en: "Unlocks inspector [K], comfort HUD and [J] telemetry" }
+    },
+    {
+        id: "replace_lightbulb",
+        name: { pt: "Substituição de Lâmpada Queimada", en: "Replace Burned Light Bulb" },
+        category: "Manutenção",
+        icon: "assets/icons/lamp.png",
+        moodleIcon: "assets/moodles/lv_comfort_3.png",
+        tools: { pt: "Lâmpada Elétrica (Base.LightBulb) + Luminária apagada", en: "Light Bulb (Base.LightBulb) + Dark Light Fixture" },
+        duration: "5 seg in-game",
+        cooldown: "Sem cooldown",
+        rewards: { pt: "Restaura iluminação do cômodo e recupera pontuação de conforto (+6 pts)", en: "Restores room illumination and recovers comfort score (+6 pts)" }
     }
 ];
 
@@ -1258,6 +1337,39 @@ const MOODLES_CATALOG = [
         description: {
             pt: "Carne podre e cadáveres em decomposição no interior. Provoca náusea severa, vômito e risco de infecção.",
             en: "Rotten food and corpses inside. Triggers severe room nausea, retching and infection hazards."
+        }
+    },
+    {
+        id: "lv_aquecido",
+        name: { pt: "Aquecido & Confortável", en: "Warm & Cozy" },
+        type: "positive",
+        icon: "assets/moodles/moodle_hot.png",
+        scoreRange: "Conforto Térmico no Lar",
+        description: {
+            pt: "Ambiente aquecido com lareira ou fogão ativo no frio. Mantém a temperatura estável, acelera em 40% a cura de resfriados e traz conforto.",
+            en: "Heated refuge with active stove or fireplace in cold weather. Stabilizes temperature, accelerates cold recovery by 40%."
+        }
+    },
+    {
+        id: "lv_alerta",
+        name: { pt: "Alerta & Focado (Santuário)", en: "Alert & Focused (Sanctuary)" },
+        type: "positive",
+        icon: "assets/moodles/moodle_concentrating.png",
+        scoreRange: "Santuário Protegido (Tier 3-4)",
+        description: {
+            pt: "Mente serena e base segura conferem reflexos aguçados. Suprime o pânico inicial ao avistar zumbis invadindo o perímetro.",
+            en: "Tranquil mind and secure sanctuary sharpen combat reflexes. Suppresses sudden panic when hostiles breach the perimeter."
+        }
+    },
+    {
+        id: "lv_loot_luck",
+        name: { pt: "Foco de Explorador (Loot Luck)", en: "Scavenger's Focus (Loot Luck)" },
+        type: "positive",
+        icon: "assets/moodles/moodle_happy.png",
+        scoreRange: "Base Impecável + Mente Plena",
+        description: {
+            pt: "Ao sair em expedição bem descansado e com a base 100% organizada, o sobrevivente ganha percepção aguçada: chance extra de encontrar itens raros em contêineres intactos.",
+            en: "Embarking on expeditions well-rested from a spotless base grants keen perception: extra roll for rare loot inside unopened containers."
         }
     }
 ];

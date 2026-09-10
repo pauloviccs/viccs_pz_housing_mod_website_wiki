@@ -43,7 +43,7 @@
             </div>
             <div class="brand-text">
                 <h1>PZ: Cozy Living</h1>
-                <p>B42 v1.6.3</p>
+                <p>B42 v1.6.7</p>
             </div>
         </a>
 
@@ -76,7 +76,7 @@
             <div class="hero">
                 <div class="hero-badge">
                     <span class="status-dot"></span>
-                    <span data-i18n="heroBadge">SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.3</span>
+                    <span data-i18n="heroBadge">SISTEMA TÁTICO ATIVO // PZ: COZY LIVING B42 v1.6.7</span>
                 </div>
                 <h2 data-i18n="heroTitle">Sua base não é um depósito de caixotes. É a sua fortaleza mental.</h2>
                 <p data-i18n="heroSubtitle">O PZ: Cozy Living transforma seu refúgio num ecossistema vivo e tático. Posse de residência, durabilidade de higiene, conforto rebalanceado, infraestrutura elétrica/hídrica e clima sazonal decidem quem sobrevive e quem sucumbe à loucura.</p>
@@ -95,7 +95,7 @@
                 <!-- Live Metrics Highlights -->
                 <div class="hero-stats">
                     <div class="stat-card">
-                        <div class="stat-val" data-i18n="heroStat1Val">16 Subsistemas</div>
+                        <div class="stat-val" data-i18n="heroStat1Val">20 Subsistemas</div>
                         <div class="stat-label" data-i18n="heroStat1Label">Sistemas Integrados</div>
                     </div>
                     <div class="stat-card">
@@ -103,7 +103,7 @@
                         <div class="stat-label" data-i18n="heroStat2Label">Itens & Mobílias Mapeadas</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-val" data-i18n="heroStat3Val">12 Status</div>
+                        <div class="stat-val" data-i18n="heroStat3Val">19 Status</div>
                         <div class="stat-label" data-i18n="heroStat3Label">Moodles & Buffs Reativos</div>
                     </div>
                 </div>
@@ -120,12 +120,16 @@
                     <span><strong>Inspetor de Cômodo:</strong> Telemetria & Conforto</span>
                 </div>
                 <div class="keybind-item">
+                    <kbd>U</kbd>
+                    <span><strong>Painel de Aparelhos:</strong> Fogões, Pias & Sanitários</span>
+                </div>
+                <div class="keybind-item">
                     <kbd>ESC</kbd>
                     <span><strong>Fechar Janelas:</strong> Modais & Painéis</span>
                 </div>
                 <div class="keybind-item">
                     <kbd>RMB</kbd>
-                    <span><strong>No Chão Interno:</strong> Reivindicar Residência</span>
+                    <span><strong>No Chão Interno:</strong> Menu de Contexto & Reivindicar</span>
                 </div>
             </div>
 
@@ -492,6 +496,48 @@
                         </div>
                     </div>
 
+                    <!-- AQUECIDO & CONFORTÁVEL (v1.6.6) -->
+                    <div class="moodle-card moodle-card-pos">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/moodle_hot.png" class="moodle-sprite-img" alt="Aquecido & Confortável">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Aquecido & Confortável</span>
+                                <span class="moodle-tier-tag tier-2">Térmico // v1.6.6</span>
+                            </div>
+                            <p class="moodle-desc">Conforto térmico no abrigo no frio. Estabiliza a temperatura do corpo, acelera em 40% a cura de resfriados e impede hipotermia.</p>
+                        </div>
+                    </div>
+
+                    <!-- ALERTA & FOCADO (v1.6.6) -->
+                    <div class="moodle-card moodle-card-pos">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/moodle_concentrating.png" class="moodle-sprite-img" alt="Alerta & Focado">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Alerta & Focado</span>
+                                <span class="moodle-tier-tag tier-3">Tático // v1.6.6</span>
+                            </div>
+                            <p class="moodle-desc">Mente serena no santuário. Supressão drástica do pânico inicial ao avistar zumbis invadindo o perímetro da base.</p>
+                        </div>
+                    </div>
+
+                    <!-- FOCO DE EXPLORADOR / LOOT LUCK (v1.6.5) -->
+                    <div class="moodle-card moodle-card-pos">
+                        <div class="moodle-sprite-box">
+                            <img src="assets/moodles/moodle_happy.png" class="moodle-sprite-img" alt="Foco de Explorador">
+                        </div>
+                        <div class="moodle-info">
+                            <div class="moodle-header-row">
+                                <span class="moodle-name">Foco de Explorador</span>
+                                <span class="moodle-tier-tag tier-4">Loot Luck // v1.6.5</span>
+                            </div>
+                            <p class="moodle-desc">Partir em expedição a partir de um santuário impecável concede dupla rolagem de itens raros em contêineres fechados.</p>
+                        </div>
+                    </div>
+
                     <!-- SQUALOR 1 -->
                     <div class="moodle-card moodle-card-neg">
                         <div class="moodle-sprite-box">
@@ -622,7 +668,7 @@
                             <button class="guide-filter-btn active" data-cat="all">
                                 <i class="fa-solid fa-layer-group"></i>
                                 <span data-i18n="guideFilterAll">Todos os Sistemas</span>
-                                <span class="guide-filter-count">16</span>
+                                <span class="guide-filter-count">20</span>
                             </button>
                             <button class="guide-filter-btn" data-cat="hygiene">
                                 <i class="fa-solid fa-toilet"></i>
@@ -632,7 +678,7 @@
                             <button class="guide-filter-btn" data-cat="cleaning">
                                 <i class="fa-solid fa-broom"></i>
                                 <span data-i18n="guideFilterCleaning">Faxina & Descontaminação</span>
-                                <span class="guide-filter-count">3</span>
+                                <span class="guide-filter-count">4</span>
                             </button>
                             <button class="guide-filter-btn" data-cat="leisure">
                                 <i class="fa-solid fa-utensils"></i>
@@ -642,7 +688,7 @@
                             <button class="guide-filter-btn" data-cat="comfort">
                                 <i class="fa-solid fa-couch"></i>
                                 <span data-i18n="guideFilterComfort">Conforto & Clima</span>
-                                <span class="guide-filter-count">2</span>
+                                <span class="guide-filter-count">5</span>
                             </button>
                             <button class="guide-filter-btn" data-cat="interface">
                                 <i class="fa-solid fa-keyboard"></i>
@@ -654,7 +700,7 @@
                         <!-- System Counter Display -->
                         <div class="guide-counter-badge">
                             <span data-i18n="guideCounterPrefix">Sistemas Mapeados:</span>
-                            <strong id="guideVisibleCount">16</strong> / 16
+                            <strong id="guideVisibleCount">20</strong> / 20
                         </div>
                     </div>
 
@@ -692,10 +738,10 @@
                                 <div class="acc-title-group">
                                     <div class="acc-title-row">
                                         <span class="acc-title">1. Vasos Sanitários Universais & Cabines Públicas</span>
-                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.7 VACINADO</span>
                                         <span class="badge-tag badge-tag-hygiene">Higiene</span>
                                     </div>
-                                    <span class="acc-subtitle">Compatibilidade total com privadas residenciais e cabines comerciais com postura sentada imersiva.</span>
+                                    <span class="acc-subtitle">Compatibilidade total com privadas residenciais e cabines comerciais com postura sentada imersiva e vacina Java anti-crash.</span>
                                 </div>
                             </div>
                             <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
@@ -706,7 +752,8 @@
                                     <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
                                     <div class="sys-card-body">
                                         <p>Imagine que seu sobrevivente passa semanas correndo e lutando, mas no vanilla ele simplesmente não tinha onde aliviar suas necessidades biológicas com dignidade.</p>
-                                        <p>Na v1.6.0, qualquer privada do jogo — de casas de subúrbio a cabines metálicas de postos de gasolina — agora é um sanitário funcional. O personagem realmente senta na louça e obtém alívio psicológico.</p>
+                                        <p>Na v1.6.0+, qualquer privada do jogo — de casas de subúrbio a cabines metálicas de postos de gasolina — agora é um sanitário funcional. O personagem realmente senta na louça e obtém alívio psicológico.</p>
+                                        <p><strong>v1.6.7 Estabilidade Total:</strong> Inclui vacina Java de segurança (limpeza forçada de <code>isSitOnGround</code> ao levantar), impedindo que o avatar trave na animação de agachamento ou dispare erros de NullPointer no PZ B42.</p>
                                     </div>
                                 </div>
 
@@ -716,7 +763,7 @@
                                         <ul class="sys-steps-list">
                                             <li class="sys-step-item"><span class="sys-step-num">1</span><span>Aproxime-se de qualquer privada residencial ou cabine sanitária pública.</span></li>
                                             <li class="sys-step-item"><span class="sys-step-num">2</span><span>Clique com o <strong>botão direito</strong> diretamente sobre o tile do vaso sanitário.</span></li>
-                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Selecione a opção <strong>'Usar Banheiro'</strong>. O sobrevivente sentará no vaso e realizará o ciclo de alívio.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Selecione a opção <strong>'Usar Banheiro'</strong>. O sobrevivente sentará na privada com postura natural e realizará o ciclo de alívio sem travar.</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -727,6 +774,7 @@
                                         <p>Qualquer tile de privada residencial ou cabine pública (ex: <code>fixtures_bathroom_01_0..11</code>, <code>fixtures_bathroom_02_*</code>).</p>
                                         <div class="sys-req-pills">
                                             <span class="sys-req-pill"><img src="assets/icons/toilet_paper.png" class="pill-pixel-icon" alt="Papel Higiênico"> <code>Base.ToiletPaper</code> (Recomendado)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-shield-halved text-cyan"></i> v1.6.7 Vacina Anti-Crash Java</span>
                                             <span class="sys-req-pill"><i class="fa-solid fa-droplet text-teal"></i> Água na rede (Opcional)</span>
                                         </div>
                                     </div>
@@ -958,10 +1006,10 @@
                                 <div class="acc-title-group">
                                     <div class="acc-title-row">
                                         <span class="acc-title">5. Faxina Ativa de Piso & Descontaminação de Sangue</span>
-                                        <span class="badge-tag badge-tag-v160">v1.6.3 ATUALIZADO</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.7 REFINADO</span>
                                         <span class="badge-tag badge-tag-cleaning">Faxina</span>
                                     </div>
-                                    <span class="acc-subtitle">Passar o esfregão consome água real do balde, desgasta ferramentas, elimina sangue e purga overlays de sujeira.</span>
+                                    <span class="acc-subtitle">Auto-equipamento bimanual, consumo real de água do balde, desgaste de ferramentas e purga física de sangue e sujeira.</span>
                                 </div>
                             </div>
                             <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
@@ -971,8 +1019,9 @@
                                 <div class="sys-card sys-card-why">
                                     <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
                                     <div class="sys-card-body">
-                                        <p>Em versões antigas, esfregar o chão não consumia água e parecia infinito. Na v1.6.3, a limpeza é tática e realista: cada piso faxinado <strong>drena unidades reais de água do seu balde</strong> e aplica desgaste mecânico calibrado na vassoura ou esfregão.</p>
-                                        <p>Esfregar o chão elimina fisicamente poças de sangue vanilla, overlays de poeira e concede o buff de <strong>'Dever Cumprido'</strong>, elevando o piso para +10 pts de base limpa.</p>
+                                        <p>Em versões antigas, esfregar o chão não consumia água e parecia infinito. Na v1.6.3+, a limpeza é tática e realista: cada piso faxinado <strong>drena unidades reais de água do seu balde</strong> e aplica desgaste mecânico calibrado na vassoura ou esfregão.</p>
+                                        <p><strong>v1.6.4 Auto-Equip Bimanual:</strong> A ação <code>ScrubFloor_Mop</code> equipa o esfregão nas duas mãos automaticamente ao iniciar a faxina, sem exigir micromanagement no inventário.</p>
+                                        <p><strong>v1.6.7 Decaimento de Squalor:</strong> A insalubridade residual agora se dissipa no ritmo configurado no sandbox (<code>SqualorLingerHours</code>), garantindo que a casa limpa recupere rapidamente a aura restauradora.</p>
                                     </div>
                                 </div>
 
@@ -980,9 +1029,9 @@
                                     <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
                                     <div class="sys-card-body">
                                         <ul class="sys-steps-list">
-                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Equipe uma Vassoura ou Esfregão (Mop) nas mãos primária e secundária.</span></li>
-                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Mantenha no inventário um Balde com Água Limpa (<code>Base.BucketWaterFull</code>) e Água Sanitária (Bleach).</span></li>
-                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Clique com o <strong>botão direito no chão manchado</strong> e selecione <strong>'Limpar Sangue'</strong> ou <strong>'Limpar Chão'</strong>. Acompanhe a água do balde diminuir conforme a área é faxinada.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Tenha uma Vassoura ou Esfregão (Mop) no inventário ou na mochila (o sistema auto-equipa com as duas mãos).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Mantenha por perto um Balde com Água Limpa (<code>Base.BucketWaterFull</code>) e Água Sanitária (Bleach).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Clique com o <strong>botão direito no chão manchado</strong> e selecione <strong>'Limpar Sangue'</strong> ou <strong>'Limpar Chão'</strong>. O sobrevivente assume a postura tática de esfregação e limpa os tiles sequencialmente.</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -991,7 +1040,8 @@
                                     <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
                                     <div class="sys-card-body">
                                         <div class="sys-req-pills">
-                                            <span class="sys-req-pill"><img src="assets/icons/broom.png" class="pill-pixel-icon" alt="Vassoura"> <code>Base.Broom</code> / <img src="assets/icons/mop.png" class="pill-pixel-icon" alt="Esfregão"> <code>Base.Mop</code></span>
+                                            <span class="sys-req-pill"><img src="assets/icons/mop.png" class="pill-pixel-icon" alt="Esfregão"> <code>Base.Mop</code> (Auto-equip 2 mãos)</span>
+                                            <span class="sys-req-pill"><img src="assets/icons/broom.png" class="pill-pixel-icon" alt="Vassoura"> <code>Base.Broom</code></span>
                                             <span class="sys-req-pill"><img src="assets/icons/bucket_water.png" class="pill-pixel-icon" alt="Balde"> <code>Base.BucketWaterFull</code> (Consome água)</span>
                                             <span class="sys-req-pill"><img src="assets/icons/bleach.png" class="pill-pixel-icon" alt="Bleach"> <code>Base.Bleach</code> (Essencial p/ sangue)</span>
                                         </div>
@@ -1489,10 +1539,10 @@
                                 <div class="acc-title-group">
                                     <div class="acc-title-row">
                                         <span class="acc-title">13. Inspetor de Cômodo & Checklist Doméstica [Tecla K]</span>
-                                        <span class="badge-tag badge-tag-v160">v1.6.0 NOVO</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.7 AUDITORIA</span>
                                         <span class="badge-tag badge-tag-interface">Interface</span>
                                     </div>
-                                    <span class="acc-subtitle">Diagnóstico em tempo real da pontuação do quarto e a nova Checklist de Rotina estilo The Sims.</span>
+                                    <span class="acc-subtitle">Diagnóstico em tempo real da pontuação do quarto, Checklist Diária estilo The Sims e auditoria de lâmpadas queimadas.</span>
                                 </div>
                             </div>
                             <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
@@ -1504,6 +1554,7 @@
                                     <div class="sys-card-body">
                                         <p>Como saber se colocar mais uma cadeira vai realmente melhorar o quarto ou se já bateu no teto de retornos decrescentes? E o que fazer hoje na base?</p>
                                         <p>O Inspetor aberto com a <strong>tecla [K]</strong> analisa todos os tiles do cômodo atual, exibe a pontuação categorizada e traz a <strong>Checklist Diária</strong> com objetivos claros para manter sua mente sã.</p>
+                                        <p><strong>v1.6.7 Auditoria Elétrica:</strong> O checklist agora acusa automaticamente quando filamentos de luminárias e abajures queimam (<code>[!] Lâmpada Queimada Detectada</code>), indicando a necessidade de reposição antes do anoitecer.</p>
                                     </div>
                                 </div>
 
@@ -1513,7 +1564,7 @@
                                         <ul class="sys-steps-list">
                                             <li class="sys-step-item"><span class="sys-step-num">1</span><span>Fique em pé dentro de qualquer cômodo da sua base reivindicada.</span></li>
                                             <li class="sys-step-item"><span class="sys-step-num">2</span><span>Pressione a tecla <strong>[K]</strong> no teclado para abrir a janela de telemetria instantânea.</span></li>
-                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Consulte a lista de tarefas diárias recomendadas (ex: 'Passar pano', 'Escovar dentes', 'Arejar janelas').</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Consulte a lista de tarefas diárias recomendadas (ex: 'Passar pano', 'Escovar dentes', 'Trocar lâmpada queimada', 'Arejar janelas').</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1524,6 +1575,7 @@
                                         <div class="sys-req-pills">
                                             <span class="sys-req-pill"><i class="fa-solid fa-keyboard text-teal"></i> Tecla de atalho: <code>[K]</code></span>
                                             <span class="sys-req-pill"><i class="fa-solid fa-house text-sand"></i> Estar dentro de uma casa reivindicada</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-lightbulb text-amber"></i> Telemetria de Lâmpadas (v1.6.7)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1620,7 +1672,7 @@
                                 <div class="acc-title-group">
                                     <div class="acc-title-row">
                                         <span class="acc-title">15. Cozimento Real sobre o Fogão (Stovetop Cooking 3D)</span>
-                                        <span class="badge-tag badge-tag-v160">v1.6.1 NOVO</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.7 DINÂMICO</span>
                                         <span class="badge-tag badge-tag-leisure">Culinária</span>
                                     </div>
                                     <span class="acc-subtitle">Coloque panelas, caçarolas e alimentos sobre o fogão aceso: cocção térmica 3D física, descongelamento progressivo e risco real de incêndio.</span>
@@ -1635,6 +1687,7 @@
                                     <div class="sys-card-body">
                                         <p>No Project Zomboid tradicional, para cozinhar você precisava abrir o inventário do fogão e colocar a panela lá dentro como se fosse um baú. Mas quem coloca uma panela <em>dentro</em> das chamas de uma fogueira ou chapa de ferro?</p>
                                         <p>No v1.6.1+, você simplesmente solta a panela ou o bife diretamente <strong>sobre a chapa do fogão ligado</strong> no mundo 3D. O calor físico aquece, descongela e cozinha o alimento em tempo real, gerando cheiro, gordura no piso e exigindo atenção para não queimar e incendiar a casa!</p>
+                                        <p><strong>v1.6.7 Otimização Sandbox:</strong> O ciclo de inspeção térmica agora obedece fielmente à opção sandbox <code>StovetopCheckIntervalSeconds</code> (padrão 12s), aliviando o processamento em servidores dedicados.</p>
                                     </div>
                                 </div>
 
@@ -1656,6 +1709,7 @@
                                         <div class="sys-req-pills">
                                             <span class="sys-req-pill"><i class="fa-solid fa-fire text-amber"></i> Chapa / Boca aquecida</span>
                                             <span class="sys-req-pill"><img src="assets/icons/canned_corn.png" class="pill-pixel-icon" alt="Comida"> <code>Base.Pot</code>, <code>Base.Pan</code> ou Alimento</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-sliders text-cyan"></i> Sandbox Calibrável (12s)</span>
                                             <span class="sys-req-pill"><i class="fa-solid fa-triangle-exclamation text-amber"></i> Extintor por perto</span>
                                         </div>
                                     </div>
@@ -1739,6 +1793,274 @@
                                             <div class="sys-impact-box sys-impact-debuff">
                                                 <strong><i class="fa-solid fa-triangle-exclamation"></i> Degradação Silenciosa</strong>
                                                 <span>Fixtures esquecidas acumulam sujeira gradativa que anula o bônus sanitário (+4 pts por peça) e atrai baratas e moscas.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 17: Sorte em Saques & Foco de Explorador (Loot Luck Dual Engine) -->
+                    <div class="guide-accordion-item" data-guide-cat="comfort" data-keywords="loot luck sorte saques exploração contêiner itens raros santuário foco sobrevivente expedição bônus percepção">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-gem"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">17. Sorte em Saques & Foco de Explorador (Loot Luck Dual Engine)</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.5 NOVO</span>
+                                        <span class="badge-tag badge-tag-comfort">Conforto</span>
+                                    </div>
+                                    <span class="acc-subtitle">Descansar em um santuário impecável aguça a mente para expedições: dupla rolagem de itens raros em contêineres fechados.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Pense no seu sobrevivente como um perito ou investigador tático: se ele dormiu no chão sujo com moscas zumbindo, sai para o apocalipse trêmulo e vasculha armários de forma apressada, ignorando compartimentos ocultos.</p>
+                                        <p>Na v1.6.5+, quem descansa em um <strong>santuário impecável (Tier 4)</strong> e faz suas refeições no aconchego do lar adquire o estado <strong>'Foco de Explorador'</strong>. Ao abrir contêineres fechados pelo mundo, o sistema processa uma <em>segunda rolagem probabilística</em> (Dual Roll) para gerar itens valiosos adicionais.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Eleve o conforto da sua base acima de 80 pts (Tier 4) e elimine todo o Squalor (0% sujeira).</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Faça uma refeição quente e durma até descansar totalmente para receber a notificação do buff de Loot Luck.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Saia em expedição de saque: ao abrir novos armários, baús, caixas de ferramentas e veículos, aproveite o aumento expressivo de itens raros.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/moodles/moodle_happy.png" class="pill-pixel-icon" alt="Foco"> Buff 'Foco de Explorador'</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-box-archive text-amber"></i> Contêineres ainda não vasculhados</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-sliders text-teal"></i> Sandbox: <code>AllowLootLuckBuff</code></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Expedições de Elite</strong>
+                                                <span>Aumenta consideravelmente as chances de encontrar munição em caixas, remédios raros, sementes e ferramentas elétricas.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-triangle-exclamation"></i> Saque Ordinário</strong>
+                                                <span>Bases desorganizadas ou com poeira anulam o bônus, limitando os achados às rolagens mínimas do jogo vanilla.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 18: Conforto Térmico Residencial ('Aquecido' & Cura de Resfriados) -->
+                    <div class="guide-accordion-item" data-guide-cat="comfort" data-keywords="aquecido conforto térmico lareira aquecedor frio resfriado cura imunidade inverno temperatura corporal lenha">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-temperature-arrow-up"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">18. Conforto Térmico Residencial ('Aquecido' & Cura de Resfriados)</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.6 NOVO</span>
+                                        <span class="badge-tag badge-tag-comfort">Conforto</span>
+                                    </div>
+                                    <span class="acc-subtitle">Lareiras acesas, tapetes isolantes e roupas secas ativam o buff 'Aquecido', estabilizando a temperatura corporal e acelerando a cura de resfriados.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>No inverno rigoroso de Kentucky, ficar dentro de uma casa fria e úmida é uma sentença quase certa de gripe ou pneumonia: o sobrevivente tosse alto, atrai hordas vizinhas e sofre lentidão.</p>
+                                        <p>Na v1.6.6+, acender uma lareira ou fogão a lenha em um quarto isolado por tapetes (+6 pts) ativa o estado benéfico <strong>'Aquecido & Confortável'</strong>. O calor ambiente regula a temperatura do corpo e <strong>acelera em 40% a cura biológica de resfriados</strong>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Posicione um Tapete acolchoado no quarto e mantenha cortinas fechadas para reter calor.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Abasteça a lareira ou fogão com lenha e acenda o fogo durante os meses frios.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Permaneça no raio de calor: observe o surgimento do moodle 'Aquecido', que interrompe tosses e drena sintomas de gripe.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><i class="fa-solid fa-fire text-amber"></i> Lareira ou Fogão a Lenha aceso</span>
+                                            <span class="sys-req-pill"><img src="assets/icons/carpet.png" class="pill-pixel-icon" alt="Tapete"> Tapete Isolante (+6 pts)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-shield-virus text-cyan"></i> Sandbox: <code>Enable_Aquecido</code></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Conforto Térmico Total</strong>
+                                                <span>Imunidade à hipotermia noturna, sono sem interrupções e recuperação veloz de resfriados sem precisar gastar antibióticos.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-snowflake text-cyan"></i> Frio Sub-Zero</strong>
+                                                <span>Pisos de concreto descalços no inverno aplicam -10 pts térmicos, gerando tremores e tosse que entregam sua posição aos zumbis.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 19: Foco em Combate ('Alerta' & Supressão de Pânico no Santuário) -->
+                    <div class="guide-accordion-item" data-guide-cat="comfort" data-keywords="alerta focado combate pânico supressão santuário reflexos defesa invasão base medo sobrevivência">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-crosshairs"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">19. Foco em Combate ('Alerta' & Supressão de Pânico no Santuário)</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.6 NOVO</span>
+                                        <span class="badge-tag badge-tag-comfort">Conforto</span>
+                                    </div>
+                                    <span class="acc-subtitle">Segurança da fortaleza interior confere prontidão tática: supressão imediata de pânico súbito em invasões e reflexos aprimorados.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>Imagine estar relaxando em casa quando uma janela é arrombada por zumbis. No vanilla, seu avatar entra imediatamente em pânico extremo, tremendo a mira e errando golpes vitais.</p>
+                                        <p>Na v1.6.6+, manter um lar consolidado e limpo confere o estado <strong>'Alerta & Focado'</strong>. A confiança de estar defendendo o seu próprio santuário suprime o choque inicial do susto, mantendo a firmeza nos disparos e a precisão das lâminas.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Mantenha sua safehouse com boa infraestrutura, portas barricadas e nível de conforto acima do Tier 3.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>O buff 'Alerta & Focado' é mantido ativamente enquanto o sobrevivente opera dentro do perímetro da base.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Em caso de invasão perimetral, reaja sem o tremor de pânico inicial, mantendo o controle cirúrgico da situação.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/moodles/moodle_concentrating.png" class="pill-pixel-icon" alt="Alerta"> Santuário Confortável (Tier 3-4)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-shield-halved text-cyan"></i> Perímetro Residencial Oficial</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-sliders text-teal"></i> Sandbox: <code>Enable_Alerta</code></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Resposta Tática Firme</strong>
+                                                <span>Amortece em até 60% o ganho de pânico repentino, garantindo velocidade de recarga e dano crítico com armas de fogo.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-triangle-exclamation"></i> Choque Psicológico</strong>
+                                                <span>Em abrigos precários ou sem posse, o sobrevivente sofre colapso de pânico imediato na invasão, perdendo força de empurrão.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SYSTEM 20: Ciclo de Vida, Queima & Substituição de Lâmpadas -->
+                    <div class="guide-accordion-item" data-guide-cat="cleaning" data-keywords="lâmpada queima filamento luz elétrica troca soquete luminária escuro manutenção base base.lightbulb conserto">
+                        <button class="accordion-trigger" type="button">
+                            <div class="acc-header-left">
+                                <div class="acc-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div class="acc-title-group">
+                                    <div class="acc-title-row">
+                                        <span class="acc-title">20. Ciclo de Vida, Queima & Substituição de Lâmpadas</span>
+                                        <span class="badge-tag badge-tag-v167">v1.6.7 NOVO</span>
+                                        <span class="badge-tag badge-tag-cleaning">Manutenção</span>
+                                    </div>
+                                    <span class="acc-subtitle">Luminárias ativas sofrem queima periódica de filamentos incandescentes: substitua lâmpadas avariadas para restaurar a luz e o conforto.</span>
+                                </div>
+                            </div>
+                            <div class="acc-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="guide-subgrid">
+                                <div class="sys-card sys-card-why">
+                                    <div class="sys-card-header"><i class="fa-solid fa-lightbulb"></i><h5>O Porquê (Conceito ELI5)</h5></div>
+                                    <div class="sys-card-body">
+                                        <p>No apocalipse de 1993, as lâmpadas incandescentes não são infinitas. Deixar as luzes da casa ligadas sem parar eventualmente rompe o filamento de tungstênio pelo desgaste térmico.</p>
+                                        <p>Na v1.6.7, luminárias residenciais ativas possuem chance periódica de queima regulada no sandbox (<code>LightBulbBurnoutChance</code>). Quando uma lâmpada queima, o cômodo escurece, anula os bônus de iluminação e emite um alerta na Checklist de Manutenção <strong>[Tecla K]</strong>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-how">
+                                    <div class="sys-card-header"><i class="fa-solid fa-gamepad"></i><h5>Como Usar no Jogo</h5></div>
+                                    <div class="sys-card-body">
+                                        <ul class="sys-steps-list">
+                                            <li class="sys-step-item"><span class="sys-step-num">1</span><span>Identifique a luminária apagada diretamente no cômodo ou consulte o Inspetor de Cômodo <strong>[Tecla K]</strong>.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">2</span><span>Mantenha uma Lâmpada de reposição (<code>Base.LightBulb</code>) no seu inventário primário ou secundário.</span></li>
+                                            <li class="sys-step-item"><span class="sys-step-num">3</span><span>Clique com o <strong>botão direito na luminária apagada</strong> e selecione <strong>'Substituir Lâmpada Queimada'</strong>. A luz acende instantaneamente restaurando a pontuação.</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-req">
+                                    <div class="sys-card-header"><i class="fa-solid fa-toolbox"></i><h5>Itens & Requisitos</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-req-pills">
+                                            <span class="sys-req-pill"><img src="assets/icons/lamp.png" class="pill-pixel-icon" alt="Lâmpada"> <code>Base.LightBulb</code> (Inventário)</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-bolt text-amber"></i> Rede Elétrica / Gerador Ativo</span>
+                                            <span class="sys-req-pill"><i class="fa-solid fa-sliders text-cyan"></i> Sandbox: <code>EnableLightBulbBurnout</code></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sys-card sys-card-impact">
+                                    <div class="sys-card-header"><i class="fa-solid fa-scale-balanced"></i><h5>Impacto: Cuidar vs Negligenciar</h5></div>
+                                    <div class="sys-card-body">
+                                        <div class="sys-impact-split">
+                                            <div class="sys-impact-box sys-impact-buff">
+                                                <strong><i class="fa-solid fa-circle-check"></i> Iluminação Plena</strong>
+                                                <span>Restaura +6 a +10 pts de conforto de iluminação no quarto, permitindo ler livros de skill à noite sem cansaço visual.</span>
+                                            </div>
+                                            <div class="sys-impact-box sys-impact-debuff">
+                                                <strong><i class="fa-solid fa-triangle-exclamation"></i> Trevas & Ansiedade</strong>
+                                                <span>A escuridão contínua zera o conforto de luz, provoca desconforto psicológico e aumenta as chances de pesadelos ao dormir.</span>
                                             </div>
                                         </div>
                                     </div>

@@ -1,6 +1,6 @@
 {
   "name": "pz-cozy-living-wiki",
-  "version": "1.6.0",
+  "version": "1.6.7",
   "description": "PZ: Cozy Living - Web Portal, Wiki & GDD Interativo",
   "private": true,
   "scripts": {
